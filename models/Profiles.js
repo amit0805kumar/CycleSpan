@@ -17,29 +17,29 @@ const ProfileSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    location: [
-        {
-            address: {
-                type: String,
-                required: true
-            },
-            cite: {
-                type: String
-            },
-            pin: {
-                type: Number,
-                required: true
-            },
-            state: {
-                type: String,
-                required: true
-            },
-            country: {
-                type: String,
-                required: true
-            }
+    location:
+    {
+        address: {
+            type: String,
+            required: true
+        },
+        city: {
+            type: String
+        },
+        pin: {
+            type: Number,
+            required: true
+        },
+        state: {
+            type: String,
+            required: true
+        },
+        country: {
+            type: String,
+            required: true
         }
-    ],
+    }
+    ,
     social: {
         youtube: {
             type: String

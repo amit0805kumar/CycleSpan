@@ -9,7 +9,7 @@ const User = require('../../models/Users')
 const auth = require('../../middleware/auth')
 
 // @route GET api/auth
-// @desc to get user from
+// @desc to get user from token
 // @access Private
 router.get('/', auth, async (req, res) => {
 
@@ -23,7 +23,7 @@ router.get('/', auth, async (req, res) => {
 })
 
 // @route POST api/auth
-// @desc to login user and get token
+// @desc to login user and get token 
 // @access Public
 router.post('/', [
     check('email', 'Enter a valid email')
