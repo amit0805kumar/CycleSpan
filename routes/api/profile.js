@@ -5,6 +5,7 @@ const Profile = require('../../models/Profiles')
 const User = require('../../models/Users')
 const Admin = require('../../models/Admin')
 const auth = require('../../middleware/auth')
+const adminAuth = require('../../middleware/adminAuth')
 
 // @route POST api/profile
 // @desc To create or update user profile
@@ -132,7 +133,7 @@ router.delete('/', auth, async (req, res) => {
 // @desc To make an admin
 // @access Private
 
-router.post("/allowAdmin", [auth, [
+router.post("/allowAdmin", [adminAuth, [
     check('user_id').not().isEmpty()
 ]], async (req, res) => {
 
@@ -141,11 +142,6 @@ router.post("/allowAdmin", [auth, [
         return res.status(400).json({ errors: error.array() })
     }
     try {
-        const allow = await Admin.findOne({ user: req.user.id })
-        if (!allow) {
-            return res.status(401).json({ message: 'Authorization denied.' });
-        }
-        //Fetching Data of the target user
         const { user_id } = req.body
         let adminData = {}
         adminData.user = user_id
@@ -160,6 +156,34 @@ router.post("/allowAdmin", [auth, [
         res.status(500).send('Server error')
     }
 
+})
+
+
+
+// @route Delete api/profile/removeAdmin
+// @desc To delete access admin allowance
+// @access Private
+
+router.delete('/removeAdmin', [adminAuth, [
+    check('user_id', 'Please enter the id').not().isEmpty()
+]], async (req, res) => {
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() })
+    }
+    try {
+        const { user_id } = req.body
+        const allAdmin = await Admin.find()
+        if (allAdmin.length <= 1) {
+            return res.status(400).json({ message: 'Sorry, You are the only admin' })
+        }
+        await Admin.findOneAndRemove({ user: user_id })
+        res.json({ message: 'Authorization removed' })
+
+    } catch (error) {
+        console.log(error.message)
+        res.status(500).send('Server error')
+    }
 })
 
 module.exports = router
