@@ -86,7 +86,7 @@ router.get('/', adminAuth, async (req, res) => {
         const stations = await Stations.find()
         if (stations == null) return res.status(401).json({ message: "No station found" })
 
-        res.json(JSON.stringify(stations))
+        res.json(stations)
     } catch (error) {
         console.log(error.message)
         res.status(400).send('Server error')

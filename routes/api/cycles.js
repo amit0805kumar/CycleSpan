@@ -86,7 +86,7 @@ router.get('/', adminAuth, async (req, res) => {
         const cycle = await Cycles.find()
         if (cycle == null) return res.status(401).json({ message: "No cycle found" })
 
-        res.json(JSON.stringify(cycle))
+        res.json(cycle)
     } catch (error) {
         console.log(error.message)
         res.status(400).send('Server error')
