@@ -35,14 +35,14 @@ const rideRecordSchema = new mongoose.Schema({
         required: true
     },
     totalTime: {
-        type: Date,
+        type: Number,
         required: true
     },
     fare: {
-        type: Fare,
+        type: Number,
         required: true
     }
 })
 
-const RideRecord = mongoose.model('activerides', rideRecordSchema)
+const RideRecord = mongoose.model('rideRecord', rideRecordSchema)
 module.exports = RideRecord

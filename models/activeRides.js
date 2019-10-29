@@ -24,7 +24,8 @@ const activeRideSchema = new mongoose.Schema({
     },
     rideId: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     }
 })
 
