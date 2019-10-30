@@ -6,6 +6,8 @@ const otpAuth = require('../../middleware/otpAuth')
 const adminAuth = require('../../middleware/adminAuth')
 const { check, validationResult } = require('express-validator')
 const AvailableCycles = require('../../models/AvailableCycles')
+const Cycles = require('../../models/Cycles')
+const Stations = require('../../models/Stations')
 const ActiveRides = require('../../models/activeRides')
 const Users = require('../../models/Users')
 const ActiveOtp = require('../../models/ActiveOtp')
@@ -31,6 +33,18 @@ router.post('/accept', async (req, res) => {
             cycleModel,
         } = req.body
         const date = new Date()
+
+        //Decrementing the count of cycle at that location
+        const avaliablecycles = await AvailableCycles.findOne({
+            locationCode: locationCode, cycleModel: cycleModel
+        })
+        if (avaliablecycles.available > 0) {
+            avaliablecycles.available -= 1
+        } else {
+            return res.status(400).json({ message: "No bicycle available" })
+        }
+
+
         const total = await RideRecord.find()
         const rideId = 'cyclespan' + (total.length + 1)
 
@@ -44,6 +58,7 @@ router.post('/accept', async (req, res) => {
         }
         const activeRides = new ActiveRides(activeSchema)
         await ActiveOtp.findOneAndRemove({ otp: otp })
+        await avaliablecycles.save()
         await activeRides.save()
         res.json(activeRides)
 
@@ -93,6 +108,29 @@ router.post('/complete', [
         recordSchema.fare = parseFloat(fare.toFixed(2))
 
         const recordData = new RideRecord(recordSchema)
+
+        //Incrementing the count of cycle on drop location
+        let availableCycles = await AvailableCycles.findOne({ locationCode: recordSchema.dropLocationCode, cycleModel: recordSchema.cycleModel })
+        if (availableCycles) {
+            availableCycles.available += 1
+        } else {
+            const cycle = await Cycles.findOne({ model: recordSchema.cycleModel })
+            const station = await Stations.findOne({ code: recordSchema.dropLocationCode })
+
+
+            const availableSchema = {
+                location: station._id,
+                locationCode: station.code,
+                cycles: cycle._id,
+                cycleModel: cycle.model,
+                available: 1
+            }
+            availableCycles = new AvailableCycles(availableSchema)
+        }
+
+
+        await availableCycles.save()
+
         await recordData.save()
         res.json(recordData)
 
