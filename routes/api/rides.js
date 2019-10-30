@@ -93,5 +93,21 @@ router.put('/update', [adminAuth, [
     }
 })
 
+// @route GET api/rides/
+// @desc To get all available rides
+// @access Private admin
+
+router.get('/', adminAuth, async (req, res) => {
+    try {
+        const allRides = await AvailableCycles.find()
+        if (!allRides) {
+            return res.json({ message: 'No rides found' })
+        }
+        res.json(allRides)
+    } catch (error) {
+        console.log(error.message)
+        res.status(400).send('Server error')
+    }
+})
 
 module.exports = router
