@@ -5,6 +5,7 @@ const adminAuth = require('../../middleware/adminAuth')
 const { check, validationResult } = require('express-validator')
 const AvailableCycles = require('../../models/AvailableCycles')
 
+const RideRecord = require('../../models/rideRecord')
 
 
 
@@ -110,4 +111,40 @@ router.get('/', adminAuth, async (req, res) => {
     }
 })
 
+
+
+// @route GET api/rides/records
+// @desc To get all records
+// @access Private admin user
+
+router.get('/records', adminAuth, async (req, res) => {
+    try {
+        const records = await RideRecord.find()
+        if (!records) {
+            return res.json({ message: 'No record found' })
+        }
+        res.json(records)
+    } catch (error) {
+        console.log(error.message)
+        res.status(400).send('Server error')
+    }
+})
+
+
+// @route GET api/rides/record/me
+// @desc To complete the ride
+// @access Private admin user
+
+router.get('/records/me', auth, async (req, res) => {
+    try {
+        const records = await RideRecord.find({ user: req.user.id })
+        if (!records) {
+            return res.json({ message: 'No record found' })
+        }
+        res.json(records)
+    } catch (error) {
+        console.log(error.message)
+        res.status(400).send('Server error')
+    }
+})
 module.exports = router

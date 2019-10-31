@@ -78,7 +78,7 @@ router.delete('/', [adminAuth, [
 
 })
 
-// @route GET api/cycles/:model
+// @route GET api/cycles
 // @desc To get all stations
 // @access Private admin
 router.get('/', adminAuth, async (req, res) => {
