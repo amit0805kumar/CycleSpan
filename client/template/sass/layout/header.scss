@@ -1,0 +1,168 @@
+.header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    .sidebar {
+        position: absolute;
+        left: 0;
+        width: 15rem;
+        height: 100%;
+        top: 0;
+        background: $color-secondary;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+        transition: $tran-smooth;
+        z-index: 20;
+
+        &:hover {
+            //   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            width: 100%;
+        }
+
+        &:hover~div.main>.content>.sub {
+            color: #fff;
+        }
+
+        .logo {
+            position: absolute;
+            top: 2rem;
+
+            width: 15rem;
+
+            img {
+                width: 5rem;
+                margin-left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .social {
+            height: 100vh;
+            padding: 0.2rem;
+            display: flex;
+            align-items: center;
+
+            .links {
+                display: flex;
+                flex-direction: column;
+                margin-left: 1rem;
+
+                a {
+                    width: 2rem;
+
+                    svg {
+                        fill: #fff;
+                        width: 100%;
+                        transition: $tran-smooth;
+
+                        &:hover {
+                            fill: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header-bg {
+        position: absolute;
+        background: $color-primary;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+    }
+
+    .main {
+        width: auto;
+        height: 100vh;
+        // background: $color-primary;
+        z-index: 100;
+        position: absolute;
+        left: 15rem;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8rem;
+
+        .content {
+            h1 {
+                font-size: 8rem;
+                color: #fff;
+
+                span {
+                    color: $color-primary-dark;
+                }
+            }
+
+            .sub {
+                font-size: 3rem;
+                color: $color-secondary;
+                margin-bottom: 3rem;
+                margin-left: 1rem;
+                transition: $tran-smooth;
+            }
+
+            a {
+                width: 20rem;
+                height: 3.5rem;
+                border-radius: 300px;
+                box-shadow: $shadow-n;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 1rem;
+                font-weight: 700;
+                font-family: "Patrick Hand", cursive;
+                color: $color-secondary;
+                letter-spacing: 3px;
+                font-size: 1.5rem;
+                background: #fff;
+                transition: $tran-normal;
+
+                .text {
+                    display: flex;
+                    align-items: center;
+                }
+
+                svg {
+                    transition: $tran-normal;
+                    width: 2rem;
+                    animation: rotation 3s infinite linear;
+                }
+
+                &:hover {
+                    box-shadow: $shadow-d1;
+                }
+
+                &:hover svg {
+                    width: 2.5rem;
+                    animation: rotation 1s infinite linear;
+                }
+            }
+        }
+
+        .image {
+            width: 50%;
+            overflow: hidden;
+            margin-top: -5rem;
+
+            img {
+                width: 70rem;
+                z-index: 10;
+            }
+
+            .text {
+                font-size: 2rem;
+                margin-top: 4rem;
+                text-align: right;
+                margin-right: 2rem;
+
+                color: $color-secondary;
+                font-family: 'Staatliches', cursive;
+                border-bottom: 2px solid $color-secondary;
+            }
+        }
+    }
+}
