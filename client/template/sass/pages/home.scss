@@ -1,0 +1,24 @@
+.heading__shadowed {
+    text-transform: uppercase;
+    font-size: 7rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Patrick Hand', cursive;
+    position: relative;
+
+    &::before {
+        content: 'CYCLES';
+        position: absolute;
+        top: 5%;
+        opacity: .2;
+        transform: translateX(-50%) rotate(180deg);
+        left: 50%;
+        letter-spacing: 5px;
+        font-size: 9rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+    }
+
+}

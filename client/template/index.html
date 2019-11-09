@@ -7,6 +7,8 @@
 
     <link rel="shotcut icon" type="img/png" href="Images/icon.png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
     <script src="https://code.jquery.com/jquery-1.12.3.min.js"
         integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
     <link
@@ -130,12 +132,316 @@
     <section class="section__steps">
         <div class="heading__book">How to book ?</div>
         <div class="steps">
-            <div class="step">1</div>
-            <div class="step">2</div>
-            <div class="step">3</div>
+            <div class="step step__left">
+                <img src="./images/one.svg" alt="" class="count">
+                <div class="content">
+                    <div class="text">
+                        Get an OTP from your account
+                    </div>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 158.8 39.8"
+                        style="enable-background:new 0 0 158.8 39.8;" xml:space="preserve">
+                        <g id="XMLID_53_">
+                            <path id="XMLID_54_" d="M31.4,6.1L22.4,18v0.2l14.4-1.9v6.5l-14.4-1.7v0.2l9.2,11.5l-6,3.4l-5.7-13.4h-0.2l-6.2,13.5l-5.4-3.4
+                       L17,21.1V21L2.9,22.8v-6.5l14,1.8v-0.2l-9-11.7l5.8-3.3l5.9,13.3h0.2l5.8-13.4L31.4,6.1z" />
+                            <path id="XMLID_56_" d="M71.1,6.1L62,18v0.2l14.4-1.9v6.5L62,21.1v0.2l9.2,11.5l-6,3.4l-5.7-13.4h-0.2L53,36.2l-5.4-3.4l9.1-11.7
+                       V21l-14.1,1.8v-6.5l14,1.8v-0.2l-9-11.7l5.8-3.3l5.9,13.3h0.2l5.8-13.4L71.1,6.1z" />
+                            <path id="XMLID_58_" d="M110.7,6.1L101.6,18v0.2l14.4-1.9v6.5l-14.4-1.7v0.2l9.2,11.5l-6,3.4L99,22.8h-0.2l-6.2,13.5l-5.4-3.4
+                       l9.1-11.7V21l-14.1,1.8v-6.5l14,1.8v-0.2l-9-11.7L93,2.9L99,16.2h0.2L105,2.8L110.7,6.1z" />
+                            <path id="XMLID_60_" d="M150.3,6.1L141.3,18v0.2l14.4-1.9v6.5l-14.4-1.7v0.2l9.2,11.5l-6,3.4l-5.7-13.4h-0.2l-6.2,13.5l-5.4-3.4
+                       l9.1-11.7V21l-14.1,1.8v-6.5l14,1.8v-0.2l-9-11.7l5.8-3.3l5.9,13.3h0.2l5.8-13.4L150.3,6.1z" />
+                        </g>
+                    </svg>
+                </div>
+                <hr class="dashed">
+            </div>
+            <div class="step step__right">
+                <img src="./images/two.svg" alt="" class="count">
+                <div class="content">
+                    <div class="text">
+                        Enter that OTP on the screen of
+                        any bicycle stant at your nearest
+                        station
+                    </div>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64.2 83.6"
+                        style="enable-background:new 0 0 64.2 83.6;" xml:space="preserve">
+                        <g id="XMLID_117_">
+                            <path id="XMLID_118_" d="M59.6,78.2H5.3v-75h54.3V78.2z M6.3,77.2h52.3v-73H6.3V77.2z" />
+                            <path id="XMLID_119_" d="M56.9,22.9H7.3V8.6h49.7V22.9z M8.3,21.9h47.7V9.6H8.3V21.9z" />
+                            <circle id="XMLID_96_" cx="14.8" cy="37.1" r="6" />
+                            <circle id="XMLID_98_" cx="31.8" cy="37.1" r="6" />
+                            <circle id="XMLID_99_" cx="48.8" cy="37.1" r="6" />
+                            <circle id="XMLID_102_" cx="14.8" cy="53.1" r="6" />
+                            <circle id="XMLID_101_" cx="31.8" cy="53.1" r="6" />
+                            <circle id="XMLID_100_" cx="48.8" cy="53.1" r="6" />
+                            <circle id="XMLID_105_" cx="14.8" cy="69.1" r="6" />
+                            <circle id="XMLID_104_" cx="31.8" cy="69.1" r="6" />
+                            <circle id="XMLID_103_" cx="48.8" cy="69.1" r="6" />
+                            <g id="XMLID_90_">
+                                <path id="XMLID_92_" d="M36.4,13.3l-1.1,1.5v0l1.8-0.2v0.8l-1.8-0.2v0l1.2,1.4L35.6,17l-0.7-1.7h0l-0.8,1.7l-0.7-0.4l1.1-1.5v0
+                           l-1.8,0.2v-0.8l1.8,0.2v0l-1.1-1.5l0.7-0.4l0.7,1.7h0l0.7-1.7L36.4,13.3z" />
+                                <path id="XMLID_125_" d="M41.4,13.3l-1.1,1.5v0l1.8-0.2v0.8l-1.8-0.2v0l1.2,1.4L40.6,17l-0.7-1.7h0l-0.8,1.7l-0.7-0.4l1.1-1.5v0
+                           l-1.8,0.2v-0.8l1.8,0.2v0l-1.1-1.5l0.7-0.4l0.7,1.7h0l0.7-1.7L41.4,13.3z" />
+                                <path id="XMLID_127_" d="M46.3,13.3l-1.1,1.5v0l1.8-0.2v0.8l-1.8-0.2v0l1.2,1.4L45.6,17l-0.7-1.7h0l-0.8,1.7l-0.7-0.4l1.1-1.5v0
+                           l-1.8,0.2v-0.8l1.8,0.2v0l-1.1-1.5l0.7-0.4l0.7,1.7h0l0.7-1.7L46.3,13.3z" />
+                                <path id="XMLID_129_" d="M51.3,13.3l-1.1,1.5v0l1.8-0.2v0.8l-1.8-0.2v0l1.2,1.4L50.6,17l-0.7-1.7h0l-0.8,1.7l-0.7-0.4l1.1-1.5v0
+                           l-1.8,0.2v-0.8l1.8,0.2v0l-1.1-1.5l0.7-0.4l0.7,1.7h0l0.7-1.7L51.3,13.3z" />
+                            </g>
+                        </g>
+                    </svg>
+
+                </div>
+                <hr class="dashed-opp">
+            </div>
+            <div class="step step__left">
+                <img src="./images/three.svg" alt="" class="count">
+                <div class="content">
+                    <div class="text">
+                        A rideId will given to you.
+                        Save that id and submit it at the
+                        end of your ride on the station
+                    </div>
+                    <img src="" alt="" class="icon">
+                </div>
+                <hr class="dashed">
+            </div>
+            <div class="step step__final step__right">
+                <img src="./images/dotBorder.svg" alt="">
+                <div class="content">
+                    <div class="text final__text">
+                        Enjoy your ride
+                    </div>
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="106 -106 512 512"
+                        style="enable-background:new 106 -106 512 512;" xml:space="preserve">
+                        <style type="text/css">
+                            .st0 {
+                                fill: #FFFFFF;
+                            }
+                        </style>
+                        <g>
+                            <g>
+                                <g>
+                                    <path class="st0"
+                                        d="M436.7,16.7c23.5,0,42.7-19.2,42.7-42.7s-19.2-42.7-42.7-42.7S394-49.5,394-26S413.2,16.7,436.7,16.7z" />
+                                    <path class="st0" d="M212.7,155.3C154,155.3,106,203.3,106,262s48,106.7,106.7,106.7s106.7-48,106.7-106.7
+                               S271.3,155.3,212.7,155.3z M212.7,336.7c-41.6,0-74.7-33.1-74.7-74.7s33.1-74.7,74.7-74.7s74.7,33.1,74.7,74.7
+                               S254.3,336.7,212.7,336.7z" />
+                                    <path class="st0" d="M510.3,132.9V90.3c-32,0-58.7-11.7-77.9-30.9l-41.6-40.5C384.4,11.3,373.7,6,362,6
+                               c-11.7,0-22.4,4.3-29.9,12.8l-58.7,58.7c-7.5,7.5-12.8,18.1-12.8,29.9s5.3,22.4,12.8,30.9l67.2,59.7v106.7h42.7V171.3l-46.9-46.9
+                               l50.1-51.2l16,16C429.2,116.9,466.5,132.9,510.3,132.9z" />
+                                    <path class="st0"
+                                        d="M511.3,155.3c-58.7,0-106.7,48-106.7,106.7s48,106.7,106.7,106.7S618,320.7,618,262S570,155.3,511.3,155.3z
+                                M511.3,336.7c-41.6,0-74.7-33.1-74.7-74.7s33.1-74.7,74.7-74.7S586,220.4,586,262S552.9,336.7,511.3,336.7z" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+
+
+                </div>
+            </div>
         </div>
     </section>
 
+    <section class="section__cycles">
+        <div class="heading__shadowed">
+            Cycles
+        </div>
+
+        <div class="cycle__slider">
+            <section class="regular slider">
+                <div>
+                    <div class="card">
+                        <div class="image">
+                            <img src="./images/yellowBike.png" alt="">
+                        </div>
+                        <div class="content">
+
+                            <h1>Heading</h1>
+                            <p>description</p>
+                            <div class="features">
+                                <div class="feature">
+                                    <div class="name">Company</div>
+                                    <div class="value">Hero</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Model</div>
+                                    <div class="value">HR301</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Gender</div>
+                                    <div class="value">M</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Gears</div>
+                                    <div class="value">5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card">
+                        <div class="image">
+                            <img src="./images/yellowBike.png" alt="">
+                        </div>
+                        <div class="content">
+
+                            <h1>Heading</h1>
+                            <p>description</p>
+                            <div class="features">
+                                <div class="feature">
+                                    <div class="name">Company</div>
+                                    <div class="value">Hero</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Model</div>
+                                    <div class="value">HR301</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Gender</div>
+                                    <div class="value">M</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Gears</div>
+                                    <div class="value">5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card">
+                        <div class="image">
+                            <img src="./images/yellowBike.png" alt="">
+                        </div>
+                        <div class="content">
+
+                            <h1>Heading</h1>
+                            <p>description</p>
+                            <div class="features">
+                                <div class="feature">
+                                    <div class="name">Company</div>
+                                    <div class="value">Hero</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Model</div>
+                                    <div class="value">HR301</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Gender</div>
+                                    <div class="value">M</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Gears</div>
+                                    <div class="value">5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card">
+                        <div class="image">
+                            <img src="./images/yellowBike.png" alt="">
+                        </div>
+                        <div class="content">
+
+                            <h1>Heading</h1>
+                            <p>description</p>
+                            <div class="features">
+                                <div class="feature">
+                                    <div class="name">Company</div>
+                                    <div class="value">Hero</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Model</div>
+                                    <div class="value">HR301</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Gender</div>
+                                    <div class="value">M</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Gears</div>
+                                    <div class="value">5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card">
+                        <div class="image">
+                            <img src="./images/yellowBike.png" alt="">
+                        </div>
+                        <div class="content">
+
+                            <h1>Heading</h1>
+                            <p>description</p>
+                            <div class="features">
+                                <div class="feature">
+                                    <div class="name">Company</div>
+                                    <div class="value">Hero</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Model</div>
+                                    <div class="value">HR301</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Gender</div>
+                                    <div class="value">M</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Gears</div>
+                                    <div class="value">5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card">
+                        <div class="image">
+                            <img src="./images/yellowBike.png" alt="">
+                        </div>
+                        <div class="content">
+
+                            <h1>Heading</h1>
+                            <p>description</p>
+                            <div class="features">
+                                <div class="feature">
+                                    <div class="name">Company</div>
+                                    <div class="value">Hero</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Model</div>
+                                    <div class="value">HR301</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Gender</div>
+                                    <div class="value">M</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="name">Gears</div>
+                                    <div class="value">5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </section>
+    <section class="section__stations">
+        <div class="heading__shadowed">
+            Stations
+        </div>
+    </section>
+    <script src="./slick/slick.min.js"></script>
 </body>
 
 </html>
