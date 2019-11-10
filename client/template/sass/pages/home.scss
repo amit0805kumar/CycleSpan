@@ -9,16 +9,18 @@
     position: relative;
 
     &::before {
-        content: 'CYCLES';
+        content: 'CYCLESPAN';
         position: absolute;
         top: 5%;
-        opacity: .2;
+        color: rgb(224, 224, 224);
         transform: translateX(-50%) rotate(180deg);
         left: 50%;
         letter-spacing: 5px;
         font-size: 9rem;
         font-family: 'Poppins', sans-serif;
         font-weight: 700;
+        z-index: -1;
+        filter: blur(.8px);
     }
 
 }
@@ -27,6 +29,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    z-index: -1;
 
     img {
         position: absolute;
@@ -34,25 +37,25 @@
     }
 
     .circle {
-        top: 20%;
+        top: 22%;
         left: 2rem;
         width: 8rem;
     }
 
     .helmet {
-        top: 22%;
+        top: 24%;
         right: 10rem;
         width: 18rem;
     }
 
     .glass {
-        top: 30%;
+        top: 28%;
         left: 10rem;
         width: 18rem;
     }
 
     .save {
-        top: 38%;
+        top: 44%;
         right: 12rem;
         width: 23rem;
     }
@@ -65,6 +68,6 @@
 
     .zigzag {
         width: 100%;
-        top: 48%;
+        top: 62%;
     }
 }

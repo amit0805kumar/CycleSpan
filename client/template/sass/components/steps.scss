@@ -36,6 +36,9 @@
       background: $color-primary;
       border-radius: 300px;
       position: relative;
+
+      box-shadow: $shadow-d2;
+
       .content {
         width: 100%;
         padding: 2rem;
@@ -48,6 +51,7 @@
         justify-content: space-between;
         margin-top: -3rem;
         position: relative;
+
         svg {
           position: absolute;
           z-index: 5;
@@ -74,6 +78,7 @@
         position: absolute;
         transform: rotate(30deg);
       }
+
       .dashed-opp {
         border: 0 none;
         border-top: 5px dashed $color-green;
@@ -107,6 +112,7 @@
 
         .content {
           margin-top: 5rem;
+
           .text {
             color: #fff;
             font-weight: 700;
