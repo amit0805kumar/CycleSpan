@@ -1,0 +1,65 @@
+.section__stations {
+    margin: 12rem;
+
+    .search {
+        width: 50rem;
+        height: 3rem;
+        border-radius: 300px;
+        border: 2px solid $color-green;
+        margin-top: 5rem;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+
+        .bar {
+            width: 95%;
+            height: 100%;
+            background: none;
+            border: none;
+            padding-left: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .location__icon {
+            height: 100%;
+            flex: 1;
+
+            svg {
+                width: 80%;
+                margin-top: .2rem;
+                margin-right: 2rem;
+            }
+
+        }
+    }
+
+    .address__container {
+        margin-top: 8rem;
+        height: 50rem;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .address {
+            background: $color-primary;
+            border-radius: 3px;
+            width: 80%;
+            padding: 1rem;
+            font-size: 1.5rem;
+            margin: 3rem 0;
+
+            .top {
+                border-bottom: 2px solid #fff;
+                margin-bottom: 1.5rem;
+                font-weight: 500;
+            }
+        }
+    }
+}
