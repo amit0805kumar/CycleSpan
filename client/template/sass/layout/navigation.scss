@@ -20,7 +20,7 @@
             transition: $tran-normal;
 
             &:hover {
-                color: #fff
+                color: $color-green !important;
             }
         }
     }

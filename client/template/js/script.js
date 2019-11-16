@@ -8,8 +8,6 @@ $(document).on('ready', function () {
     sidebar.on('mouseleave', function () {
         navbarLinks.css('color', '#2D2D2D')
     })
-
-
     //Slider config
     $(".regular").slick({
         dots: true,
