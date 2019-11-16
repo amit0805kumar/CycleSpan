@@ -1229,5 +1229,90 @@ a {
                       justify-content: space-between;
               width: 90%;
               padding-left: 2rem; }
+    .dashboard__container .content .section__profile {
+      width: 100%;
+      padding: 2rem; }
+      .dashboard__container .content .section__profile .header {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        height: 4rem;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+        .dashboard__container .content .section__profile .header h1 {
+          font-size: 3rem; }
+        .dashboard__container .content .section__profile .header .edit {
+          width: 2rem; }
+          .dashboard__container .content .section__profile .header .edit:hover {
+            cursor: pointer; }
+          .dashboard__container .content .section__profile .header .edit:hover svg {
+            fill: #5c5c5c; }
+          .dashboard__container .content .section__profile .header .edit svg {
+            width: 100%; }
+      .dashboard__container .content .section__profile .general {
+        margin-top: 2rem; }
+        .dashboard__container .content .section__profile .general .name {
+          font-size: 4rem;
+          color: #DB313E; }
+        .dashboard__container .content .section__profile .general .email {
+          color: #2D2D2D;
+          font-size: 1.4rem; }
+      .dashboard__container .content .section__profile .address,
+      .dashboard__container .content .section__profile .phone {
+        margin-top: 4rem; }
+        .dashboard__container .content .section__profile .address h1,
+        .dashboard__container .content .section__profile .phone h1 {
+          font-size: 2.5rem;
+          margin-bottom: 1.5rem; }
+        .dashboard__container .content .section__profile .address .text,
+        .dashboard__container .content .section__profile .phone .text {
+          font-size: 1.5rem; }
+    .dashboard__container .content .section__billing {
+      padding-right: 1.5rem; }
+      .dashboard__container .content .section__billing .header {
+        background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+        height: 15rem;
+        padding: 2rem;
+        border-bottom: 2px solid #2D2D2D; }
+        .dashboard__container .content .section__billing .header h1 {
+          font-size: 3rem;
+          margin-bottom: 2rem; }
+        .dashboard__container .content .section__billing .header .total {
+          font-family: 'Patrick Hand', cursive;
+          font-size: 2rem;
+          color: #fff;
+          letter-spacing: 3px; }
+      .dashboard__container .content .section__billing .bills__container {
+        width: 100%;
+        overflow-y: scroll;
+        height: 50rem; }
+        .dashboard__container .content .section__billing .bills__container .row {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          width: 100%;
+          background: #fda085;
+          padding: .5rem;
+          font-size: 2rem;
+          font-weight: 500;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between; }
+        .dashboard__container .content .section__billing .bills__container .bill {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          width: 100%;
+          padding: .8rem;
+          font-size: 1.5rem;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+          border-bottom: 1.2px solid #cecdcd; }
 
 /*# sourceMappingURL=style.css.map */
