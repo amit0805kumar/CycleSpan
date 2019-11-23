@@ -1,0 +1,337 @@
+.admin__nav {
+  width: 100%;
+  display: flex;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  background: $color-secondary;
+  align-items: center;
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .details {
+    display: flex;
+    align-items: center;
+
+    .name {
+      margin-right: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .edit__links {
+      width: 0;
+      align-items: center;
+      transition: $tran-cubic;
+      position: relative;
+      overflow: hidden;
+
+      .linkCont {
+        display: flex;
+        justify-content: space-around;
+        width: 25rem;
+        height: 100%;
+
+        .link {
+          transition: $tran-smooth;
+          color: rgb(177, 177, 177);
+
+          &:hover {
+            cursor: pointer;
+            color: $color-primary;
+          }
+        }
+      }
+    }
+
+    .expandLink {
+      width: 25rem;
+
+      &+.edit {
+        transform: rotate(90deg);
+      }
+
+    }
+
+    .edit {
+      width: 1.5rem;
+      display: flex;
+      align-items: center;
+      transition: $tran-smooth;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:hover svg {
+        fill: $color-primary;
+      }
+
+      svg {
+        fill: #fff;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.active__section,
+.section__record,
+.section__allcycles,
+.section__allstations,
+.section__available {
+  width: 100%;
+  height: 50rem;
+  background: #fff9c4;
+  box-shadow: $shadow-n;
+  padding: 1.2rem;
+  display: flex;
+  margin: 3rem 0;
+
+  .table__container {
+    background: #fff;
+
+    .heading {
+      width: 100%;
+      font-size: 2rem;
+      font-weight: 500;
+      background: $color-secondary;
+      color: #fff;
+      padding: 0.8rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .view {
+        color: $color-primary;
+        font-weight: 300;
+        transition: $tran-smooth;
+        text-decoration: underline;
+
+        &:hover {
+          cursor: pointer;
+          color: #fff;
+        }
+      }
+
+      .btn {
+        display: flex;
+        padding: 0.5rem 1.5rem;
+        font-weight: 300;
+        background: $color-primary;
+        border-radius: 300px;
+        align-items: center;
+
+        .icon {
+          margin-right: 1.5rem;
+        }
+
+        transition: $tran-smooth;
+
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0 3px 6px rgba(245, 210, 13, 0.16), 0 3px 6px rgba(255, 239, 9, 0.219);
+          transform: translateY(-2px);
+        }
+      }
+
+      .search {
+        font-family: "Poppins", sans-serif;
+
+        input {
+          color: $color-primary;
+          background: none;
+          border: none;
+          border-bottom: 1px solid $color-primary;
+          transition: all 0.3s;
+          padding: 0.5rem;
+          letter-spacing: 1px;
+          width: 25rem;
+
+          &:focus {
+            border-bottom: 1px solid #fff;
+            outline: none;
+          }
+        }
+      }
+    }
+
+    .table {
+      width: 100%;
+      height: 88%;
+      overflow-y: scroll;
+
+      .row {
+        display: flex;
+        list-style: none;
+        width: 100%;
+        justify-content: space-around;
+
+        li {
+          padding: 0.5rem 0.8rem;
+          font-size: 1.5rem;
+          flex: 1;
+          font-family: "Montserrat", sans-serif;
+        }
+
+        .num {
+          text-align: center;
+        }
+      }
+
+      .head {
+        font-weight: 700;
+        color: rgb(190, 190, 190);
+        white-space: nowrap;
+        margin-bottom: 1.5rem;
+      }
+
+      .content {
+        .cycleDetails {
+          width: 6rem;
+        }
+      }
+    }
+  }
+
+  .active__rides {
+    width: 60%;
+    height: 100%;
+  }
+
+  .active__otp {
+    width: 40%;
+    height: 100%;
+    margin-left: 1rem;
+  }
+
+  .today__record,
+  .all__cycles,
+  .all__stations,
+  .all__availables {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.modal__forms {
+  position: fixed;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  .form__container {
+    padding: 1rem;
+    border-top: 3px solid $color-primary;
+    width: 60rem;
+    background: #fff;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    margin-top: 3rem;
+    padding-bottom: 4rem;
+    position: relative;
+
+    .close {
+      position: absolute;
+      right: 1rem;
+      top: 0.2rem;
+      font-size: 3rem;
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
+
+    form {
+      h1 {
+        margin-bottom: 2rem;
+        color: $color-secondary;
+      }
+
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .radio {
+        width: 60%;
+        margin: 3rem 0;
+
+        h3 {
+          margin-bottom: 1.5rem;
+        }
+
+        .radio__btns {
+          align-items: center;
+          display: flex;
+          width: 100%;
+
+          .form__group {
+            width: 10rem;
+            align-items: center;
+            display: flex;
+
+            label {
+              margin-left: -1rem;
+            }
+          }
+        }
+      }
+
+      .uploader {
+        width: 60%;
+
+        .upload__input {
+          width: 100%;
+        }
+      }
+
+      input,
+      select,
+      textarea {
+        width: 60%;
+        margin: 0.8rem 0;
+        padding: 0.8rem 1rem;
+        box-sizing: border-box;
+        resize: none;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        font-family: inherit;
+
+        &:focus {
+          outline: none;
+          border: 1px solid $color-primary;
+        }
+
+        &:focus:invalid {
+          outline: none;
+          border: 1px solid $color-red;
+        }
+
+        &::placeholder {
+          font-family: "Montserrat", sans-serif;
+        }
+      }
+
+      button {
+        background: $color-primary;
+        padding: 1rem 2rem;
+        color: $color-secondary;
+        border: none;
+        margin-top: 2rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

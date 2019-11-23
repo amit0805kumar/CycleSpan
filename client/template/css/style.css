@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:200,300,400,500,600,700,800|Oswald:300,400,500,600,700|PT+Sans|Poppins:200,300,400,500,600,700,800,900|Raleway:200,300,400,500,600,700,800,900&display=swap");
 * {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
@@ -1283,7 +1284,7 @@ a {
           font-size: 3rem;
           margin-bottom: 2rem; }
         .dashboard__container .content .section__billing .header .total {
-          font-family: 'Patrick Hand', cursive;
+          font-family: "Patrick Hand", cursive;
           font-size: 2rem;
           color: #fff;
           letter-spacing: 3px; }
@@ -1297,7 +1298,7 @@ a {
           display: flex;
           width: 100%;
           background: #fda085;
-          padding: .5rem;
+          padding: 0.5rem;
           font-size: 2rem;
           font-weight: 500;
           -webkit-box-pack: justify;
@@ -1308,11 +1309,491 @@ a {
           display: -ms-flexbox;
           display: flex;
           width: 100%;
-          padding: .8rem;
+          padding: 0.8rem;
           font-size: 1.5rem;
           -webkit-box-pack: justify;
               -ms-flex-pack: justify;
                   justify-content: space-between;
           border-bottom: 1.2px solid #cecdcd; }
+    .dashboard__container .content .section__help h1.heading {
+      font-size: 4rem;
+      position: relative; }
+      .dashboard__container .content .section__help h1.heading::after {
+        position: absolute;
+        content: "";
+        width: 5rem;
+        left: 0;
+        background: #DB313E;
+        height: 3px;
+        bottom: 0rem; }
+    .dashboard__container .content .section__help .faq {
+      margin-top: 3rem; }
+      .dashboard__container .content .section__help .faq h1 {
+        margin-bottom: 2rem; }
+      .dashboard__container .content .section__help .faq .questions {
+        font-size: 1.5rem; }
+        .dashboard__container .content .section__help .faq .questions .question {
+          margin: 1.5rem 0; }
+          .dashboard__container .content .section__help .faq .questions .question .ques {
+            font-weight: 500; }
+          .dashboard__container .content .section__help .faq .questions .question .ans {
+            margin-left: 5rem;
+            color: #DB313E;
+            position: relative; }
+            .dashboard__container .content .section__help .faq .questions .question .ans::before {
+              position: absolute;
+              content: "";
+              width: 3rem;
+              height: 2px;
+              background: #DB313E;
+              left: -4rem;
+              top: 45%; }
+    .dashboard__container .content .section__help .number {
+      margin-top: 6rem; }
+      .dashboard__container .content .section__help .number h1 {
+        font-size: 5rem;
+        letter-spacing: 4px;
+        text-align: center; }
+      .dashboard__container .content .section__help .number .contacts {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
+        .dashboard__container .content .section__help .number .contacts .num {
+          margin: 0 2rem;
+          font-size: 3rem;
+          position: relative;
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out; }
+          .dashboard__container .content .section__help .number .contacts .num:hover {
+            color: #DB313E; }
+          .dashboard__container .content .section__help .number .contacts .num:hover::after {
+            width: 0; }
+          .dashboard__container .content .section__help .number .contacts .num::after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            height: 2px;
+            width: 6rem;
+            background: #dfbd15;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+                    transform: translateX(-50%); }
+
+.admin__nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #2D2D2D;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .admin__nav .heading {
+    font-size: 2rem; }
+  .admin__nav .details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .admin__nav .details .name {
+      margin-right: 1.5rem;
+      font-size: 1.5rem; }
+    .admin__nav .details .edit__links {
+      width: 0;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-transition: all 0.3s cubic-bezier(0.84, 0.39, 0.83, 0.67);
+      transition: all 0.3s cubic-bezier(0.84, 0.39, 0.83, 0.67);
+      position: relative;
+      overflow: hidden; }
+      .admin__nav .details .edit__links .linkCont {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        width: 25rem;
+        height: 100%; }
+        .admin__nav .details .edit__links .linkCont .link {
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+          color: #b1b1b1; }
+          .admin__nav .details .edit__links .linkCont .link:hover {
+            cursor: pointer;
+            color: #FFDC32; }
+    .admin__nav .details .expandLink {
+      width: 25rem; }
+      .admin__nav .details .expandLink + .edit {
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg); }
+    .admin__nav .details .edit {
+      width: 1.5rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+      .admin__nav .details .edit:hover {
+        cursor: pointer; }
+      .admin__nav .details .edit:hover svg {
+        fill: #FFDC32; }
+      .admin__nav .details .edit svg {
+        fill: #fff;
+        width: 100%; }
+
+.active__section,
+.section__record,
+.section__allcycles,
+.section__allstations,
+.section__available {
+  width: 100%;
+  height: 50rem;
+  background: #fff9c4;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 3rem 0; }
+  .active__section .table__container,
+  .section__record .table__container,
+  .section__allcycles .table__container,
+  .section__allstations .table__container,
+  .section__available .table__container {
+    background: #fff; }
+    .active__section .table__container .heading,
+    .section__record .table__container .heading,
+    .section__allcycles .table__container .heading,
+    .section__allstations .table__container .heading,
+    .section__available .table__container .heading {
+      width: 100%;
+      font-size: 2rem;
+      font-weight: 500;
+      background: #2D2D2D;
+      color: #fff;
+      padding: 0.8rem 1rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .active__section .table__container .heading .view,
+      .section__record .table__container .heading .view,
+      .section__allcycles .table__container .heading .view,
+      .section__allstations .table__container .heading .view,
+      .section__available .table__container .heading .view {
+        color: #FFDC32;
+        font-weight: 300;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        text-decoration: underline; }
+        .active__section .table__container .heading .view:hover,
+        .section__record .table__container .heading .view:hover,
+        .section__allcycles .table__container .heading .view:hover,
+        .section__allstations .table__container .heading .view:hover,
+        .section__available .table__container .heading .view:hover {
+          cursor: pointer;
+          color: #fff; }
+      .active__section .table__container .heading .btn,
+      .section__record .table__container .heading .btn,
+      .section__allcycles .table__container .heading .btn,
+      .section__allstations .table__container .heading .btn,
+      .section__available .table__container .heading .btn {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 0.5rem 1.5rem;
+        font-weight: 300;
+        background: #FFDC32;
+        border-radius: 300px;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; }
+        .active__section .table__container .heading .btn .icon,
+        .section__record .table__container .heading .btn .icon,
+        .section__allcycles .table__container .heading .btn .icon,
+        .section__allstations .table__container .heading .btn .icon,
+        .section__available .table__container .heading .btn .icon {
+          margin-right: 1.5rem; }
+        .active__section .table__container .heading .btn:hover,
+        .section__record .table__container .heading .btn:hover,
+        .section__allcycles .table__container .heading .btn:hover,
+        .section__allstations .table__container .heading .btn:hover,
+        .section__available .table__container .heading .btn:hover {
+          cursor: pointer;
+          -webkit-box-shadow: 0 3px 6px rgba(245, 210, 13, 0.16), 0 3px 6px rgba(255, 239, 9, 0.219);
+                  box-shadow: 0 3px 6px rgba(245, 210, 13, 0.16), 0 3px 6px rgba(255, 239, 9, 0.219);
+          -webkit-transform: translateY(-2px);
+                  transform: translateY(-2px); }
+      .active__section .table__container .heading .search,
+      .section__record .table__container .heading .search,
+      .section__allcycles .table__container .heading .search,
+      .section__allstations .table__container .heading .search,
+      .section__available .table__container .heading .search {
+        font-family: "Poppins", sans-serif; }
+        .active__section .table__container .heading .search input,
+        .section__record .table__container .heading .search input,
+        .section__allcycles .table__container .heading .search input,
+        .section__allstations .table__container .heading .search input,
+        .section__available .table__container .heading .search input {
+          color: #FFDC32;
+          background: none;
+          border: none;
+          border-bottom: 1px solid #FFDC32;
+          -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+          padding: 0.5rem;
+          letter-spacing: 1px;
+          width: 25rem; }
+          .active__section .table__container .heading .search input:focus,
+          .section__record .table__container .heading .search input:focus,
+          .section__allcycles .table__container .heading .search input:focus,
+          .section__allstations .table__container .heading .search input:focus,
+          .section__available .table__container .heading .search input:focus {
+            border-bottom: 1px solid #fff;
+            outline: none; }
+    .active__section .table__container .table,
+    .section__record .table__container .table,
+    .section__allcycles .table__container .table,
+    .section__allstations .table__container .table,
+    .section__available .table__container .table {
+      width: 100%;
+      height: 88%;
+      overflow-y: scroll; }
+      .active__section .table__container .table .row,
+      .section__record .table__container .table .row,
+      .section__allcycles .table__container .table .row,
+      .section__allstations .table__container .table .row,
+      .section__available .table__container .table .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        list-style: none;
+        width: 100%;
+        -ms-flex-pack: distribute;
+            justify-content: space-around; }
+        .active__section .table__container .table .row li,
+        .section__record .table__container .table .row li,
+        .section__allcycles .table__container .table .row li,
+        .section__allstations .table__container .table .row li,
+        .section__available .table__container .table .row li {
+          padding: 0.5rem 0.8rem;
+          font-size: 1.5rem;
+          -webkit-box-flex: 1;
+              -ms-flex: 1;
+                  flex: 1;
+          font-family: "Montserrat", sans-serif; }
+        .active__section .table__container .table .row .num,
+        .section__record .table__container .table .row .num,
+        .section__allcycles .table__container .table .row .num,
+        .section__allstations .table__container .table .row .num,
+        .section__available .table__container .table .row .num {
+          text-align: center; }
+      .active__section .table__container .table .head,
+      .section__record .table__container .table .head,
+      .section__allcycles .table__container .table .head,
+      .section__allstations .table__container .table .head,
+      .section__available .table__container .table .head {
+        font-weight: 700;
+        color: #bebebe;
+        white-space: nowrap;
+        margin-bottom: 1.5rem; }
+      .active__section .table__container .table .content .cycleDetails,
+      .section__record .table__container .table .content .cycleDetails,
+      .section__allcycles .table__container .table .content .cycleDetails,
+      .section__allstations .table__container .table .content .cycleDetails,
+      .section__available .table__container .table .content .cycleDetails {
+        width: 6rem; }
+  .active__section .active__rides,
+  .section__record .active__rides,
+  .section__allcycles .active__rides,
+  .section__allstations .active__rides,
+  .section__available .active__rides {
+    width: 60%;
+    height: 100%; }
+  .active__section .active__otp,
+  .section__record .active__otp,
+  .section__allcycles .active__otp,
+  .section__allstations .active__otp,
+  .section__available .active__otp {
+    width: 40%;
+    height: 100%;
+    margin-left: 1rem; }
+  .active__section .today__record,
+  .active__section .all__cycles,
+  .active__section .all__stations,
+  .active__section .all__availables,
+  .section__record .today__record,
+  .section__record .all__cycles,
+  .section__record .all__stations,
+  .section__record .all__availables,
+  .section__allcycles .today__record,
+  .section__allcycles .all__cycles,
+  .section__allcycles .all__stations,
+  .section__allcycles .all__availables,
+  .section__allstations .today__record,
+  .section__allstations .all__cycles,
+  .section__allstations .all__stations,
+  .section__allstations .all__availables,
+  .section__available .today__record,
+  .section__available .all__cycles,
+  .section__available .all__stations,
+  .section__available .all__availables {
+    width: 100%;
+    height: 100%; }
+
+.modal__forms {
+  position: fixed;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  .modal__forms .form__container {
+    padding: 1rem;
+    border-top: 3px solid #FFDC32;
+    width: 60rem;
+    background: #fff;
+    border-radius: 3px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: auto;
+    margin-top: 3rem;
+    padding-bottom: 4rem;
+    position: relative; }
+    .modal__forms .form__container .close {
+      position: absolute;
+      right: 1rem;
+      top: 0.2rem;
+      font-size: 3rem;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      cursor: pointer; }
+    .modal__forms .form__container form {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .modal__forms .form__container form h1 {
+        margin-bottom: 2rem;
+        color: #2D2D2D; }
+      .modal__forms .form__container form .radio {
+        width: 60%;
+        margin: 3rem 0; }
+        .modal__forms .form__container form .radio h3 {
+          margin-bottom: 1.5rem; }
+        .modal__forms .form__container form .radio .radio__btns {
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          width: 100%; }
+          .modal__forms .form__container form .radio .radio__btns .form__group {
+            width: 10rem;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex; }
+            .modal__forms .form__container form .radio .radio__btns .form__group label {
+              margin-left: -1rem; }
+      .modal__forms .form__container form .uploader {
+        width: 60%; }
+        .modal__forms .form__container form .uploader .upload__input {
+          width: 100%; }
+      .modal__forms .form__container form input,
+      .modal__forms .form__container form select,
+      .modal__forms .form__container form textarea {
+        width: 60%;
+        margin: 0.8rem 0;
+        padding: 0.8rem 1rem;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        resize: none;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        font-family: inherit; }
+        .modal__forms .form__container form input:focus,
+        .modal__forms .form__container form select:focus,
+        .modal__forms .form__container form textarea:focus {
+          outline: none;
+          border: 1px solid #FFDC32; }
+        .modal__forms .form__container form input:focus:invalid,
+        .modal__forms .form__container form select:focus:invalid,
+        .modal__forms .form__container form textarea:focus:invalid {
+          outline: none;
+          border: 1px solid #DB313E; }
+        .modal__forms .form__container form input::-webkit-input-placeholder,
+        .modal__forms .form__container form select::-webkit-input-placeholder,
+        .modal__forms .form__container form textarea::-webkit-input-placeholder {
+          font-family: "Montserrat", sans-serif; }
+        .modal__forms .form__container form input:-ms-input-placeholder,
+        .modal__forms .form__container form select:-ms-input-placeholder,
+        .modal__forms .form__container form textarea:-ms-input-placeholder {
+          font-family: "Montserrat", sans-serif; }
+        .modal__forms .form__container form input::-ms-input-placeholder,
+        .modal__forms .form__container form select::-ms-input-placeholder,
+        .modal__forms .form__container form textarea::-ms-input-placeholder {
+          font-family: "Montserrat", sans-serif; }
+        .modal__forms .form__container form input::placeholder,
+        .modal__forms .form__container form select::placeholder,
+        .modal__forms .form__container form textarea::placeholder {
+          font-family: "Montserrat", sans-serif; }
+      .modal__forms .form__container form button {
+        background: #FFDC32;
+        padding: 1rem 2rem;
+        color: #2D2D2D;
+        border: none;
+        margin-top: 2rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700; }
+        .modal__forms .form__container form button:hover {
+          cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

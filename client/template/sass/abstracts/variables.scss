@@ -9,6 +9,7 @@ $color-green: #19D8B4;
 //Transitions
 $tran-normal: all .3s;
 $tran-smooth: all .3s ease-in-out;
+$tran-cubic: all .3s cubic-bezier(.84, .39, .83, .67);
 
 //Box-shadows
 $shadow-n : 0 1px 3px rgba(0, 0, 0, 0.12),
