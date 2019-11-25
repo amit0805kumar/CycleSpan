@@ -168,6 +168,7 @@
         list-style: none;
         width: 100%;
         justify-content: space-around;
+        margin: .5rem 0;
 
         li {
           padding: 0.5rem 0.8rem;
@@ -191,6 +192,39 @@
       .content {
         .cycleDetails {
           width: 6rem;
+        }
+
+
+
+        .del {
+          background: $color-red;
+          color: #fff;
+          padding: .5rem .8rem;
+          border-radius: 100px;
+          box-shadow: 0 3px 6px rgba(219, 49, 63, 0.16),
+            0 3px 6px rgba(219, 49, 63, 0.23);
+
+          &:hover {
+            cursor: pointer;
+            background: rgb(226, 9, 53);
+          }
+
+        }
+
+        .inc,
+        .dec {
+          color: #fff;
+          border-radius: 100px;
+          padding: 0 2rem;
+          cursor: pointer;
+        }
+
+        .inc {
+          background: #0288D1;
+        }
+
+        .dec {
+          background: #E64A19;
         }
       }
     }
