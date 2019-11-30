@@ -1,172 +1,175 @@
 .profileForm {
-    .header {
-        width: 100%;
-        height: 10rem;
-        background: $color-primary;
-        color: #fff;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 4rem;
-        padding-left: 2rem;
+  .header {
+    width: 100%;
+    height: 10rem;
+    background: $color-primary;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 4rem;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+  }
+
+  .form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1px;
+
+    form {
+      margin-top: 4rem;
+      width: 60%;
+      border: 1px solid rgba(129, 129, 129, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+
+      .row {
         display: flex;
+        width: 100%;
         align-items: center;
-        font-weight: 700;
-    }
 
-    .form {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 1px;
-
-        form {
-            margin-top: 4rem;
-            width: 60%;
-            border: 1px solid rgba(129, 129, 129, 0.5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem;
-
-            .row {
-                display: flex;
-                width: 100%;
-
-                .col {
-                    width: 50%;
-                }
-
-            }
-
-            .form__field {
-                margin: 4rem 0;
-                width: 100%;
-                align-items: center;
-
-                p {
-                    color: $color-red;
-                    font-size: 1.5rem;
-                    margin-bottom: 2rem;
-                }
-
-                .docs {
-                    display: flex;
-
-                    input {
-                        margin-right: 4rem;
-                    }
-                }
-
-                .social__links {
-                    display: flex;
-                    justify-content: space-between;
-
-                    .social {
-                        display: flex;
-                        align-items: center;
-
-                        .icon {
-                            width: 2rem;
-                            margin-right: 1.5rem;
-
-                            svg {
-                                width: 100%;
-                            }
-                        }
-                    }
-                }
-
-                h3 {
-                    margin-bottom: 2rem;
-                    font-size: 2rem;
-                }
-
-                span {
-                    font-size: 2rem;
-                }
-
-                .radioBtns {
-                    display: flex;
-                    margin-top: -2rem;
-
-                    .radio {
-                        label {
-                            font-size: 1.5rem;
-
-                        }
-                    }
-                }
-
-                input {
-                    border: none;
-                    width: 20rem;
-                    margin-bottom: 2rem;
-                    border-bottom: 2px solid $color-secondary;
-                    padding: .5rem 0;
-                    font-family: inherit;
-                    font-size: 1.8rem;
-
-                    &:focus {
-                        outline: none;
-                        border-bottom: 2px solid $color-red;
-                    }
-                }
-            }
-
-            .btn {
-                color: white;
-                border: 1px solid white;
-                padding: 20px 80px;
-                text-transform: uppercase;
-                letter-spacing: 4px;
-                position: relative;
-                overflow: hidden;
-                cursor: pointer;
-                background: $color-secondary;
-
-                span {
-                    font-family: 'Roboto', sans-serif;
-                    position: relative;
-                    z-index: 100;
-                }
-
-                &:before,
-                &:after {
-                    content: '';
-                    position: absolute;
-                    display: block;
-                    height: 100%;
-                    width: 100%;
-                    top: 0;
-                    left: 0;
-                }
-
-                &:before {
-                    transform: translate3d(-100%, 0, 0);
-                    background-color: $color-primary;
-                    border: 1px solid $color-primary;
-
-                    transition: transform 300ms ease-in-out;
-                }
-
-                &:after {
-                    background-color: $color-primary-dark;
-                    border: 1px solid $color-primary-dark;
-                    transform: translate3d(100%, 0, 0);
-
-                    transition: transform 300ms 300ms cubic-bezier(.16, .73, .58, .62);
-                }
-
-
-                &:hover {
-                    &:before {
-                        transform: translate3d(0, 0, 0);
-                    }
-
-                    &:after {
-                        transform: translate3d(0, 0, 0);
-                    }
-                }
-            }
+        .col {
+          width: 50%;
         }
+      }
+
+      .form__field {
+        margin: 4rem 0;
+        width: 100%;
+        align-items: center;
+        .dobLabel {
+          margin-right: 1.5rem;
+          font-size: 2rem;
+        }
+        p {
+          color: $color-red;
+          font-size: 1.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .docs {
+          display: flex;
+
+          input {
+            margin-right: 4rem;
+          }
+        }
+
+        .social__links {
+          display: flex;
+          justify-content: space-between;
+
+          .social {
+            display: flex;
+            align-items: center;
+
+            .icon {
+              width: 2rem;
+              margin-right: 1.5rem;
+
+              svg {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        h3 {
+          margin-bottom: 2rem;
+          font-size: 2rem;
+          padding: 0.5rem 1rem;
+          background: rgb(240, 238, 238);
+        }
+
+        span {
+          font-size: 2rem;
+        }
+
+        .radioBtns {
+          display: flex;
+          margin-top: -2rem;
+
+          .radio {
+            label {
+              font-size: 1.5rem;
+            }
+          }
+        }
+
+        input {
+          border: none;
+          width: 20rem;
+          margin-bottom: 2rem;
+          border-bottom: 2px solid $color-secondary;
+          padding: 0.5rem 0;
+          font-family: inherit;
+          font-size: 1.8rem;
+
+          &:focus {
+            outline: none;
+            border-bottom: 2px solid $color-red;
+          }
+        }
+      }
+
+      .btn {
+        color: white;
+        border: 1px solid white;
+        padding: 20px 80px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        background: $color-secondary;
+
+        span {
+          font-family: "Roboto", sans-serif;
+          position: relative;
+          z-index: 100;
+        }
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+        }
+
+        &:before {
+          transform: translate3d(-100%, 0, 0);
+          background-color: $color-primary;
+          border: 1px solid $color-primary;
+
+          transition: transform 300ms ease-in-out;
+        }
+
+        &:after {
+          background-color: $color-primary-dark;
+          border: 1px solid $color-primary-dark;
+          transform: translate3d(100%, 0, 0);
+
+          transition: transform 300ms 300ms cubic-bezier(0.16, 0.73, 0.58, 0.62);
+        }
+
+        &:hover {
+          &:before {
+            transform: translate3d(0, 0, 0);
+          }
+
+          &:after {
+            transform: translate3d(0, 0, 0);
+          }
+        }
+      }
     }
+  }
 }
