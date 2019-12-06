@@ -22,7 +22,7 @@
     }
 
     .edit__links {
-      width: 0;
+      width: 25rem;
       align-items: center;
       transition: $tran-cubic;
       position: relative;
@@ -61,18 +61,19 @@
       align-items: center;
       transition: $tran-smooth;
 
+      img {
+        width: 100%;
+      }
+
       &:hover {
         cursor: pointer;
       }
 
-      &:hover svg {
+      &:hover img {
         fill: $color-primary;
       }
 
-      svg {
-        fill: #fff;
-        width: 100%;
-      }
+
     }
   }
 }

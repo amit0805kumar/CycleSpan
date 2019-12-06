@@ -1,0 +1,24 @@
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 560 560"
+                        style="enable-background:new 0 0 560 560;" xml:space="preserve">
+                        <style type="text/css">
+                            .st0 {
+                                fill: none;
+                                stroke: #000000;
+                                stroke-miterlimit: 10;
+                            }
+                        </style>
+                        <g id="XMLID_25_">
+                            <circle id="XMLID_20_" class="st0" cx="279.5" cy="279.5" r="271.5" />
+                            <rect id="XMLID_21_" x="274.6" y="8" width="9.9" height="543.1" />
+
+                            <rect id="XMLID_23_" x="274.6" y="8"
+                                transform="matrix(0.7071 -0.7071 0.7071 0.7071 -115.7791 279.5358)" width="9.9"
+                                height="543.1" />
+                            <rect id="XMLID_22_" x="8" y="274.6" width="543.1" height="9.9" />
+
+                            <rect id="XMLID_24_" x="274.6" y="8"
+                                transform="matrix(0.7071 0.7071 -0.7071 0.7071 279.5299 -115.7935)" width="9.9"
+                                height="543.1" />
+                        </g>
+                    </svg>

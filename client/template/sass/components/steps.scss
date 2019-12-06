@@ -52,11 +52,20 @@
         margin-top: -3rem;
         position: relative;
 
-        svg {
+        img {
           position: absolute;
           z-index: 5;
           width: 5rem;
           bottom: 0rem;
+        }
+
+        .bikeSvg {
+          position: absolute;
+          z-index: 5;
+          width: 4rem;
+          left: 50%;
+          top: 10rem;
+          transform: translateX(-50%);
         }
 
         .text {

@@ -1,0 +1,17 @@
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-23 25 512 512"
+                    style="enable-background:new -23 25 512 512;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0c {
+                            fill: #EE3840;
+                        }
+
+                        .st1c {
+                            fill: #FFE1D6;
+                        }
+                    </style>
+                    <path class="st0c" d="M431.8,223.8c0,159.2-179.8,306.7-179.8,306.7c-10.5,8.6-27.7,8.6-38.2,0c0,0-179.8-147.5-179.8-306.7
+	C34.2,114,123.2,25,233,25S431.8,114,431.8,223.8z" />
+                    <path class="st1c"
+                        d="M233,323.9c-55.2,0-100-44.9-100-100s44.9-100,100-100s100,44.9,100,100S288.2,323.9,233,323.9z" />
+                </svg>

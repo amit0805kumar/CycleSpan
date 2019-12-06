@@ -75,7 +75,7 @@
             width: 2.5rem;
             margin: 0 1.5rem;
 
-            svg {
+            img {
                 width: 100%;
                 fill: #fff;
             }
@@ -127,13 +127,13 @@
             width: 3rem;
             transition: $tran-smooth;
 
-            &:hover svg {
+            &:hover img {
                 cursor: pointer;
                 transform: rotateZ(135deg);
                 width: 2rem;
             }
 
-            svg {
+            img {
                 transition: $tran-smooth;
                 width: 100%;
                 transform: rotate(40deg);

@@ -190,7 +190,7 @@
         height: 3rem;
         transition: $tran-smooth;
 
-        svg {
+        img {
           width: 3rem;
           height: 3rem;
           fill: $color-primary;
@@ -234,7 +234,7 @@
           width: 3rem;
           height: 3rem;
 
-          svg {
+          img {
             width: 100%;
           }
         }
@@ -557,6 +557,7 @@
       h1.heading {
         font-size: 4rem;
         position: relative;
+
         &::after {
           position: absolute;
           content: "";
@@ -570,20 +571,26 @@
 
       .faq {
         margin-top: 3rem;
+
         h1 {
           margin-bottom: 2rem;
         }
+
         .questions {
           font-size: 1.5rem;
+
           .question {
             margin: 1.5rem 0;
+
             .ques {
               font-weight: 500;
             }
+
             .ans {
               margin-left: 5rem;
               color: $color-red;
               position: relative;
+
               &::before {
                 position: absolute;
                 content: "";
@@ -600,25 +607,31 @@
 
       .number {
         margin-top: 6rem;
+
         h1 {
           font-size: 5rem;
           letter-spacing: 4px;
           text-align: center;
         }
+
         .contacts {
           display: flex;
           justify-content: center;
+
           .num {
             margin: 0 2rem;
             font-size: 3rem;
             position: relative;
             transition: $tran-smooth;
+
             &:hover {
               color: $color-red;
             }
+
             &:hover::after {
               width: 0;
             }
+
             &::after {
               position: absolute;
               content: "";
