@@ -1,25 +1,33 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
-import './vendors/script.js'
-import $ from 'jquery'
-import { findDOMNode } from 'react-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+//Redux
+import { Provider } from 'react-redux'
+import store from './store'
 
 //Components
 import Landing from './components/layout/Landing'
 import Nav from './components/layout/Nav'
-import BgPattern from './components/layout/BgPattern'
-import Cycles from './components/cycles/Cycles'
+import Login from './components/auth/Login'
+import Register from './components/auth/Register'
 
 
 
 const App = () => {
+  return (<Provider store={store}>
+    <Router>
+      <Fragment>
+        <Nav />
+        <Route exact path="/" component={Landing} />
+        <Switch>
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
 
-  return <Fragment>
-    <BgPattern></BgPattern>
-    <Nav></Nav>
-    <Landing></Landing>
-    <Cycles></Cycles>
-  </Fragment>
+        </Switch>
+      </Fragment>
+    </Router>
+  </Provider>)
 }
 
 

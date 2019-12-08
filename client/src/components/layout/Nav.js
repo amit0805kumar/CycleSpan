@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react'
-
+import { Link } from 'react-router-dom'
 const Nav = () => {
     return (
         <Fragment>
             <nav className="nav">
                 <div className="links">
-                    <a className="link" href="#">Home</a>
-                    <a className="link" href="#">Login</a>
-                    <a className="link" href="#">Cycles</a>
-                    <a className="link" href="#">Stations</a>
-                    <a className="link" href="#">Help</a>
+                    <Link className="link" to="/">Home</Link>
+                    <Link className="link" to="/login">Login</Link>
+                    <Link className="link" to="/">Cycles</Link>
+                    <Link className="link" to="/">Stations</Link>
+                    <Link className="link" to="/">Help</Link>
                 </div>
             </nav>
         </Fragment>

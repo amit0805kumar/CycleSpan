@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import circle from '../../images/circle.svg'
 import helmet from '../../images/helmet.svg'
 import googles from '../../images/googles.svg'

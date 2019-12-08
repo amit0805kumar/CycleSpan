@@ -1,41 +1,37 @@
-import React, { Fragment, useRef } from 'react'
+import React, { Fragment } from 'react'
 import yellowBikepng from '../../images/yellowBike.png'
 import cycleSpanLogo from '../../images/cycleSpanLogo.svg'
 import one from '../../images/one.svg'
 import two from '../../images/two.svg'
 import three from '../../images/three.svg'
-// import dotBorder from '../../images/dotBorder.svg'
-import $ from 'jquery'
-import { findDOMNode } from 'react-dom'
+import { Link } from 'react-router-dom'
+
+import BgPattern from './BgPattern'
 
 
 
 const Landing = () => {
-    let slider = React.createRef();
 
-    const handleToggle = () => {
-        $(slider).hide()
-        console.log(slider)
-    }
     return <Fragment>
+        <BgPattern />
         <header className="header" >
 
-            <div className="sidebar" ref={slider}>
+            <div className="sidebar">
                 <div className="logo">
                     <img src={cycleSpanLogo} alt="" />
                 </div>
                 <div className="social">
                     <div className="links">
-                        <a href="#" className="link"></a>
-                        <a href="#" className="link"></a>
-                        <a href="#" className="link"></a>
+                        <Link to="/" className="link"></Link>
+                        <Link to="/" className="link"></Link>
+                        <Link to="/" className="link"></Link>
                     </div>
                 </div>
             </div>
             <div className="header-bg"></div>
             <div className="main">
                 <div className="content">
-                    <h1 className="test" onClick={handleToggle}>CYCLE<span>SPAN</span></h1>
+                    <h1 className="test">CYCLE<span>SPAN</span></h1>
                     <div className="sub">Ride In Style</div>
                     <a href="./dashboard.html">
                         <div className="text" >Book a ride</div>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="shotcut icon" type="img/png" href="Images/icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"
+        integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css?family=Cinzel:400,700,900|Patrick+Hand|Poppins:200,300,400,500,600,700,800,900|Staatliches&display=swap"
+        rel="stylesheet">
+    <title>Cyclespan</title>
+</head>
+
+<body>
+
+    <div class="modal__forms">
+        <div class="form__container">
+            <div class="close noselect" id="close">+</div>
+
+            <form action="" id="cycles">
+                <h1>Add Cycles</h1>
+                <input type="text" placeholder="Cycle Model" class="field" required>
+                <input type="text" placeholder="Company" class="field" required>
+                <input type="text" placeholder="Colour" class="field" required>
+                <select name="" id="" class="select" required>
+                    <option value="null">--Select Gears--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <div class="radio" required>
+                    <h3>Gender</h3>
+                    <div class="radio__btns">
+                        <div class="form__group">
+                            <input type="radio" name="gender" value="M" id="male">
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="form__group"><input type="radio" name="gender" value="F" id="fem">
+                            <label for="fem">Female</label></div>
+                    </div>
+                </div>
+                <div class="uploader">
+                    <h3>Choose an Image: </h3><input type="file" accept="image/png" class="upload__input">
+                </div>
+                <textarea name="desc" class="desc" cols="30" rows="3" placeholder="Description" required></textarea>
+                <button type="Submit">Submit</button>
+
+            </form>
+            <form action="" id="stations">
+                <h1>Add Stations</h1>
+                <textarea name="desc" class="address" cols="30" rows="3" placeholder="Address" required></textarea>
+                <input type="text" placeholder="City" class="field" required>
+                <input type="Number" placeholder="Location Code" class="field" required>
+                <input type="Number" placeholder="Pincode" class="field" required>
+                <input type="text" placeholder="State" class="field" required>
+                <input type="text" placeholder="Country" class="field" required>
+
+                <button type="Submit">Submit</button>
+
+            </form>
+            <form action="" id="available">
+                <h1>Add Available Cycles</h1>
+                <select name="" id="" class="select" required>
+                    <option value="null">--Select Model--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <select name="" id="" class="select" required>
+                    <option value="null">--Select Location Code--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <input type="number" placeholder="Count" class="field" required>
+                <button type="Submit">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

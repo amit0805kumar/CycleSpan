@@ -167,12 +167,12 @@ a {
         margin-left: 1rem; }
         .header .sidebar .social .links a {
           width: 2rem; }
-          .header .sidebar .social .links a svg {
+          .header .sidebar .social .links a img {
             fill: #fff;
             width: 100%;
             -webkit-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out; }
-            .header .sidebar .social .links a svg:hover {
+            .header .sidebar .social .links a img:hover {
               fill: #FFDC32; }
   .header .header-bg {
     position: absolute;
@@ -240,7 +240,7 @@ a {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center; }
-      .header .main .content a svg {
+      .header .main .content a img {
         -webkit-transition: all 0.3s;
         transition: all 0.3s;
         width: 2rem;
@@ -266,7 +266,7 @@ a {
         text-align: right;
         margin-right: 2rem;
         color: #2D2D2D;
-        font-family: 'Staatliches', cursive;
+        font-family: "Staatliches", cursive;
         border-bottom: 2px solid #2D2D2D; }
 
 .footer {
@@ -339,7 +339,7 @@ a {
     .footer .social a {
       width: 2.5rem;
       margin: 0 1.5rem; }
-      .footer .social a svg {
+      .footer .social a img {
         width: 100%;
         fill: #fff; }
   .footer .form {
@@ -391,12 +391,12 @@ a {
       width: 3rem;
       -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
-      .footer .form button:hover svg {
+      .footer .form button:hover img {
         cursor: pointer;
         -webkit-transform: rotateZ(135deg);
                 transform: rotateZ(135deg);
         width: 2rem; }
-      .footer .form button svg {
+      .footer .form button img {
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
         width: 100%;
@@ -491,11 +491,19 @@ a {
                 justify-content: space-between;
         margin-top: -3rem;
         position: relative; }
-        .section__steps .steps .step .content svg {
+        .section__steps .steps .step .content img {
           position: absolute;
           z-index: 5;
           width: 5rem;
           bottom: 0rem; }
+        .section__steps .steps .step .content .bikeSvg {
+          position: absolute;
+          z-index: 5;
+          width: 4rem;
+          left: 50%;
+          top: 10rem;
+          -webkit-transform: translateX(-50%);
+                  transform: translateX(-50%); }
         .section__steps .steps .step .content .text {
           font-size: 1.5rem;
           color: #2D2D2D;
@@ -557,14 +565,19 @@ a {
     margin-top: 4rem; }
     .section__cycles .cycle__slider .slider {
       width: 80%;
-      margin: 100px auto; }
-      .section__cycles .cycle__slider .slider div:focus {
-        outline: none;
-        border: none; }
+      margin: 100px auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
       .section__cycles .cycle__slider .slider .card {
         width: 18rem;
         height: 28rem;
-        position: relative; }
+        position: relative;
+        margin-bottom: 3rem; }
         .section__cycles .cycle__slider .slider .card .image {
           width: 10rem;
           height: 10rem;
@@ -655,8 +668,8 @@ a {
       -webkit-box-flex: 1;
           -ms-flex: 1;
               flex: 1; }
-      .section__stations .search .location__icon svg {
-        width: 80%;
+      .section__stations .search .location__icon img {
+        width: 76%;
         margin-top: .2rem;
         margin-right: 2rem; }
   .section__stations .address__container {
@@ -1013,7 +1026,7 @@ a {
         height: 3rem;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out; }
-        .dashboard__container .content .otpBtn .icon svg {
+        .dashboard__container .content .otpBtn .icon img {
           width: 3rem;
           height: 3rem;
           fill: #FFDC32;
@@ -1049,7 +1062,7 @@ a {
         .dashboard__container .content .available .search .icon {
           width: 3rem;
           height: 3rem; }
-          .dashboard__container .content .available .search .icon svg {
+          .dashboard__container .content .available .search .icon img {
             width: 100%; }
       .dashboard__container .content .available .cycles {
         width: 100%;
@@ -1412,7 +1425,7 @@ a {
       margin-right: 1.5rem;
       font-size: 1.5rem; }
     .admin__nav .details .edit__links {
-      width: 0;
+      width: 25rem;
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
@@ -1450,13 +1463,12 @@ a {
               align-items: center;
       -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
+      .admin__nav .details .edit img {
+        width: 100%; }
       .admin__nav .details .edit:hover {
         cursor: pointer; }
-      .admin__nav .details .edit:hover svg {
+      .admin__nav .details .edit:hover img {
         fill: #FFDC32; }
-      .admin__nav .details .edit svg {
-        fill: #fff;
-        width: 100%; }
 
 .active__section,
 .section__record,
@@ -1712,12 +1724,8 @@ a {
     height: 100%; }
 
 .modal__forms {
-  position: fixed;
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
-  min-height: 100vh;
-  top: 0;
-  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1736,11 +1744,15 @@ a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     height: auto;
-    margin-top: 3rem;
+    margin: 6rem 0;
     padding-bottom: 4rem;
     position: relative; }
     .modal__forms .form__container .close {
@@ -1926,7 +1938,7 @@ a {
           .profileForm .form form .form__field .social__links .social .icon {
             width: 2rem;
             margin-right: 1.5rem; }
-            .profileForm .form form .form__field .social__links .social .icon svg {
+            .profileForm .form form .form__field .social__links .social .icon img {
               width: 100%; }
       .profileForm .form form .form__field h3 {
         margin-bottom: 2rem;
