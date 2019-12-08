@@ -1,0 +1,59 @@
+.heading__shadowed {
+  text-transform: uppercase;
+  font-size: 7rem;
+  font-weight: 500;
+  display: inline-block;
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-family: 'Patrick Hand', cursive;
+  position: relative; }
+  .heading__shadowed::before {
+    content: 'CYCLESPAN';
+    position: absolute;
+    top: 5%;
+    color: #e0e0e0;
+    -webkit-transform: translateX(-50%) rotate(180deg);
+            transform: translateX(-50%) rotate(180deg);
+    left: 50%;
+    letter-spacing: 5px;
+    font-size: 9rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    z-index: -1;
+    -webkit-filter: blur(0.8px);
+            filter: blur(0.8px); }
+
+.background__pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+  .background__pattern img {
+    position: absolute;
+    width: 6rem; }
+  .background__pattern .circle {
+    top: 22%;
+    left: 2rem;
+    width: 8rem; }
+  .background__pattern .helmet {
+    top: 24%;
+    right: 10rem;
+    width: 18rem; }
+  .background__pattern .glass {
+    top: 28%;
+    left: 10rem;
+    width: 18rem; }
+  .background__pattern .save {
+    top: 44%;
+    right: 12rem;
+    width: 23rem; }
+  .background__pattern .sayno {
+    top: 45%;
+    left: 11rem;
+    width: 25rem; }
+  .background__pattern .zigzag {
+    width: 100%;
+    top: 62%; }
+
+/*# sourceMappingURL=home.css.map */

@@ -1,0 +1,29 @@
+.alerts__container {
+    position: fixed;
+    left: 5rem;
+    bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+
+    .alert {
+        color: #fff;
+        border-radius: 4px;
+        font-size: 1.5rem;
+        padding: 1.2rem 3rem;
+        margin: 1rem 0;
+
+        &__danger {
+            background: $color-red;
+
+        }
+
+        &__success {
+            background: #2E7D32;
+        }
+
+        &__info {
+            background: $color-secondary;
+        }
+    }
+}

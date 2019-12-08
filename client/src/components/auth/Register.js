@@ -4,8 +4,9 @@ import bottomSvg from '../../images/bottomZigZag.svg'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { setAlert } from '../../actions/alert'
+import { register } from '../../actions/auth'
 import PropTypes from 'prop-types';
-const Register = ({ setAlert }) => {
+const Register = ({ setAlert, register }) => {
 
     const [formData, setFormData] = useState({
         name: '',
@@ -23,10 +24,9 @@ const Register = ({ setAlert }) => {
     const onSubmit = e => {
         e.preventDefault();
         if (password !== password2) {
-            setAlert('Pasword do not match', 'error')
+            setAlert('Pasword do not match', 'danger')
         } else {
-
-            console.log(formData)
+            register({ name, email, password })
         }
     }
 
@@ -63,7 +63,8 @@ const Register = ({ setAlert }) => {
 }
 
 Register.protoTypes = {
-    setAlert: PropTypes.func.isRequired
+    setAlert: PropTypes.func.isRequired,
+    register: PropTypes.func.isRequired,
 }
 
-export default connect(null, { setAlert })(Register)
+export default connect(null, { setAlert, register })(Register)

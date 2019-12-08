@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import topSvg from '../../images/topZigZag.svg'
 import bottomSvg from '../../images/bottomZigZag.svg'
-import { Link } from 'react-router-dom'
-
-
-const Login = () => {
+import { Link, Redirect } from 'react-router-dom'
+import { login } from '../../actions/auth'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux'
+const Login = ({ login, isAuthenticated }) => {
 
     const [formData, setFormData] = useState({
         email: '',
@@ -15,6 +16,14 @@ const Login = () => {
         ...formData,
         [e.target.name]: e.target.value
     })
+    const onSubmit = async e => {
+        e.preventDefault();
+        login(email, password);
+
+    };
+    if (isAuthenticated) {
+        return <Redirect to='/' />
+    }
 
     return (
         <div className="form__container">
@@ -35,7 +44,7 @@ const Login = () => {
 
             </div>
             <div className="form">
-                <form action="">
+                <form onSubmit={e => onSubmit(e)}>
                     <h1>Login</h1>
                     <input type="email" placeholder="Email" required name="email" value={email} onChange={e => onChange(e)} />
                     <input type="password" placeholder="Passoword" required name="password" value={password} onChange={e => onChange(e)} />
@@ -46,4 +55,12 @@ const Login = () => {
     )
 }
 
-export default Login
+login.prototype = {
+    login: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+}
+
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+export default connect(mapStateToProps, { login })(Login)
