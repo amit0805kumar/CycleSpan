@@ -22,7 +22,7 @@ const Login = ({ login, isAuthenticated }) => {
 
     };
     if (isAuthenticated) {
-        return <Redirect to='/' />
+        return <Redirect to='/dashboard' />
     }
 
     return (
@@ -55,7 +55,7 @@ const Login = ({ login, isAuthenticated }) => {
     )
 }
 
-login.prototype = {
+Login.prototype = {
     login: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool
 }

@@ -84,3 +84,11 @@ export const login = (email, password) => async dispatch => {
         })
     }
 }
+
+
+//Logout and clear profile
+export const logout = () => dispatch => {
+    dispatch({
+        type: LOGOUT
+    })
+}

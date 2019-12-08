@@ -919,7 +919,7 @@ a {
         transition: all 0.2s cubic-bezier(0.98, 0.07, 0.83, 0.67); }
         .dashboard__container .sidebar .nav .link:hover::before {
           width: 100%; }
-        .dashboard__container .sidebar .nav .link:hover a {
+        .dashboard__container .sidebar .nav .link:hover .ln {
           color: #2D2D2D;
           letter-spacing: 3px; }
         .dashboard__container .sidebar .nav .link::before {
@@ -932,7 +932,7 @@ a {
           background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
           z-index: -1;
           left: 0; }
-        .dashboard__container .sidebar .nav .link a {
+        .dashboard__container .sidebar .nav .link .ln {
           color: #fff;
           font-size: 1.5rem;
           width: 100%;
