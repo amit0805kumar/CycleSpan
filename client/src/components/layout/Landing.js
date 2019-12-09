@@ -4,6 +4,8 @@ import cycleSpanLogo from '../../images/cycleSpanLogo.svg'
 import one from '../../images/one.svg'
 import two from '../../images/two.svg'
 import three from '../../images/three.svg'
+import wheel from '../../images/wheel.svg'
+
 import { Link } from 'react-router-dom'
 
 import BgPattern from './BgPattern'
@@ -33,9 +35,10 @@ const Landing = () => {
                 <div className="content">
                     <h1 className="test">CYCLE<span>SPAN</span></h1>
                     <div className="sub">Ride In Style</div>
-                    <a href="./dashboard.html">
+                    <Link to="/dashboard">
                         <div className="text" >Book a ride</div>
-                    </a>
+                        <img src={wheel} alt="Wheel" />
+                    </Link>
                 </div>
                 <div className="image">
                     <img src={yellowBikepng} alt=""></img>

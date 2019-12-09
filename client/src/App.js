@@ -15,6 +15,9 @@ import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import Alert from './components/layout/Alert'
 import Dashboard from './components/layout/Dashboard'
+import ProfileForm from './components/profile/ProfileForm'
+import PrivateRoute from './components/routing/PrivateRoute'
+import Admin from './components/admin/Admin'
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -29,12 +32,14 @@ const App = () => {
     <Router>
       <Fragment>
         <Nav />
-        <Route exact path="/" component={Landing} />
         <Alert />
+        <PrivateRoute exact path="/admin" component={Admin} />
         <Switch>
+          <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/profileForm" component={ProfileForm} />
         </Switch>
       </Fragment>
     </Router>

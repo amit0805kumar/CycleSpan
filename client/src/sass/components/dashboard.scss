@@ -649,3 +649,37 @@
     }
   }
 }
+
+.create__profile {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10rem;
+
+  .text {
+    font-size: 2rem;
+  }
+
+  .link {
+    background: $color-secondary;
+    color: #fff;
+    margin-top: 3rem;
+    padding: 1.2rem 2.5rem;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+
+    .ln {
+      font-size: 1.5rem;
+      color: #fff;
+    }
+  }
+
+  .logout {
+    background: $color-primary-dark;
+
+    .ln {
+      color: $color-secondary;
+    }
+  }
+}
