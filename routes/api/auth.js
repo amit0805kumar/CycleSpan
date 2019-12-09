@@ -7,6 +7,7 @@ const { check, validationResult } = require('express-validator');
 
 const User = require('../../models/Users')
 const auth = require('../../middleware/auth')
+const Admin = require('../../models/Admin')
 
 // @route GET api/auth
 // @desc to get user from token
@@ -16,6 +17,19 @@ router.get('/', auth, async (req, res) => {
     try {
         const user = await User.findById(req.user.id).select('-password')
         res.json(user)
+    } catch (error) {
+        console.log(error.message)
+        res.status(500).send('Server Error')
+    }
+})
+// @route GET api/auth/checkAdmin
+// @desc to check admin or not
+// @access Private
+router.get('/checkAdmin', auth, async (req, res) => {
+
+    try {
+        const adminAllow = await Admin.findOne({ user: req.user.id })
+        res.json(adminAllow)
     } catch (error) {
         console.log(error.message)
         res.status(500).send('Server Error')

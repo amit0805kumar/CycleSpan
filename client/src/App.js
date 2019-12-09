@@ -17,6 +17,7 @@ import Alert from './components/layout/Alert'
 import Dashboard from './components/layout/Dashboard'
 import ProfileForm from './components/profile/ProfileForm'
 import PrivateRoute from './components/routing/PrivateRoute'
+import AdminRoutes from './components/routing/AdminRoutes'
 import Admin from './components/admin/Admin'
 
 if (localStorage.token) {
@@ -33,7 +34,7 @@ const App = () => {
       <Fragment>
         <Nav />
         <Alert />
-        <PrivateRoute exact path="/admin" component={Admin} />
+        <AdminRoutes exact path="/admin" component={Admin} />
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />

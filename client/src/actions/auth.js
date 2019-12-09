@@ -5,6 +5,8 @@ import {
     AUTH_ERROR,
     LOGIN_FAILED,
     LOGIN_SUCCESS,
+    ADMIN_ERROR,
+    CHECK_ADMIN,
     LOGOUT
 } from './types'
 import { setAlert } from './alert'
@@ -17,13 +19,26 @@ export const loadUser = () => async dispatch => {
     }
     try {
         const res = await axios.get('/api/auth')
+        const admin = await axios.get('/api/auth/checkAdmin')
         dispatch({
             type: USER_LOADED,
             payload: res.data
         })
+        if (admin.data) {
+            dispatch({
+                type: CHECK_ADMIN
+            })
+        } else {
+            dispatch({
+                type: ADMIN_ERROR
+            })
+        }
     } catch (error) {
         dispatch({
             type: AUTH_ERROR
+        })
+        dispatch({
+            type: ADMIN_ERROR
         })
     }
 }
