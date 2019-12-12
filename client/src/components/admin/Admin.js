@@ -1,8 +1,10 @@
 import React from 'react'
 import settingSvg from '../../images/setting.svg'
 import PropTypes from 'prop-types'
+import { logout } from '../../actions/auth'
+import { connect } from 'react-redux'
 
-const Admin = props => {
+const Admin = ({ logout }) => {
     return (
         <React.Fragment>
             <nav class="admin__nav">
@@ -13,7 +15,7 @@ const Admin = props => {
                         <div class="linkCont">
                             <div class="link">Manage Admins</div>
                             <div class="link">Edit Profile</div>
-                            <div class="link">Logout</div>
+                            <div class="link" onClick={e => logout()}>Logout</div>
                         </div>
                     </div>
                     <div class="edit">
@@ -26,7 +28,7 @@ const Admin = props => {
 }
 
 Admin.propTypes = {
-
+    logout: PropTypes.func.isRequired
 }
 
-export default Admin
+export default connect(null, { logout })(Admin)

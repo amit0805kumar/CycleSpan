@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
+import Loader from '../layout/Loader'
 
 const PrivateRoute = ({ auth: { isAuthenticated, loading }, component: Component, ...rest }) => (
 
@@ -15,7 +16,7 @@ const PrivateRoute = ({ auth: { isAuthenticated, loading }, component: Component
                         <Component {...props} />
                     )
             ) : (
-                    <div>Loading...</div>
+                    <Loader />
                 )
         }
     />

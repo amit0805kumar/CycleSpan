@@ -5,11 +5,12 @@ import { Link, Redirect } from 'react-router-dom'
 import { login } from '../../actions/auth'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
-const Login = ({ login, isAuthenticated }) => {
+import Loader from '../layout/Loader'
+const Login = ({ login, isAuthenticated, isAdmin, loading }) => {
 
     const [formData, setFormData] = useState({
-        email: '',
-        password: ''
+        email: 'amit@gmail.com',
+        password: '222222'
     });
     const { email, password } = formData;
     const onChange = e => setFormData({
@@ -21,9 +22,17 @@ const Login = ({ login, isAuthenticated }) => {
         login(email, password);
 
     };
-    if (isAuthenticated) {
-        return <Redirect to='/dashboard' />
+
+    if (loading) {
+        {
+            return <Loader />
+        }
+    } else {
+        if (isAuthenticated) {
+            return <Redirect to='/dashboard' />
+        }
     }
+
 
     return (
         <div className="form__container">
@@ -57,10 +66,14 @@ const Login = ({ login, isAuthenticated }) => {
 
 Login.prototype = {
     login: PropTypes.func.isRequired,
-    isAuthenticated: PropTypes.bool
+    isAuthenticated: PropTypes.bool,
+    isAdmin: PropTypes.bool,
+    loading: PropTypes.bool
 }
 
 const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
+    isAdmin: state.auth.isAdmin,
+    loading: state.auth.loading
 });
 export default connect(mapStateToProps, { login })(Login)

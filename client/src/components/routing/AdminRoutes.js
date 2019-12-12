@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
+import Loader from '../layout/Loader'
 
 const AdminRoute = ({ auth: { isAuthenticated, loading, isAdmin }, component: Component, ...rest }) => (
 
@@ -19,7 +20,7 @@ const AdminRoute = ({ auth: { isAuthenticated, loading, isAdmin }, component: Co
 
                     )
             ) : (
-                    <div>Loading...</div>
+                    <Loader />
                 )
         }
     />
