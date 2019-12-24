@@ -6,10 +6,10 @@ import { login } from '../../actions/auth'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 import Loader from '../layout/Loader'
-const Login = ({ login, isAuthenticated, isAdmin, loading }) => {
+const Login = ({ login, isAuthenticated, loading }) => {
 
     const [formData, setFormData] = useState({
-        email: 'amit@gmail.com',
+        email: 'aditya@gmail.com',
         password: '222222'
     });
     const { email, password } = formData;
@@ -23,18 +23,18 @@ const Login = ({ login, isAuthenticated, isAdmin, loading }) => {
 
     };
 
-    if (loading) {
-        {
-            return <Loader />
-        }
-    } else {
-        if (isAuthenticated) {
-            return <Redirect to='/dashboard' />
-        }
-    }
+    // if (loading) {
+    //     {
+    //         return <Loader />
+    //     }
+    // } else {
+    //     if (isAuthenticated) {
+    //         return <Redirect to='/dashboard' />
+    //     }
+    // }
 
 
-    return (
+    return loading ? <Loader /> : isAuthenticated ? <Redirect to='/dashboard' /> : (
         <div className="form__container">
             <div className="design">
                 <div className="back">
@@ -67,13 +67,11 @@ const Login = ({ login, isAuthenticated, isAdmin, loading }) => {
 Login.prototype = {
     login: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool,
-    isAdmin: PropTypes.bool,
     loading: PropTypes.bool
 }
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
-    isAdmin: state.auth.isAdmin,
     loading: state.auth.loading
 });
 export default connect(mapStateToProps, { login })(Login)

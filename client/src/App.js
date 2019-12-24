@@ -14,11 +14,15 @@ import Nav from './components/layout/Nav'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import Alert from './components/layout/Alert'
-import Dashboard from './components/layout/Dashboard'
+import Dashboard from './components/dashboard/Dashboard'
 import ProfileForm from './components/profile/ProfileForm'
+import ProfileEditForm from './components/profile/ProfileEditForm'
 import PrivateRoute from './components/routing/PrivateRoute'
 import AdminRoutes from './components/routing/AdminRoutes'
 import Admin from './components/admin/Admin'
+import OtpAcceptor from './components/station/OtpAcceptor'
+import RideIdAcceptor from './components/station/RideIdAcceptor'
+
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -32,6 +36,8 @@ const App = () => {
   return (<Provider store={store}>
     <Router>
       <Fragment>
+        <Route exact path="/otpAccept" component={OtpAcceptor} />
+        <Route exact path="/rideIdAccept" component={RideIdAcceptor} />
         <Nav />
         <Alert />
         <AdminRoutes exact path="/admin" component={Admin} />
@@ -41,6 +47,7 @@ const App = () => {
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login} />
           <PrivateRoute exact path="/profileForm" component={ProfileForm} />
+          <PrivateRoute exact path="/profileEdit" component={ProfileEditForm} />
         </Switch>
       </Fragment>
     </Router>

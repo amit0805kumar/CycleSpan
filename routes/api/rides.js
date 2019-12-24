@@ -115,9 +115,9 @@ router.get('/', adminAuth, async (req, res) => {
 
 // @route GET api/rides/records
 // @desc To get all records
-// @access Private admin user
+// @access Private user
 
-router.get('/records', adminAuth, async (req, res) => {
+router.get('/records', auth, async (req, res) => {
     try {
         const records = await RideRecord.find()
         if (!records) {
@@ -132,7 +132,7 @@ router.get('/records', adminAuth, async (req, res) => {
 
 
 // @route GET api/rides/record/me
-// @desc To complete the ride
+// @desc To get my records
 // @access Private admin user
 
 router.get('/records/me', auth, async (req, res) => {

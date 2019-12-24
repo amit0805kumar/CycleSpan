@@ -5,15 +5,12 @@ import youtubeSvg from '../../images/001-youtube.svg'
 import { addProfile } from '../../actions/profile'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom'
+import { Redirect } from "react-router-dom";
 import { getCurrentProfile } from '../../actions/profile'
 
+const ProfileEditForm = ({ getCurrentProfile, addProfile, history, profile: { profile, loading } }) => {
 
-const ProfileForm = ({ getCurrentProfile, addProfile, history, profile: { profile } }) => {
 
-    useEffect(() => {
-        getCurrentProfile()
-    }, [getCurrentProfile])
     const [formData, setData] = useState({
         dob: '',
         gender: '',
@@ -27,21 +24,42 @@ const ProfileForm = ({ getCurrentProfile, addProfile, history, profile: { profil
         instagram: '',
         aadhar: '',
         pan: ''
-    })
+    });
+    useEffect(() => {
+        // getCurrentProfile()
+        setData({
+            dob: loading || !profile.dob ? '' : profile.dob,
+            gender: loading || !profile.gender ? '' : profile.gender,
+            number: loading || !profile.number ? '' : profile.number,
+            address: loading || !profile.location.address ? '' : profile.location.address,
+            pin: loading || !profile.location.pin ? '' : profile.location.pin,
+            state: loading || !profile.location.state ? '' : profile.location.state,
+            country: loading || !profile.location.country ? '' : profile.location.country,
+            youtube: loading || !profile.social || !profile.social.youtube ? '' : profile.social.youtube,
+            facebook: loading || !profile.social || !profile.social.facebook ? '' : profile.social.facebook,
+            instagram: loading || !profile.social || !profile.social.instagram ? '' : profile.social.instagram,
+            aadhar: loading || !profile.aadhar ? '' : profile.aadhar,
+            pan: loading || !profile.pan ? '' : profile.pan
+        })
 
-    if (profile !== null) {
+    }, [loading, profile])
+
+
+
+    if (!profile) {
         return <Redirect to="/dashboard" />
     }
     const onChange = e => setData({
         ...formData,
         [e.target.name]: e.target.value
     })
-    const { dob, gender, number, address, state, country, youtube, facebook, instagram, pin, aadhar, pan } = formData
+    const { gender, number, address, state, country, youtube, facebook, instagram, pin, aadhar, pan } = formData
 
     const onSubmit = async e => {
         e.preventDefault();
         addProfile(formData, history)
     };
+
 
     return (
         <React.Fragment>
@@ -54,10 +72,6 @@ const ProfileForm = ({ getCurrentProfile, addProfile, history, profile: { profil
                         <div className="form__field">
                             <h3>Personal Info</h3>
                             <div className="row">
-                                <div className="col">
-                                    <label htmlFor="dob" className="dobLabel">Dob: </label>
-                                    <input type="date" value={dob} name="dob" onChange={e => onChange(e)} id="dob" />
-                                </div>
                                 <div className="col">
                                     <input type="number" value={number} name="number" onChange={e => onChange(e)} placeholder="Phone number" />
                                 </div>
@@ -133,11 +147,12 @@ const ProfileForm = ({ getCurrentProfile, addProfile, history, profile: { profil
     )
 }
 
-ProfileForm.prototype = {
+ProfileEditForm.prototype = {
     addProfile: PropTypes.func.isRequired,
     getCurrentProfile: PropTypes.func.isRequired
 }
+
 const mapStateToProps = state => ({
     profile: state.profile
 })
-export default connect(mapStateToProps, { addProfile, getCurrentProfile })(ProfileForm)
+export default connect(mapStateToProps, { addProfile, getCurrentProfile })(ProfileEditForm)

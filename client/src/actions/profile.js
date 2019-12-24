@@ -1,7 +1,6 @@
 import {
     GET_PROFILE,
     PROFILE_ERROR,
-    CLEAR_PROFILE,
     ADD_PROFILE
 } from './types'
 import axios from 'axios'

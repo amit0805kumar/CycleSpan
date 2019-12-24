@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import yellowBikepng from '../../images/yellowBike.png'
 import cycleSpanLogo from '../../images/cycleSpanLogo.svg'
 import one from '../../images/one.svg'
@@ -9,10 +9,17 @@ import wheel from '../../images/wheel.svg'
 import { Link } from 'react-router-dom'
 
 import BgPattern from './BgPattern'
+import LandingCycles from "./LandingCycles"
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { getCycles } from "../../actions/cycles"
+import { getAllStations } from '../../actions/station'
 
-
-
-const Landing = () => {
+const Landing = ({ getCycles, getAllStations }) => {
+    useEffect(() => {
+        getCycles()
+        getAllStations()
+    }, [getCycles, getAllStations]);
 
     return <Fragment>
         <BgPattern />
@@ -99,9 +106,15 @@ const Landing = () => {
                 </div>
             </div>
         </section>
+        <LandingCycles />
     </Fragment >
 
 
 }
 
-export default Landing
+Landing.propTypes = {
+    getCycles: PropTypes.func.isRequired,
+    getAllStations: PropTypes.func.isRequired
+}
+
+export default connect(null, { getCycles, getAllStations })(Landing)

@@ -80,8 +80,8 @@ router.delete('/', [adminAuth, [
 
 // @route GET api/station
 // @desc To get all stations
-// @access Private admin
-router.get('/', adminAuth, async (req, res) => {
+// @access public
+router.get('/', async (req, res) => {
     try {
         const stations = await Stations.find()
         if (stations == null) return res.status(401).json({ message: "No station found" })

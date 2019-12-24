@@ -3,6 +3,7 @@ import settingSvg from '../../images/setting.svg'
 import PropTypes from 'prop-types'
 import { logout } from '../../actions/auth'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Admin = ({ logout }) => {
     return (
@@ -13,8 +14,8 @@ const Admin = ({ logout }) => {
                     <div class="name">Amit Kumar</div>
                     <div class="edit__links" id="editLinks">
                         <div class="linkCont">
-                            <div class="link">Manage Admins</div>
-                            <div class="link">Edit Profile</div>
+                            <Link class="link" to='/'>Manage Admins</Link>
+                            <Link to="/profileEdit" className="link">Edit Profile</Link>
                             <div class="link" onClick={e => logout()}>Logout</div>
                         </div>
                     </div>

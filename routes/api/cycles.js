@@ -79,9 +79,9 @@ router.delete('/', [adminAuth, [
 })
 
 // @route GET api/cycles
-// @desc To get all stations
-// @access Private admin
-router.get('/', adminAuth, async (req, res) => {
+// @desc To get all cycles
+// @access Private
+router.get('/', async (req, res) => {
     try {
         const cycle = await Cycles.find()
         if (cycle == null) return res.status(401).json({ message: "No cycle found" })
