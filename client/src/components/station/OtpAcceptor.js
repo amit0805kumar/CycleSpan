@@ -3,10 +3,11 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { getAllStations } from '../../actions/station';
 import { getCycles } from '../../actions/cycles';
+import { acceptOtp } from '../../actions/ride';
 import Loader from '../layout/Loader';
 
 
-const OtpAcceptor = ({ station: { stations }, cycles: { cycles, loading }, getAllStations, getCycles }) => {
+const OtpAcceptor = ({ station: { stations }, cycles: { cycles, loading }, getAllStations, getCycles, acceptOtp }) => {
     useEffect(() => {
         getAllStations()
         getCycles()
@@ -15,16 +16,23 @@ const OtpAcceptor = ({ station: { stations }, cycles: { cycles, loading }, getAl
 
     const [data, setdata] = useState({
         locCode: "",
-        model: ""
+        model: "",
+        otp: ""
     })
-    const { locCode, model } = data
+    const { locCode, model, otp } = data
 
     return (
         locCode !== "" && model !== "" ? <React.Fragment>
             <div className="formContainer">
-                <form>
+                <form onSubmit={e => {
+                    e.preventDefault()
+                    acceptOtp(locCode, model, otp)
+                }}>
                     <h1>Enter your OTP</h1>
-                    <input type="number" className="field" />
+                    <input required type="number" className="field" onChange={(e) => setdata({
+                        ...data,
+                        otp: e.target.value
+                    })} />
                     <input type="submit" value="Submit" className="btn" />
                 </form>
             </div>
@@ -58,11 +66,12 @@ const OtpAcceptor = ({ station: { stations }, cycles: { cycles, loading }, getAl
 OtpAcceptor.propTypes = {
     station: PropTypes.object.isRequired,
     getAllStations: PropTypes.func.isRequired,
-    getCycles: PropTypes.func.isRequired
+    getCycles: PropTypes.func.isRequired,
+    acceptOtp: PropTypes.func.isRequired
 }
 const mapStateToProps = state => ({
     station: state.station,
     cycles: state.cycles
 })
 
-export default connect(mapStateToProps, { getAllStations, getCycles })(OtpAcceptor)
+export default connect(mapStateToProps, { getAllStations, getCycles, acceptOtp })(OtpAcceptor)

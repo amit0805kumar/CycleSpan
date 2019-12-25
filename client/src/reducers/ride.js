@@ -3,12 +3,14 @@ import {
     GEN_OTP,
     OTP_ERROR,
     RECORD_ERROR,
-    CANCEL_OTP
+    CANCEL_OTP,
+    ACCEPT_OTP
 } from '../actions/types'
 
 const intialState = {
     otp: null,
     active: null,
+    actives: [],
     records: [],
     bill: 0,
     loading: true
@@ -44,6 +46,12 @@ export default function (state = intialState, actions) {
         case CANCEL_OTP: return {
             ...state,
             otp: null,
+            loading: false
+        }
+        case ACCEPT_OTP: return {
+            ...state,
+            otp: null,
+            active: payload,
             loading: false
         }
 

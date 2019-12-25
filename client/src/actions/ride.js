@@ -3,7 +3,8 @@ import {
     GEN_OTP,
     OTP_ERROR,
     RECORD_ERROR,
-    CANCEL_OTP
+    CANCEL_OTP,
+    ACCEPT_OTP
 } from './types.js'
 import { setAlert } from './alert'
 import axios from 'axios'
@@ -52,10 +53,30 @@ export const cancelOtp = () => async dispatch => {
     }
 }
 
-export const getAllLocations = () => async dispatch => {
-    try {
-        const res = await axios.get('/api/sation')
-    } catch (error) {
 
+
+export const acceptOtp = (locationCode, model, otp) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    const body = JSON.stringify({
+        locationCode: locationCode,
+        cycleModel: model,
+        otp: otp
+    })
+    try {
+        const res = await axios.post('/api/activeRide/accept', body, config)
+        dispatch({
+            type: ACCEPT_OTP,
+            payload: res.data
+        })
+    } catch (error) {
+        dispatch({
+            type: OTP_ERROR
+        })
+        dispatch(setAlert(error.response.data.message, 'danger'))
     }
 }
