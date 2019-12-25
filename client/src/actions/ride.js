@@ -4,7 +4,9 @@ import {
     OTP_ERROR,
     RECORD_ERROR,
     CANCEL_OTP,
-    ACCEPT_OTP
+    ACCEPT_OTP,
+    ACCEPT_RIDEID,
+    RIDEID_ERROR
 } from './types.js'
 import { setAlert } from './alert'
 import axios from 'axios'
@@ -76,6 +78,32 @@ export const acceptOtp = (locationCode, model, otp) => async dispatch => {
     } catch (error) {
         dispatch({
             type: OTP_ERROR
+        })
+        dispatch(setAlert(error.response.data.message, 'danger'))
+    }
+}
+
+export const acceptRideId = (locationCode, rideId) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    const body = JSON.stringify({
+        dropLocationCode: locationCode,
+        rideId: rideId
+    })
+
+    try {
+        const res = await axios.post('/api/activeRide/complete', body, config)
+        dispatch({
+            type: ACCEPT_RIDEID,
+        })
+        dispatch(setAlert('Ride Completed', 'success'))
+    } catch (error) {
+        dispatch({
+            type: RIDEID_ERROR
         })
         dispatch(setAlert(error.response.data.message, 'danger'))
     }

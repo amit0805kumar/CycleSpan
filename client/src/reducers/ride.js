@@ -4,7 +4,9 @@ import {
     OTP_ERROR,
     RECORD_ERROR,
     CANCEL_OTP,
-    ACCEPT_OTP
+    ACCEPT_OTP,
+    ACCEPT_RIDEID,
+    RIDEID_ERROR
 } from '../actions/types'
 
 const intialState = {
@@ -54,6 +56,14 @@ export default function (state = intialState, actions) {
             active: payload,
             loading: false
         }
+        case ACCEPT_RIDEID:
+        case RIDEID_ERROR:
+            return {
+                ...state,
+                otp: null,
+                active: null,
+                loading: false
+            }
 
         default:
             return state;
