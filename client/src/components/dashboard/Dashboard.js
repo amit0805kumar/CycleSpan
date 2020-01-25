@@ -11,23 +11,25 @@ import DashboardHome from './DashboardHome'
 import Billing from "./Billing";
 import Help from "./Help";
 import { getRecord } from "../../actions/ride";
+import { getAllStations } from "../../actions/station";
 //Img
 import logoutSvg from '../../images/logout.svg'
 
 
 // eslint-disable-next-line
 
-const Dashboard = ({ getRecord, logout, getCurrentProfile, profile: { profile, loading }, isAdmin, user, rideDate }) => {
+const Dashboard = ({ getRecord, logout, getCurrentProfile, getAllStations, profile: { profile, loading }, isAdmin, user, rideDate }) => {
 
     const [Type, setType] = useState({
         type: 'home'
     })
     const { type } = Type;
     useEffect(() => {
+        getAllStations()
         getCurrentProfile()
         getRecord()
 
-    }, [getCurrentProfile, getRecord])
+    }, [getCurrentProfile, getRecord, getAllStations])
 
     const content = () => {
 
@@ -40,6 +42,7 @@ const Dashboard = ({ getRecord, logout, getCurrentProfile, profile: { profile, l
         }
 
     }
+
 
     return (loading && !profile ? <Loader /> : (<React.Fragment>
 
@@ -107,7 +110,9 @@ Dashboard.propTypes = {
     getCurrentProfile: PropTypes.func.isRequired,
     isAdmin: PropTypes.bool,
     getRecord: PropTypes.func.isRequired,
-    rideDate: PropTypes.object.isRequired
+    rideDate: PropTypes.object.isRequired,
+    getAllStations: PropTypes.func.isRequired,
+    user: PropTypes.object.isRequired
 }
 const mapStateToProps = state => ({
     profile: state.profile,
@@ -115,4 +120,4 @@ const mapStateToProps = state => ({
     user: state.auth.user,
     rideDate: state.ride
 })
-export default connect(mapStateToProps, { logout, getCurrentProfile, getRecord })(Dashboard)
+export default connect(mapStateToProps, { logout, getCurrentProfile, getRecord, getAllStations })(Dashboard)

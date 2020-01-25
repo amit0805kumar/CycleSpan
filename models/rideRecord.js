@@ -6,6 +6,10 @@ const rideRecordSchema = new mongoose.Schema({
         ref: 'users',
         required: true
     },
+    email: {
+        type: String,
+        required: true
+    },
     userName: {
         type: String,
         required: true

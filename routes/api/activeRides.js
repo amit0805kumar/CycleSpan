@@ -26,7 +26,7 @@ router.post('/accept', async (req, res) => {
         }
 
         const user_id = activeOtp.user
-        const { name } = await Users.findById({ _id: user_id })
+        const { name, email } = await Users.findById({ _id: user_id })
 
         const {
             locationCode,
@@ -54,7 +54,8 @@ router.post('/accept', async (req, res) => {
             pickupLocationCode: locationCode,
             cycleModel: cycleModel,
             pickupTime: date,
-            rideId: rideId
+            rideId: rideId,
+            email: email
         }
         const activeRides = new ActiveRides(activeSchema)
         await ActiveOtp.findOneAndRemove({ otp: otp })
@@ -68,7 +69,25 @@ router.post('/accept', async (req, res) => {
     }
 })
 
-
+// @route GET api/activeRide/me
+// @desc To get User's active ride
+// @access Private user
+router.get('/me', auth, async (req, res) => {
+    try {
+        const active = await ActiveRides.findOne({
+            user: req.user.id
+        })
+        if (active) {
+            res.json(active)
+        }
+        else {
+            return res.status(400).json({ message: "No ride found" })
+        }
+    } catch (error) {
+        console.log(error.message)
+        res.status(400).send('Server error')
+    }
+})
 
 // @route POST api/activeRide/complete
 // @desc To complete the ride
@@ -91,6 +110,7 @@ router.post('/complete', [
         const date = new Date()
         const recordSchema = {}
         recordSchema.user = ride.user
+        recordSchema.email = ride.email
         recordSchema.userName = ride.userName
         recordSchema.pickupLocationCode = ride.pickupLocationCode
         recordSchema.cycleModel = ride.cycleModel

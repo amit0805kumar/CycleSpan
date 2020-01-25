@@ -98,7 +98,7 @@ router.put('/update', [adminAuth, [
 // @desc To get all available rides
 // @access Private admin
 
-router.get('/', adminAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const allRides = await AvailableCycles.find()
         if (!allRides) {

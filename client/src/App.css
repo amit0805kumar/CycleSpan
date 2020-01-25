@@ -854,6 +854,38 @@ a {
 
 .dashboard__container {
   width: 100%; }
+  .dashboard__container .rideStatus {
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    width: 30rem;
+    border-radius: 4px;
+    background: #fcf5baad;
+    font-size: 1.5rem;
+    overflow: hidden; }
+    .dashboard__container .rideStatus .status__heading {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 500;
+      text-align: center;
+      padding-top: 1.5rem;
+      background: #DB313E; }
+    .dashboard__container .rideStatus .status__content {
+      margin-top: 1.5rem;
+      padding: 1rem; }
+      .dashboard__container .rideStatus .status__content .name {
+        text-align: center;
+        font-weight: 500;
+        color: #DB313E; }
+      .dashboard__container .rideStatus .status__content .field {
+        margin: 1.5rem 0; }
+        .dashboard__container .rideStatus .status__content .field__heading {
+          color: dimgray;
+          font-weight: 700;
+          font-size: 1.2rem; }
+        .dashboard__container .rideStatus .status__content .field__content {
+          color: black;
+          margin-left: 0.5rem; }
   .dashboard__container .sidebar {
     width: 20rem;
     background: #2D2D2D;
@@ -2133,6 +2165,14 @@ a {
   background: #e7e7e7;
   border-radius: 3px;
   padding: 2rem; }
+  .formContainer .summary {
+    margin-top: 2rem;
+    background: #faf5b7;
+    border: 2px solid #727272;
+    padding: 1rem; }
+    .formContainer .summary .container h3 {
+      margin: 1rem 0;
+      color: #2D2D2D; }
   .formContainer form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2155,18 +2195,18 @@ a {
     .formContainer form .field {
       border: none;
       background: none;
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
       color: #2D2D2D;
       border: 2px solid #2D2D2D;
       border-radius: 3px;
       font-size: 2rem;
-      font-family: 'PT Sans', sans-serif;
+      font-family: "PT Sans", sans-serif;
       text-align: center;
       font-weight: 700;
       letter-spacing: 3px;
       margin-top: 5rem; }
     .formContainer form .btn {
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
       font-weight: 500;
       background: #2D2D2D;
       color: #fff;
@@ -2176,7 +2216,7 @@ a {
       margin-left: 50%;
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%);
-      padding: .5rem 2rem;
+      padding: 0.5rem 2rem;
       border: none;
       text-align: center; }
       .formContainer form .btn:hover {

@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom'
 
 import BgPattern from './BgPattern'
 import LandingCycles from "./LandingCycles"
+import LandingStations from "./LandingStations"
+import Footer from "./Footer"
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getCycles } from "../../actions/cycles"
@@ -107,6 +109,8 @@ const Landing = ({ getCycles, getAllStations }) => {
             </div>
         </section>
         <LandingCycles />
+        <LandingStations />
+        <Footer />
     </Fragment >
 
 

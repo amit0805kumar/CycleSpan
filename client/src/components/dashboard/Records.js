@@ -1,8 +1,18 @@
 import React from 'react'
-import maps from "../../images/maps-and-flags.svg";
 import Moment from 'react-moment'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import AddressComp from './AddressComp'
 
-const Records = ({ records }) => {
+const Records = ({ records, stations }) => {
+
+
+    const getStationByCode = (code) => {
+        const station = stations.filter(st => {
+            return code == st.code
+        })
+        return station[0]
+    }
 
     return (
         <React.Fragment>
@@ -23,24 +33,10 @@ const Records = ({ records }) => {
                                         <div className="locations">
                                             <hr />
                                             <div className="from">
-                                                <div className="loc__back">
-                                                    <img src={maps} alt="" />
-                                                </div>
-                                                <div className="text">
-                                                    <div className="address">{record.pickupLocationCode}</div>
-                                                    <div className="address">Ghaziabad</div>
-                                                    <div className="address">Pincode - 201002</div>
-                                                </div>
+                                                <AddressComp address={getStationByCode(record.pickupLocationCode)} />
                                             </div>
                                             <div className="to">
-                                                <div className="loc__back">
-                                                    <img src={maps} alt="" />
-                                                </div>
-                                                <div className="text">
-                                                    <div className="address">{record.dropLocationCode}</div>
-                                                    <div className="address">Ghaziabad</div>
-                                                    <div className="address">Pincode - 201002</div>
-                                                </div>
+                                                <AddressComp address={getStationByCode(record.dropLocationCode)} />
                                             </div>
                                         </div>
                                         <div className="record__details">
@@ -78,5 +74,10 @@ const Records = ({ records }) => {
     )
 }
 
-
-export default Records
+Records.propTypes = {
+    stations: PropTypes.array.isRequired
+}
+const mapStateToProps = state => ({
+    stations: state.station.stations
+})
+export default connect(mapStateToProps, {})(Records)

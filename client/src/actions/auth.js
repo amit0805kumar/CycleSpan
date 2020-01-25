@@ -60,11 +60,12 @@ export const register = ({ name, email, password }) => async dispatch => {
             type: REGISTER_SUCCESS,
             payload: res.data
         })
+        dispatch(setAlert('Register Successfull', 'success'))
         dispatch(loadUser());
     } catch (error) {
         var errors = error.response.data.errors
         if (errors) {
-            errors.forEach(error => dispatch(setAlert(error.msg, 'danger')))
+            errors.forEach(error => dispatch(setAlert(error.message, 'danger')))
         }
         dispatch({
             type: REGISTER_FAIL
@@ -92,7 +93,7 @@ export const login = (email, password) => async dispatch => {
     } catch (error) {
         var errors = error.response.data.errors
         if (errors) {
-            errors.forEach(error => dispatch(setAlert(error.msg, 'danger')))
+            errors.forEach(error => dispatch(setAlert(error.message, 'danger')))
         }
         dispatch({
             type: LOGIN_FAILED

@@ -16,7 +16,7 @@ const RideIdAcceptor = ({ station: { stations, loading }, getAllStations, accept
         locCode: "",
         rideId: ""
     })
-    const { rideId, locCode } = data
+    const { locCode, rideId } = data
 
     return (
         locCode !== "" ? <React.Fragment>

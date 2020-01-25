@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import rightArrow from '../../images/rightArrow.svg'
 import { getOtp } from '../../actions/ride'
 import { cancelOtp } from '../../actions/ride'
-const Otpmanage = ({ getOtp, cancelOtp, otp }) => {
-    const genotp = () => {
-        getOtp();
+const Otpmanage = ({ getOtp, cancelOtp, otp, user }) => {
+    const genotp = async () => {
+        await getOtp(user.email);
     }
     return (
         <React.Fragment>
@@ -31,10 +31,12 @@ const Otpmanage = ({ getOtp, cancelOtp, otp }) => {
 Otpmanage.propTypes = {
     getOtp: PropTypes.func.isRequired,
     cancelOtp: PropTypes.func.isRequired,
+    user: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
-    otp: state.ride.otp
+    otp: state.ride.otp,
+    user: state.auth.user
 })
 
 export default connect(mapStateToProps, { getOtp, cancelOtp })(Otpmanage)
