@@ -6,6 +6,7 @@ import profile from './profile'
 import cycles from './cycles'
 import ride from './ride'
 import station from './station'
+import admin from './admin'
 
 export default combineReducers({
     alert,
@@ -13,5 +14,6 @@ export default combineReducers({
     profile,
     cycles,
     ride,
-    station
+    station,
+    admin
 })

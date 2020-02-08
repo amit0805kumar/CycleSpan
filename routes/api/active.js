@@ -3,6 +3,7 @@ const router = express.Router()
 const { check, validationResult } = require('express-validator')
 const ActiveOtp = require('../../models/ActiveOtp')
 const auth = require('../../middleware/auth')
+const adminAuth = require('../../middleware/adminAuth')
 const otplib = require('otplib')
 const config = require('config')
 const { authenticator } = require('otplib')
@@ -14,8 +15,6 @@ const otpSecret = config.get('otpSecret')
 // @access Private
 router.get('/getOtp', auth, async (req, res) => {
     try {
-
-
         let object = await ActiveOtp.findOne({ user: req.user.id })
         if (object == null) {
             token = authenticator.generate(otpSecret);
@@ -28,6 +27,23 @@ router.get('/getOtp', auth, async (req, res) => {
         }
         // const isValid = authenticator.check(token, otpSecret);
         res.json(object);
+
+    } catch (error) {
+        console.log(error.message)
+        res.status(400).send('server error')
+    }
+})
+
+// @route GET api/active/otps
+// @desc To get all active OTPs
+// @access Private admin
+
+router.get('/otps', adminAuth, async (req, res) => {
+
+    try {
+
+        let data = await ActiveOtp.find()
+        res.json(data)
 
     } catch (error) {
         console.log(error.message)

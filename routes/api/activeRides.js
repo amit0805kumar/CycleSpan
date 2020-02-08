@@ -89,6 +89,20 @@ router.get('/me', auth, async (req, res) => {
     }
 })
 
+// @route GET api/activeRide/
+// @desc To get all active ride
+// @access Private Admin user
+router.get('/',adminAuth, async (req, res) => {
+    try {
+        const active = await ActiveRides.find()
+        res.json(active)
+    } catch (error) {
+        console.log(error.message)
+        res.status(400).send('Server error')
+    }
+})
+
+
 // @route POST api/activeRide/complete
 // @desc To complete the ride
 // @access Private user

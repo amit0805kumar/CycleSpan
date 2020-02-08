@@ -80,7 +80,7 @@ router.delete('/', [adminAuth, [
 
 // @route GET api/cycles
 // @desc To get all cycles
-// @access Private
+// @access Public
 router.get('/', async (req, res) => {
     try {
         const cycle = await Cycles.find()

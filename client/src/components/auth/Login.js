@@ -9,7 +9,7 @@ import Loader from '../layout/Loader'
 const Login = ({ login, isAuthenticated, loading }) => {
 
     const [formData, setFormData] = useState({
-        email: 'amit0805kumar@gmail.com',
+        email: 'amit@gmail.com',
         password: '222222'
     });
     const { email, password } = formData;

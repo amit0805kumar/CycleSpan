@@ -16,7 +16,6 @@ import {
 const intialState = {
     otp: null,
     active: null,
-    actives: [],
     records: [],
     availables: [],
     bill: 0,
