@@ -3,17 +3,17 @@ import React from 'react'
 
 const Cycles = ({ cycles }) => {
     return (
-        <div class="all__cycles table__container">
-            <div class="heading">
-                <div class="text">All cycles</div>
-                <div class="btn" id="addCycles">
-                    <div class="icon">+</div>
-                    <div class="content">Add</div>
+        <div className="all__cycles table__container">
+            <div className="heading">
+                <div className="text">All cycles</div>
+                <div className="btn" id="addCycles">
+                    <div className="icon">+</div>
+                    <div className="content">Add</div>
                 </div>
             </div>
-            <div class="table">
-                <ul class="row head allCycles">
-                    <li class="num"></li>
+            <div className="table">
+                <ul className="row head allCycles">
+                    <li className="num"></li>
                     <li>Model</li>
                     <li>Company</li>
                     <li>Details</li>
@@ -26,17 +26,17 @@ const Cycles = ({ cycles }) => {
                 </ul>
                 {
                     cycles ? cycles.map((cycle, index) => {
-                        return <ul class="row content allCycles" key={index}>
-                            <li class="num">{index + 1}.</li>
+                        return <ul className="row content allCycles" key={index}>
+                            <li className="num">{index + 1}.</li>
                             <li>{cycle.model}</li>
                             <li>{cycle.company}</li>
-                            <li class="cycleDetails">{cycle.details}</li>
+                            <li className="cycleDetails">{cycle.details}</li>
                             <li>{cycle.colour}</li>
                             <li>{cycle.gender}</li>
                             <li>{cycle.gears}</li>
                             <li>15/hr</li>
                             <li>Img...</li>
-                            <li><span class="del">Delete</span></li>
+                            <li><span className="del">Delete</span></li>
                         </ul>
                     }) : <React.Fragment></React.Fragment>
 

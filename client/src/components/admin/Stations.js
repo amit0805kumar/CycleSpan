@@ -3,17 +3,17 @@ import React from 'react'
 
 const Stations = ({ stations }) => {
     return (
-        <div class="all__stations table__container">
-            <div class="heading">
-                <div class="text">All stations</div>
-                <div class="btn" id="addStations">
-                    <div class="icon">+</div>
-                    <div class="content">Add</div>
+        <div className="all__stations table__container">
+            <div className="heading">
+                <div className="text">All stations</div>
+                <div className="btn" id="addStations">
+                    <div className="icon">+</div>
+                    <div className="content">Add</div>
                 </div>
             </div>
-            <div class="table">
-                <ul class="row head allStations">
-                    <li class="num"></li>
+            <div className="table">
+                <ul className="row head allStations">
+                    <li className="num"></li>
                     <li>Address</li>
                     <li>PIN</li>
                     <li>Country</li>
@@ -24,15 +24,15 @@ const Stations = ({ stations }) => {
                 </ul>
                 {
                     stations ? stations.map((station, index) => {
-                        return <ul class="row content allStations" key={index}>
-                            <li class="num">{index + 1}.</li>
+                        return <ul className="row content allStations" key={index}>
+                            <li className="num">{index + 1}.</li>
                             <li>{station.address}</li>
                             <li>{station.pin}</li>
-                            <li class="cycleDetails">{station.country}</li>
+                            <li className="cycleDetails">{station.country}</li>
                             <li>{station.code}</li>
                             <li>{station.state}</li>
                             <li>{station.city}</li>
-                            <li><span class="del">Delete</span></li>
+                            <li><span className="del">Delete</span></li>
                         </ul>
                     }) : <React.Fragment></React.Fragment>
                 }

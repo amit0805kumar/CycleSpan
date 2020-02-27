@@ -45,7 +45,7 @@ const Landing = ({ getCycles, getAllStations }) => {
                     <h1 className="test">CYCLE<span>SPAN</span></h1>
                     <div className="sub">Ride In Style</div>
                     <Link to="/dashboard">
-                        <div className="text" >Book a ride</div>
+<div className="text" >Book a ride</div>
                         <img src={wheel} alt="Wheel" />
                     </Link>
                 </div>

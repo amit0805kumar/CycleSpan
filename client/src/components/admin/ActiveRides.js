@@ -4,12 +4,12 @@ import Moment from 'react-moment'
 
 const ActiveRides = ({ rides }) => {
     return (
-        <div class="active__rides table__container">
-            <div class="heading">Active Rides</div>
-            <div class="table">
+        <div className="active__rides table__container">
+            <div className="heading">Active Rides</div>
+            <div className="table">
 
-                <ul class="row head activeRides">
-                    <li class="num"></li>
+                <ul className="row head activeRides">
+                    <li className="num"></li>
                     <li>Name</li>
                     <li>Pickup Location</li>
                     <li>Cyclemodel</li>
@@ -19,8 +19,8 @@ const ActiveRides = ({ rides }) => {
 
                 {
                     rides.map((ride, index) => {
-                        return <ul class="row content activeRides">
-                            <li class="num">{index + 1}.</li>
+                        return <ul className="row content activeRides" key={index}>
+                            <li className="num">{index + 1}.</li>
                             <li>{ride.userName}</li>
                             <li>{ride.pickupLocationCode}</li>
                             <li>{ride.cycleModel}</li>

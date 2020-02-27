@@ -3,20 +3,20 @@ import React from 'react'
 
 const Availables = ({ availables }) => {
     return (
-        <div class="all__availables table__container">
-            <div class="heading">
-                <div class="text">All Available cycles</div>
-                <div class="search"><input type="text" placeholder="Search by ModelNo/LocationCode" />
+        <div className="all__availables table__container">
+            <div className="heading">
+                <div className="text">All Available cycles</div>
+                <div className="search"><input type="text" placeholder="Search by ModelNo/LocationCode" />
 
                 </div>
-                <div class="btn" id="addAvailable">
-                    <div class="icon">+</div>
-                    <div class="content">Add</div>
+                <div className="btn" id="addAvailable">
+                    <div className="icon">+</div>
+                    <div className="content">Add</div>
                 </div>
             </div>
-            <div class="table">
-                <ul class="row head allAvailables">
-                    <li class="num"></li>
+            <div className="table">
+                <ul className="row head allAvailables">
+                    <li className="num"></li>
                     <li>Model No.</li>
                     <li>Locaton</li>
                     <li>Count</li>
@@ -25,13 +25,13 @@ const Availables = ({ availables }) => {
                 </ul>
                 {
                     availables ? availables.map((available, index) => {
-                        if (available.available > 0) return <ul class="row content allAvailables">
-                            <li class="num">{index + 1}.</li>
+                        if (available.available > 0) return <ul className="row content allAvailables" key={index}>
+                            <li className="num">{index + 1}.</li>
                             <li>{available.cycleModel}</li>
                             <li>{available.locationCode}</li>
                             <li>{available.available}</li>
-                            <li><span class="dec">-</span></li>
-                            <li><span class="inc">+</span></li>
+                            <li><span className="dec">-</span></li>
+                            <li><span className="inc">+</span></li>
                         </ul>
                     }) : <React.Fragment></React.Fragment>
                 }

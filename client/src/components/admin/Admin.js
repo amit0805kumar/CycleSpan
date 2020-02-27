@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import settingSvg from '../../images/setting.svg'
 import PropTypes from 'prop-types'
 import { logout } from '../../actions/auth'
@@ -11,13 +11,26 @@ import Records from './Records'
 import Stations from './Stations'
 import Availables from './Availables'
 
+// import socketIOClient from "socket.io-client";
+
 
 import { getAllRecords, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides } from '../../actions/admin'
 
 const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides }) => {
 
-
+    // const [data, setData] = useState({
+    //     endpoint: 'http://localhost:5000/',
+    //     response: false
+    // })
     useEffect(() => {
+
+        // const { endpoint } = data;
+        // const socket = socketIOClient(endpoint);
+        // socket.on('FromAPI', d => setData({
+        //     ...data,
+        //     response: d
+        // }))
+
         getAllRecords()
         getAllCycles()
         getAllStations()
@@ -26,20 +39,22 @@ const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, get
         getAllActiveRides()
     }, [getAllRecords, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides])
 
+ 
+   
     return (
         <React.Fragment>
-            <nav class="admin__nav">
-                <div class="heading">Admin</div>
-                <div class="details">
-                    <div class="name">Amit Kumar</div>
-                    <div class="edit__links" id="editLinks">
-                        <div class="linkCont">
-                            <Link class="link" to='/'>Manage Admins</Link>
+            <nav className="admin__nav">
+                <div className="heading">Admin</div>
+                <div className="details">
+                    <div className="name">Amit Kumar</div>
+                    <div className="edit__links" id="editLinks">
+                        <div className="linkCont">
+                            <Link className="link" to='/'>Manage Admins</Link>
                             <Link to="/profileEdit" className="link">Edit Profile</Link>
-                            <div class="link" onClick={e => logout()}>Logout</div>
+                            <div className="link" onClick={e => logout()}>Logout</div>
                         </div>
                     </div>
-                    <div class="edit">
+                    <div className="edit">
                         <img src={settingSvg} alt="" />
                     </div>
                 </div>

@@ -18,8 +18,8 @@ const LandingStations = ({ stations }) => {
 
             <div className="address__container">
                 {
-                    stations.map(station => {
-                        return <React.Fragment>
+                    stations.map((station, index) => {
+                        return <React.Fragment key={index}>
                             <div className="address">
                                 <div className="top">Location Code : {station.code}</div>
                                 <div className="bottom">
