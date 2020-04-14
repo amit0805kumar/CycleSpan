@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const nodemailer = require('nodemailer')
+const config = require('config')
 router.post('/', async (req, res) => {
     let {
         sub, body, receiver
@@ -13,7 +14,7 @@ router.post('/', async (req, res) => {
         secure: true,
         auth: {
             user: 'greatamitkumar042@gmail.com',
-            pass: 'RockBottom'
+            pass: 'StarLord'
         },
         tls: {
             rejectUnauthorized: false
@@ -28,7 +29,7 @@ router.post('/', async (req, res) => {
 
     transporter.sendMail(mailOptions, function (err, data) {
         if (err) {
-
+            console.log(err)
             res.send('Email Error')
 
         }

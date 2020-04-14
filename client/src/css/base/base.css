@@ -1,13 +1,12 @@
 * {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
   margin: 0px;
   padding: 0px; }
 
 body {
   position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: .1px; }
 
 html {
   font-size: 62.5%;
@@ -18,6 +17,7 @@ html {
   /* iOS Safari */
   -webkit-user-select: none;
   /* Safari */
+  -khtml-user-select: none;
   /* Konqueror HTML */
   -moz-user-select: none;
   /* Firefox */

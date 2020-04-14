@@ -14,7 +14,7 @@ export const mailer = async (sub, html, receiver) => {
         })
 
         const res = await axios.post('/api/mailer', body, config)
-        console.log(res.data)
+        console.log(res.data)   
     } catch (error) {
         console.log('Email error')
     }

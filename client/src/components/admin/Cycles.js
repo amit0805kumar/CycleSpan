@@ -1,12 +1,12 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 
-const Cycles = ({ cycles }) => {
+const Cycles = ({ cycles, addCycle }) => {
     return (
         <div className="all__cycles table__container">
             <div className="heading">
                 <div className="text">All cycles</div>
-                <div className="btn" id="addCycles">
+                <div className="btn" id="addCycles" onClick={()=>{addCycle()}}>
                     <div className="icon">+</div>
                     <div className="content">Add</div>
                 </div>

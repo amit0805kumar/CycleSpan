@@ -1,22 +1,26 @@
 /*
-Error: Undefined variable: "$color-secondary".
-        on line 8 of F:\Github\CycleSpan\client\src\sass\components\admin.scss
+Error: Undefined variable: "$color-primary".
+        on line 30 of F:\Github\CycleSpan\client\src\sass\components\loader.scss
 
-3:   display: flex;
-4:   padding: 1rem 1.5rem;
-5:   color: #fff;
-6:   display: flex;
-7:   justify-content: space-between;
-8:   background: $color-secondary;
-9:   align-items: center;
-10:   margin-top: 4rem;
-11: 
-12:   .heading {
-13:     font-size: 2rem;
+25:   height: 64px;
+26:   margin: 8px;
+27:   border: 8px solid #fff;
+28:   border-radius: 50%;
+29:   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+30:   border-color: $color-primary transparent transparent transparent;
+31: }
+32: .lds-ring div:nth-child(1) {
+33:   animation-delay: -0.45s;
+34: }
+35: .lds-ring div:nth-child(2) {
 
 Backtrace:
-F:\Github\CycleSpan\client\src\sass\components\admin.scss:8
+F:\Github\CycleSpan\client\src\sass\components\loader.scss:30
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/list_literal.rb:75:in `map'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/list_literal.rb:75:in `_perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
@@ -62,4 +66,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-secondary\".\A         on line 8 of F:\Github\CycleSpan\client\src\sass\components\admin.scss\A \A 3:   display: flex;\A 4:   padding: 1rem 1.5rem;\A 5:   color: #fff;\A 6:   display: flex;\A 7:   justify-content: space-between;\A 8:   background: $color-secondary;\A 9:   align-items: center;\A 10:   margin-top: 4rem;\A 11: \A 12:   .heading {\A 13:     font-size: 2rem;"; }
+  content: "Error: Undefined variable: \"$color-primary\".\A         on line 30 of F:\Github\CycleSpan\client\src\sass\components\loader.scss\A \A 25:   height: 64px;\A 26:   margin: 8px;\A 27:   border: 8px solid #fff;\A 28:   border-radius: 50%;\A 29:   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\A 30:   border-color: $color-primary transparent transparent transparent;\A 31: }\A 32: .lds-ring div:nth-child(1) {\A 33:   animation-delay: -0.45s;\A 34: }\A 35: .lds-ring div:nth-child(2) {"; }

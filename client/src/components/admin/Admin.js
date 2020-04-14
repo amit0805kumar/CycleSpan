@@ -10,27 +10,14 @@ import Cycles from './Cycles'
 import Records from './Records'
 import Stations from './Stations'
 import Availables from './Availables'
-
-// import socketIOClient from "socket.io-client";
+import FormManager from './forms/FormManager'
 
 
 import { getAllRecords, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides } from '../../actions/admin'
 
 const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides }) => {
 
-    // const [data, setData] = useState({
-    //     endpoint: 'http://localhost:5000/',
-    //     response: false
-    // })
     useEffect(() => {
-
-        // const { endpoint } = data;
-        // const socket = socketIOClient(endpoint);
-        // socket.on('FromAPI', d => setData({
-        //     ...data,
-        //     response: d
-        // }))
-
         getAllRecords()
         getAllCycles()
         getAllStations()
@@ -39,10 +26,28 @@ const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, get
         getAllActiveRides()
     }, [getAllRecords, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides])
 
- 
-   
+    const [formdata, setData] = useState({
+        close: true
+    })
+    const {close} = formdata
+    // console.log(fdata.otp)
+    const remove = ()=>{
+        setData({
+            formdata,
+            close: true
+        })
+    }
+    const openPop = ()=>{
+        setData({
+            ...formdata,
+            close: false
+        })
+    }
     return (
         <React.Fragment>
+            {
+            close ? <React.Fragment></React.Fragment> : <FormManager close={remove}/>
+            } 
             <nav className="admin__nav">
                 <div className="heading">Admin</div>
                 <div className="details">
@@ -60,6 +65,8 @@ const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, get
                 </div>
             </nav>
 
+           
+
             <div className="active__section">
                 <ActiveRides rides={admin.activeRides} />
                 <ActiveOtp otps={admin.activeOtps} />
@@ -68,7 +75,7 @@ const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, get
                 <Records records={admin.records} />
             </div>
             <div className="section__allcycles">
-                <Cycles cycles={admin.cycles} />
+                <Cycles cycles={admin.cycles} addCycle={openPop}/>
             </div>
             <div className="section__allstations">
                 <Stations stations={admin.stations} />

@@ -27,13 +27,10 @@ const PORT = process.env.PORT || 5000
 const server = http.createServer(app);
 const io = socketIo(server) 
 
-io.on("connection", socket => {
-    console.log("New client connected"), setInterval(
-      () => getApiAndEmit(socket),
-      10000
-    );
-    socket.on("disconnect", () => console.log("Client disconnected"));
-  });
+// io.on("connection", socket => {
+//     console.log("New client connected")
+//     socket.on("disconnect", () => console.log("Client disconnected"));
+//   });
 
 server.listen(PORT, () => {
     console.log(`Server started in port: ${PORT}`)
@@ -41,16 +38,6 @@ server.listen(PORT, () => {
 
 
 
-const getApiAndEmit = async socket => {
-  try {
-    const res = await axios.get(
-      "https://api.darksky.net/forecast/5c42a6daa57f945abc433cd3236c3977/43.7695,11.2558"
-    ); // Getting the data from DarkSky
-    socket.emit("FromAPI", res.data.currently.temperature); // Emitting a new message. It will be consumed by the client
-  } catch (error) {
-    console.error(`Error: ${error.code}`);
-  }
-};
 
 
 app.get('/',function (req, res) {

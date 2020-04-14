@@ -15,7 +15,6 @@ import {
 import { setAlert } from './alert'
 import axios from 'axios'
 import { mailer } from './mailer'
-
 export const getRecord = () => async dispatch => {
     try {
         const res = await axios.get('/api/rides/records/me')
@@ -47,11 +46,7 @@ export const getOtp = (receiver) => async dispatch => {
 
     try {
         const res = await axios.get('/api/active/getOtp')
-
-
         mailer('Cyclespan OTP', `<h1>OTP: ${res.data.otp}</h1>`, receiver)
-
-
         dispatch({
             type: GEN_OTP,
             payload: res.data.otp

@@ -4,8 +4,7 @@
   font-weight: 500;
   display: inline-block;
   margin-left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   font-family: 'Patrick Hand', cursive;
   position: relative; }
   .heading__shadowed::before {
@@ -13,16 +12,14 @@
     position: absolute;
     top: 5%;
     color: #e0e0e0;
-    -webkit-transform: translateX(-50%) rotate(180deg);
-            transform: translateX(-50%) rotate(180deg);
+    transform: translateX(-50%) rotate(180deg);
     left: 50%;
     letter-spacing: 5px;
     font-size: 9rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     z-index: -1;
-    -webkit-filter: blur(0.8px);
-            filter: blur(0.8px); }
+    filter: blur(0.8px); }
 
 .background__pattern {
   position: absolute;

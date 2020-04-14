@@ -7,7 +7,6 @@ import { Provider } from 'react-redux'
 import store from './store'
 import setAuthToken from './util/setAuthToken'
 import { loadUser } from './actions/auth';
-import socketIOClient from "socket.io-client";
 //Components
 import Landing from './components/layout/Landing'
 import Nav from './components/layout/Nav'
@@ -31,18 +30,11 @@ if (localStorage.token) {
 const App = () => {
 
 
-  const [fdata, setData] = useState({
-    response: false,
-    endpoint: 'http://127.0.0.1:5000/'
-  })
 
   useEffect(() => {
-    const { endpoint } = fdata;
-    const socket = socketIOClient(endpoint);
-    socket.on("FromAPI", data => setData({ response: data }));
-
     store.dispatch(loadUser())
-  }, [socketIOClient, loadUser])
+  }, [loadUser])
+
   return (<Provider store={store}>
     <Router>
       <Fragment>

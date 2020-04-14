@@ -1,24 +1,46 @@
 /*
-Error: Undefined variable: "$color-secondary".
-        on line 8 of F:\Github\CycleSpan\client\src\sass\components\admin.scss
+Error: Undefined variable: "$color-red".
+        on line 17 of F:\Github\CycleSpan\client\src\sass\components\alert.scss
 
-3:   display: flex;
-4:   padding: 1rem 1.5rem;
-5:   color: #fff;
-6:   display: flex;
-7:   justify-content: space-between;
-8:   background: $color-secondary;
-9:   align-items: center;
-10:   margin-top: 4rem;
-11: 
-12:   .heading {
-13:     font-size: 2rem;
+12:         font-size: 1.5rem;
+13:         padding: 1.2rem 3rem;
+14:         margin: 1rem 0;
+15: 
+16:         &__danger {
+17:             background: $color-red;
+18: 
+19:         }
+20: 
+21:         &__success {
+22:             background: #2E7D32;
 
 Backtrace:
-F:\Github\CycleSpan\client\src\sass\components\admin.scss:8
+F:\Github\CycleSpan\client\src\sass\components\alert.scss:17
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
@@ -62,4 +84,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-secondary\".\A         on line 8 of F:\Github\CycleSpan\client\src\sass\components\admin.scss\A \A 3:   display: flex;\A 4:   padding: 1rem 1.5rem;\A 5:   color: #fff;\A 6:   display: flex;\A 7:   justify-content: space-between;\A 8:   background: $color-secondary;\A 9:   align-items: center;\A 10:   margin-top: 4rem;\A 11: \A 12:   .heading {\A 13:     font-size: 2rem;"; }
+  content: "Error: Undefined variable: \"$color-red\".\A         on line 17 of F:\Github\CycleSpan\client\src\sass\components\alert.scss\A \A 12:         font-size: 1.5rem;\A 13:         padding: 1.2rem 3rem;\A 14:         margin: 1rem 0;\A 15: \A 16:         &__danger {\A 17:             background: $color-red;\A 18: \A 19:         }\A 20: \A 21:         &__success {\A 22:             background: #2E7D32;"; }
