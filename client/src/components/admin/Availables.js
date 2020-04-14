@@ -1,7 +1,7 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 
-const Availables = ({ availables }) => {
+const Availables = ({ availables, addAvailable }) => {
     return (
         <div className="all__availables table__container">
             <div className="heading">
@@ -9,7 +9,7 @@ const Availables = ({ availables }) => {
                 <div className="search"><input type="text" placeholder="Search by ModelNo/LocationCode" />
 
                 </div>
-                <div className="btn" id="addAvailable">
+                <div className="btn" id="addAvailable" onClick={()=>addAvailable(3)}>
                     <div className="icon">+</div>
                     <div className="content">Add</div>
                 </div>

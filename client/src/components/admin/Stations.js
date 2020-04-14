@@ -1,12 +1,12 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 
-const Stations = ({ stations }) => {
+const Stations = ({ stations, addStation }) => {
     return (
         <div className="all__stations table__container">
             <div className="heading">
                 <div className="text">All stations</div>
-                <div className="btn" id="addStations">
+                <div className="btn" id="addStations" onClick={()=>addStation(2)}>
                     <div className="icon">+</div>
                     <div className="content">Add</div>
                 </div>

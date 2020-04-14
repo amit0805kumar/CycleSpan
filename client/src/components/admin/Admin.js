@@ -27,26 +27,28 @@ const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, get
     }, [getAllRecords, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides])
 
     const [formdata, setData] = useState({
-        close: true
+        close: true,
+        code: null
     })
-    const {close} = formdata
-    // console.log(fdata.otp)
+    const {close, code} = formdata
     const remove = ()=>{
         setData({
             formdata,
-            close: true
+            close: true,
+            code: null
         })
     }
-    const openPop = ()=>{
+    const openPop = (code)=>{
         setData({
             ...formdata,
-            close: false
+            close: false,
+            code: code
         })
     }
     return (
         <React.Fragment>
             {
-            close ? <React.Fragment></React.Fragment> : <FormManager close={remove}/>
+            close ? <React.Fragment></React.Fragment> : <FormManager close={remove} code={code}/>
             } 
             <nav className="admin__nav">
                 <div className="heading">Admin</div>
@@ -78,10 +80,10 @@ const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, get
                 <Cycles cycles={admin.cycles} addCycle={openPop}/>
             </div>
             <div className="section__allstations">
-                <Stations stations={admin.stations} />
+                <Stations stations={admin.stations} addStation={openPop} />
             </div>
             <div className="section__available" >
-                <Availables availables={admin.availables} />
+                <Availables availables={admin.availables} addAvailable={openPop}/>
             </div>
         </React.Fragment>
     )
