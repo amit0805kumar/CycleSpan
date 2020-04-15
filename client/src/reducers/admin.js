@@ -10,7 +10,8 @@ import {
     GET__ALLAVAILABLES,
     ALLAVAIL_ERROR,
     GET_ALLRECORD,
-    ALLRECORD_ERROR
+    ALLRECORD_ERROR,
+    ADD_CYCLES
 } from '../actions/types'
 
 const initialState = {
@@ -34,6 +35,7 @@ export default function (state = initialState, actions) {
             }
         case ALLRECORD_ERROR:
             return {
+                ...state,
                 records: null,
                 loading: false
             }
@@ -45,6 +47,7 @@ export default function (state = initialState, actions) {
             }
         case ALLCYCLE_ERROR:
             return {
+                ...state,
                 cycles: null,
                 loading: false
             }
@@ -56,6 +59,7 @@ export default function (state = initialState, actions) {
             }
         case ALLSTATION_ERROR:
             return {
+                ...state,
                 cycles: null,
                 loading: false
             }
@@ -67,6 +71,7 @@ export default function (state = initialState, actions) {
             }
         case ALLAVAIL_ERROR:
             return {
+                ...state,
                 availables: null,
                 loading: false
             }
@@ -78,6 +83,7 @@ export default function (state = initialState, actions) {
             }
         case ALLOTP_ERROR:
             return {
+                ...state,
                 activeOtps: null,
                 loading: false
             }
@@ -89,7 +95,13 @@ export default function (state = initialState, actions) {
             }
         case ALLACTIVES_ERROR:
             return {
+                ...state,
                 activeRides: null,
+                loading: false
+            }
+        case ADD_CYCLES:
+            return {
+                ...state,
                 loading: false
             }
         default:

@@ -18,3 +18,4 @@ export const getCycles = () => async dispatch => {
 
     }
 }
+

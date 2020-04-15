@@ -1,6 +1,6 @@
 import {
     GET_CYCLES,
-    CYCLE_ERROR
+    CYCLE_ERROR,
 } from '../actions/types'
 
 const initialState = {
@@ -22,6 +22,7 @@ export default function (state = initialState, actions) {
                 cycles: [],
                 loading: false
             }
+     
         default:
             return state
     }

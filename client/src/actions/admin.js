@@ -11,8 +11,10 @@ import {
     ALLAVAIL_ERROR,
     GET_ALLRECORD,
     ALLRECORD_ERROR,
+    ADD_CYCLES
 } from './types'
 import axios from 'axios'
+import {setAlert} from './alert'
 
 export const getAllRecords = () => async dispatch => {
     try {
@@ -95,5 +97,29 @@ export const getAllActiveRides = () => async dispatch => {
         dispatch({
             type: ALLACTIVES_ERROR
         })
+    }
+}
+
+//Add cycles
+export const addCycles = (payload) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    try {
+        const res = await axios.post('/api/cycles',payload, config)
+        dispatch({
+            type: ADD_CYCLES
+        })
+        dispatch(getAllCycles())
+        dispatch(setAlert('Cycle added successfully!','success'))
+    } catch (error) {
+        console.log(error)
+        dispatch({
+            type: ALLCYCLE_ERROR
+        })
+        dispatch(setAlert('Somethong went wrong','danger'))
     }
 }
