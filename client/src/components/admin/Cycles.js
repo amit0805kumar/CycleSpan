@@ -1,7 +1,9 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import {deleteCycle} from '../../actions/admin'
+import PropTypes from 'prop-types'
 
-const Cycles = ({ cycles, addCycle }) => {
+const Cycles = ({ cycles, addCycle, deleteCycle }) => {
     return (
         <div className="all__cycles table__container">
             <div className="heading">
@@ -36,7 +38,7 @@ const Cycles = ({ cycles, addCycle }) => {
                             <li>{cycle.gears}</li>
                             <li>15/hr</li>
                             <li>Img...</li>
-                            <li><span className="del">Delete</span></li>
+                            <li><span className="del" onClick={()=>deleteCycle(cycle.model)}>Delete</span></li>
                         </ul>
                     }) : <React.Fragment></React.Fragment>
 
@@ -47,8 +49,8 @@ const Cycles = ({ cycles, addCycle }) => {
     )
 }
 
-// Cycles.propTypes = {
+Cycles.propTypes = {
+    deleteCycle: PropTypes.func.isRequired
+}
 
-// }
-
-export default Cycles
+export default connect(null, {deleteCycle})(Cycles)

@@ -57,16 +57,10 @@ router.post('/', [adminAuth, [
 // @desc To delete cycles
 // @access Private admin
 
-router.delete('/', [adminAuth, [
-    check('model', 'Please enter the model').not().isEmpty()
-]], async (req, res) => {
+router.delete('/:model', [adminAuth], async (req, res) => {
 
-    const error = validationResult(req)
-    if (!error.isEmpty()) {
-        return res.status(400).json({ errors: error.array() })
-    }
     try {
-        var cycle = await Cycles.findOneAndRemove({ model: req.body.model })
+        var cycle = await Cycles.findOneAndRemove({ model: req.params.model })
         if (cycle == null) {
             return res.status(401).json({ "message": "Cycle not found" })
         }

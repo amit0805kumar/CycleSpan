@@ -11,7 +11,8 @@ import {
     ALLAVAIL_ERROR,
     GET_ALLRECORD,
     ALLRECORD_ERROR,
-    ADD_CYCLES
+    ADD_CYCLES,
+    DELETE_CYCLES
 } from './types'
 import axios from 'axios'
 import {setAlert} from './alert'
@@ -109,7 +110,7 @@ export const addCycles = (payload) => async dispatch => {
     }
 
     try {
-        const res = await axios.post('/api/cycles',payload, config)
+        await axios.post('/api/cycles',payload, config)
         dispatch({
             type: ADD_CYCLES
         })
@@ -120,6 +121,22 @@ export const addCycles = (payload) => async dispatch => {
         dispatch({
             type: ALLCYCLE_ERROR
         })
+        dispatch(setAlert('Somethong went wrong','danger'))
+    }
+}
+
+//Deleting cycle
+
+export const deleteCycle = (model) => async dispatch => {
+ 
+    try {
+       await axios.delete(`/api/cycles/${model}`)
+        dispatch({
+            type: DELETE_CYCLES
+        })
+        dispatch(getAllCycles())
+        dispatch(setAlert('Cycle deleted successfully!','danger'))
+    } catch (error) {
         dispatch(setAlert('Somethong went wrong','danger'))
     }
 }
