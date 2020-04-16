@@ -1,30 +1,81 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
 
-function AddAvailable({close}) {
+
+function AddAvailable({close, cycles,stations}) {
+
+    const [formData, setFormData] = useState({
+        location: "",
+        locationCode: "",
+        cycle: "",
+        cycleModel: "",
+        available: ""
+    })
+
+    const {locationCode, cycleModel, available} = formData
+
+     const onChange = e => {
+         if(e.target.name === "locationCode"){
+             var data = ""
+             stations.map(station => {
+                 if(station.code+"" === e.target.value){
+                     data = station._id
+                 }
+             })
+             setFormData({
+                 ...formData,
+                 locationCode: e.target.value,
+                 location: data
+             })
+         }else if(e.target.name === "cycleModel"){
+            var data = ""
+            cycles.map(cycle => {
+                if(cycle.model === e.target.value){
+                    data = cycle._id
+                }
+            })
+            setFormData({
+                ...formData,
+                cycleModel: e.target.value,
+                cycle: data
+            })
+         }else{
+             setFormData({
+                 ...formData,
+                 [e.target.name]: e.target.value
+             })
+         }
+     }
+
+     
+    const onSubmit = async e => {
+        e.preventDefault();
+        console.log(formData)
+        close()
+    };
     return (
         <React.Fragment>
             <div className="form__container">
             <div className="close noselect" id="close" onClick={()=>{close()}}>+</div>
-                   <form action="" id="available">
+                   <form onSubmit={e=>onSubmit(e)} id="available">
                 <h1>Add Available Cycles</h1>
-                <select name="" id="" className="select" required>
-                    <option value="null">--Select Model--</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                <select   className="select"  required value={cycleModel} name="cycleModel" onChange={e=>onChange(e)}>
+                    <option value="null" key="test">--Select Model--</option>
+                    {cycles.map((data, index) => {
+                        return <option value={data.model} key={index}>{data.model}</option> 
+                    })}
+                    
                 </select>
-                <select name="" id="" className="select" required>
-                    <option value="null">--Select Location Code--</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                <select  className="select" required value={locationCode} name="locationCode" onChange={e=>onChange(e)}>
+                    <option value="null" >--Select Location Code--</option>
+                    {stations.map((data, index) => {
+                        return <option value={data.code} key={index}>{data.code}</option> 
+                    })}
+                    
+                   
                 </select>
-                <input type="number" placeholder="Count" className="field" required />
+                <input type="number" placeholder="Count" className="field" required value={available} name="available" onChange={e=>onChange(e)}/>
                 <button type="Submit">Submit</button>
 
             </form>
@@ -34,8 +85,13 @@ function AddAvailable({close}) {
 }
 
 AddAvailable.propTypes = {
-
+  cycles: PropTypes.array.isRequired,
+  stations: PropTypes.array.isRequired
 }
+const mapStateToProps = state => ({
+    cycles: state.admin.cycles,
+    stations: state.admin.stations
+})
 
-export default AddAvailable
+export default connect(mapStateToProps, {})(AddAvailable)
 

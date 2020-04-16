@@ -12,7 +12,10 @@ import {
     GET_ALLRECORD,
     ALLRECORD_ERROR,
     ADD_CYCLES,
-    DELETE_CYCLES
+    DELETE_CYCLES,
+    ADD_STATION,
+    REMOVE_STATION,
+    UPDATE_AVAILABlE
 } from '../actions/types'
 
 const initialState = {
@@ -102,6 +105,9 @@ export default function (state = initialState, actions) {
             }
         case ADD_CYCLES:
         case DELETE_CYCLES:
+        case ADD_STATION:
+        case REMOVE_STATION:
+        case UPDATE_AVAILABlE:
             return {
                 ...state,
                 loading: false

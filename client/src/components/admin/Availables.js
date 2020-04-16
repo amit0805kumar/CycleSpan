@@ -1,7 +1,24 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
 
-const Availables = ({ availables, addAvailable }) => {
+import {updateAvailable} from '../../actions/admin'
+
+const Availables = ({ availables, addAvailable, updateAvailable }) => {
+
+const update = (opt,data) => {
+    let payload={}
+    payload.locationCode = data.locationCode
+    payload.cycleModel = data.cycleModel
+    payload.count = "1"
+    if(opt === "inc"){
+        payload.action = "inc"
+    }else if(opt === "dec"){
+        payload.action = "dec"
+    }
+    updateAvailable(JSON.stringify(payload))
+
+}
     return (
         <div className="all__availables table__container">
             <div className="heading">
@@ -16,7 +33,6 @@ const Availables = ({ availables, addAvailable }) => {
             </div>
             <div className="table">
                 <ul className="row head allAvailables">
-                    <li className="num"></li>
                     <li>Model No.</li>
                     <li>Locaton</li>
                     <li>Count</li>
@@ -26,12 +42,17 @@ const Availables = ({ availables, addAvailable }) => {
                 {
                     availables ? availables.map((available, index) => {
                         if (available.available > 0) return <ul className="row content allAvailables" key={index}>
-                            <li className="num">{index + 1}.</li>
                             <li>{available.cycleModel}</li>
                             <li>{available.locationCode}</li>
                             <li>{available.available}</li>
-                            <li><span className="dec">-</span></li>
-                            <li><span className="inc">+</span></li>
+                            <li><span className="dec" onClick={()=>update("dec",{
+                                cycleModel: available.cycleModel,
+                                locationCode: available.locationCode,
+                            })}>-</span></li>
+                            <li><span className="inc"  onClick={()=>update("inc",{
+                                cycleModel: available.cycleModel,
+                                locationCode: available.locationCode,
+                            })}>+</span></li>
                         </ul>
                     }) : <React.Fragment></React.Fragment>
                 }
@@ -40,8 +61,8 @@ const Availables = ({ availables, addAvailable }) => {
     )
 }
 
-// Availables.propTypes = {
+Availables.propTypes = {
+    updateAvailable: PropTypes.func.isRequired
+}
 
-// }
-
-export default Availables
+export default connect(null,{updateAvailable})(Availables)

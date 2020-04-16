@@ -56,16 +56,10 @@ router.post('/', [adminAuth, [
 // @desc To delete station
 // @access Private admin
 
-router.delete('/', [adminAuth, [
-    check('code', 'Please enter the ctation code').not().isEmpty()
-]], async (req, res) => {
+router.delete('/:code', adminAuth, async (req, res) => {
 
-    const error = validationResult(req)
-    if (!error.isEmpty()) {
-        return res.status(400).json({ errors: error.array() })
-    }
     try {
-        var station = await Stations.findOneAndRemove({ code: req.body.code })
+        var station = await Stations.findOneAndRemove({ code: req.params.code })
         if (station == null) {
             return res.status(401).json({ "message": "Station not found" })
         }

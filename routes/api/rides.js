@@ -16,7 +16,7 @@ const RideRecord = require('../../models/rideRecord')
 router.post('/add', [adminAuth, [
     check('location', 'Please select the location').not().isEmpty(),
     check('locationCode', 'Please select the location code').not().isEmpty(),
-    check('cycles', 'Please select the cycles').not().isEmpty(),
+    check('cycle', 'Please select the cycle').not().isEmpty(),
     check('cycleModel', 'Please select the cycleModel').not().isEmpty(),
     check('available', 'Please select the number of cycle').not().isEmpty(),
 ]], async (req, res) => {
@@ -30,7 +30,7 @@ router.post('/add', [adminAuth, [
         const availableData = {}
         availableData.location = req.body.location
         availableData.locationCode = req.body.locationCode
-        availableData.cycles = req.body.cycles
+        availableData.cycles = req.body.cycle
         availableData.cycleModel = req.body.cycleModel
         availableData.available = req.body.available
 

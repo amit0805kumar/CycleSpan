@@ -12,7 +12,10 @@ import {
     GET_ALLRECORD,
     ALLRECORD_ERROR,
     ADD_CYCLES,
-    DELETE_CYCLES
+    DELETE_CYCLES,
+    ADD_STATION,
+    REMOVE_STATION,
+    UPDATE_AVAILABlE
 } from './types'
 import axios from 'axios'
 import {setAlert} from './alert'
@@ -117,10 +120,6 @@ export const addCycles = (payload) => async dispatch => {
         dispatch(getAllCycles())
         dispatch(setAlert('Cycle added successfully!','success'))
     } catch (error) {
-        console.log(error)
-        dispatch({
-            type: ALLCYCLE_ERROR
-        })
         dispatch(setAlert('Somethong went wrong','danger'))
     }
 }
@@ -136,6 +135,62 @@ export const deleteCycle = (model) => async dispatch => {
         })
         dispatch(getAllCycles())
         dispatch(setAlert('Cycle deleted successfully!','danger'))
+    } catch (error) {
+        dispatch(setAlert('Somethong went wrong','danger'))
+    }
+}
+
+//Add stations
+
+export const addStation = (payload) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    try {
+        await axios.post('/api/stations',payload, config)
+        dispatch({
+            type: ADD_STATION
+        })    
+        dispatch(getAllStations())
+        dispatch(setAlert('Station successfully added','success'))
+    } catch (error) {
+        dispatch(setAlert('Something went wrong!','danger'))
+    }
+}
+
+//Deleting cycle
+
+export const deleteStation = (code) => async dispatch => {
+ 
+    try {
+       await axios.delete(`/api/stations/${code}`)
+        dispatch({
+            type: REMOVE_STATION
+        })
+        dispatch(getAllStations())
+        dispatch(setAlert('Station deleted successfully!','danger'))
+    } catch (error) {
+        dispatch(setAlert('Somethong went wrong','danger'))
+    }
+}
+
+
+export const updateAvailable = (payload) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    try {
+        await axios.put('/api/rides/update',payload,config)    
+        dispatch({
+            type: UPDATE_AVAILABlE
+        })
+        dispatch(getAllAvailables())
+        dispatch(setAlert('Ride updated','success'))
     } catch (error) {
         dispatch(setAlert('Somethong went wrong','danger'))
     }

@@ -1,7 +1,9 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
+import {deleteStation} from '../../actions/admin'
 
-const Stations = ({ stations, addStation }) => {
+const Stations = ({ stations, addStation, deleteStation }) => {
     return (
         <div className="all__stations table__container">
             <div className="heading">
@@ -32,7 +34,7 @@ const Stations = ({ stations, addStation }) => {
                             <li>{station.code}</li>
                             <li>{station.state}</li>
                             <li>{station.city}</li>
-                            <li><span className="del">Delete</span></li>
+                            <li><span className="del" onClick={()=>deleteStation(station.code)}>Delete</span></li>
                         </ul>
                     }) : <React.Fragment></React.Fragment>
                 }
@@ -43,8 +45,8 @@ const Stations = ({ stations, addStation }) => {
     )
 }
 
-// Stations.propTypes = {
+Stations.propTypes = {
+   deleteStation: PropTypes.func.isRequired
+}
 
-// }
-
-export default Stations
+export default connect(null, {deleteStation})(Stations)
