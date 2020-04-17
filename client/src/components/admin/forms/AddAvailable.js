@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import {addAvailable} from '../../../actions/admin'
 
 
-function AddAvailable({close, cycles,stations}) {
+function AddAvailable({close, cycles,stations, addAvailable}) {
 
     const [formData, setFormData] = useState({
         location: "",
@@ -51,7 +52,7 @@ function AddAvailable({close, cycles,stations}) {
      
     const onSubmit = async e => {
         e.preventDefault();
-        console.log(formData)
+        addAvailable(JSON.stringify(formData))
         close()
     };
     return (
@@ -86,12 +87,13 @@ function AddAvailable({close, cycles,stations}) {
 
 AddAvailable.propTypes = {
   cycles: PropTypes.array.isRequired,
-  stations: PropTypes.array.isRequired
+  stations: PropTypes.array.isRequired,
+  addAvailable: PropTypes.func.isRequired
 }
 const mapStateToProps = state => ({
     cycles: state.admin.cycles,
     stations: state.admin.stations
 })
 
-export default connect(mapStateToProps, {})(AddAvailable)
+export default connect(mapStateToProps, {addAvailable})(AddAvailable)
 

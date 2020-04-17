@@ -195,3 +195,21 @@ export const updateAvailable = (payload) => async dispatch => {
         dispatch(setAlert('Somethong went wrong','danger'))
     }
 }
+export const addAvailable = (payload) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    try {
+        await axios.post('/api/rides/add',payload,config)    
+        dispatch({
+            type: UPDATE_AVAILABlE
+        })
+        dispatch(getAllAvailables())
+        dispatch(setAlert('Ride Added','success'))
+    } catch (error) {
+        dispatch(setAlert('Somethong went wrong','danger'))
+    }
+}
