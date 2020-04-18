@@ -13,9 +13,9 @@ import Availables from './Availables'
 import FormManager from './forms/FormManager'
 
 
-import { getAllRecords, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides } from '../../actions/admin'
+import { getAllRecords, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides, getAdmins, getUsers } from '../../actions/admin'
 
-const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides }) => {
+const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides, getUsers, getAdmins }) => {
 
     useEffect(() => {
         getAllRecords()
@@ -24,7 +24,9 @@ const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, get
         getAllAvailables()
         getAllOtps()
         getAllActiveRides()
-    }, [getAllRecords, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides])
+        getUsers()
+        getAdmins()
+    }, [getAllRecords, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides, getUsers, getAdmins])
 
     const [formdata, setData] = useState({
         close: true,
@@ -56,7 +58,7 @@ const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, get
                     <div className="name">Amit Kumar</div>
                     <div className="edit__links" id="editLinks">
                         <div className="linkCont">
-                            <Link className="link" to='/'>Manage Admins</Link>
+                            <div className="link" onClick={()=>openPop(4)}>Manage Admins</div>
                             <Link to="/profileEdit" className="link">Edit Profile</Link>
                             <div className="link" onClick={e => logout()}>Logout</div>
                         </div>
@@ -97,11 +99,13 @@ Admin.propTypes = {
     getAllStations: PropTypes.func.isRequired,
     getAllAvailables: PropTypes.func.isRequired,
     getAllOtps: PropTypes.func.isRequired,
-    getAllActiveRides: PropTypes.func.isRequired
+    getAllActiveRides: PropTypes.func.isRequired,
+    getUsers: PropTypes.func.isRequired,
+    getAdmins: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
     admin: state.admin
 })
 
-export default connect(mapStateToProps, { logout, getAllRecords, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides })(Admin)
+export default connect(mapStateToProps, { logout, getAllRecords, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides, getAdmins, getUsers })(Admin)

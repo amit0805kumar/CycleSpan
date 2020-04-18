@@ -155,16 +155,16 @@ router.delete('/', auth, async (req, res) => {
 // @desc To make an admin
 // @access Private
 
-router.post("/allowAdmin", [adminAuth, [
-    check('user_id').not().isEmpty()
-]], async (req, res) => {
+router.post("/allowAdmin/:user_id", adminAuth, async (req, res) => {
 
-    const errors = validationResult(req)
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: error.array() })
-    }
     try {
-        const { user_id } = req.body
+        const { user_id } = req.params
+        const redundantFlag = await Admin.findOne({
+            user: user_id
+        })
+        if(redundantFlag){
+          return  res.status(400).json({ message: 'You are already an Admin!' })
+        }
         let adminData = {}
         adminData.user = user_id
         let userData = await User.findOne({ _id: user_id })
@@ -186,15 +186,10 @@ router.post("/allowAdmin", [adminAuth, [
 // @desc To delete access admin allowance
 // @access Private
 
-router.delete('/removeAdmin', [adminAuth, [
-    check('user_id', 'Please enter the id').not().isEmpty()
-]], async (req, res) => {
-    const errors = validationResult(req)
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() })
-    }
+router.delete('/removeAdmin/:user_id', adminAuth, async (req, res) => {
+
     try {
-        const { user_id } = req.body
+        const { user_id } = req.params
         const allAdmin = await Admin.find()
         if (allAdmin.length <= 1) {
             return res.status(400).json({ message: 'Sorry, You are the only admin' })

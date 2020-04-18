@@ -37,6 +37,12 @@ export const AVAILABLE_ERROR = 'AVAILABLE_ERROR'
 export const UPDATE_AVAILABlE = 'UPDATE_AVAILABlE'
 export const GET_ACTIVE = 'GET_ACTIVE'
 export const ACTIVE_ERROR = 'ACTIVE_ERROR'
+export const ADMIN_UPDATED = 'ADMIN_UPDATED'
+export const GET_ADMINS = 'GET_ADMINS'
+export const GET_ADMINS_ERROR = 'GET_ADMINS_ERROR'
+export const GET_USERS = 'GET_USERS'
+export const GET_USERS_ERROR = 'GET_USERS_ERROR'
+
 
 
 export const GET_OTPS = 'GET_OTPS'

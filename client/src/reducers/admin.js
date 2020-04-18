@@ -15,7 +15,11 @@ import {
     DELETE_CYCLES,
     ADD_STATION,
     REMOVE_STATION,
-    UPDATE_AVAILABlE
+    UPDATE_AVAILABlE,
+    GET_ADMINS,
+    GET_ADMINS_ERROR,
+    GET_USERS_ERROR,
+    GET_USERS
 } from '../actions/types'
 
 const initialState = {
@@ -25,6 +29,8 @@ const initialState = {
     stations: [],
     availables: [],
     records: [],
+    users: [],
+    admins: [],
     loading: true
 }
 
@@ -111,6 +117,30 @@ export default function (state = initialState, actions) {
             return {
                 ...state,
                 loading: false
+            }
+        case GET_USERS:
+            return {
+                ...state,
+                users: payload,
+                loading: false
+            }
+        case GET_USERS_ERROR:
+            return {
+                ...state,
+                loading: false,
+                users: []
+            }
+        case GET_ADMINS:
+            return {
+                ...state,
+                admins: payload,
+                loading: false
+            }
+        case GET_ADMINS_ERROR:
+            return {
+                ...state,
+                loading: false,
+                admins: []
             }
         default:
             return state

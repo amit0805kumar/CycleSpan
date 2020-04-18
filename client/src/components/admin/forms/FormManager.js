@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import AddCycle from './AddCycle'
 import AddStation from './AddStation'
 import AddAvailable from './AddAvailable'
+import ManageAdmin from './ManageAdmin'
 
 function FormManager({close, code}) {
 
@@ -13,6 +14,8 @@ function FormManager({close, code}) {
             case 2: return <AddStation close={close}/>
                     break
             case 3: return <AddAvailable close={close}/>
+                    break
+            case 4: return <ManageAdmin close={close}/>
                     break
             default: return <AddCycle close={close}/>
         }
