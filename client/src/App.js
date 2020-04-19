@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
@@ -28,12 +28,9 @@ if (localStorage.token) {
 }
 
 const App = () => {
-
-
-
   useEffect(() => {
     store.dispatch(loadUser())
-  }, [loadUser])
+  },[])
 
   return (<Provider store={store}>
     <Router>

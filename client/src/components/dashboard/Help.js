@@ -4,58 +4,58 @@ const Help = () => {
     return (
         <React.Fragment>
 
-            <div class="section__help">
-                <h1 class="heading">
+            <div className="section__help">
+                <h1 className="heading">
                     Help
                 </h1>
 
-                <div class="faq">
+                <div className="faq">
                     <h1>Frequently Asked Questions..</h1>
-                    <div class="questions">
-                        <div class="question">
+                    <div className="questions">
+                        <div className="question">
 
-                            <div class="ques">
-                                <span class="no">1. </span>
+                            <div className="ques">
+                                <span className="no">1. </span>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit laudantium quae
                                 architecto.
                             </div>
-                            <div class="ans">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
+                            <div className="ans">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
                         </div>
-                        <div class="question">
+                        <div className="question">
 
-                            <div class="ques">
-                                <span class="no">2. </span>
+                            <div className="ques">
+                                <span className="no">2. </span>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit laudantium quae
                                 architecto.
                             </div>
-                            <div class="ans">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
+                            <div className="ans">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
                         </div>
-                        <div class="question">
+                        <div className="question">
 
-                            <div class="ques">
-                                <span class="no">3. </span>
+                            <div className="ques">
+                                <span className="no">3. </span>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit laudantium quae
                                 architecto.
                             </div>
-                            <div class="ans">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
+                            <div className="ans">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
                         </div>
-                        <div class="question">
+                        <div className="question">
 
-                            <div class="ques">
-                                <span class="no">4. </span>
+                            <div className="ques">
+                                <span className="no">4. </span>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit laudantium quae
                                 architecto.
                             </div>
-                            <div class="ans">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
+                            <div className="ans">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="number">
+                <div className="number">
                     <h1>Toll Free</h1>
-                    <div class="contacts">
-                        <div class="num">+91 8802546558</div>
-                        <div class="num">+91 8802546558</div>
+                    <div className="contacts">
+                        <div className="num">+91 8802546558</div>
+                        <div className="num">+91 8802546558</div>
                     </div>
                 </div>
             </div>

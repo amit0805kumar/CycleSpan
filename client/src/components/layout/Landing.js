@@ -5,6 +5,10 @@ import one from '../../images/one.svg'
 import two from '../../images/two.svg'
 import three from '../../images/three.svg'
 import wheel from '../../images/wheel.svg'
+import otpPic from '../../images/otpPic.svg'
+import otp from '../../images/otp.svg'
+import cycle2 from '../../images/cycle2.svg'
+
 
 import { Link } from 'react-router-dom'
 
@@ -66,7 +70,7 @@ const Landing = ({ getCycles, getAllStations }) => {
                         <div className="text">
                             Get an OTP from your account
                     </div>
-                        <p>SVG</p>
+                        <img src={otp} alt="otp"/>
 
                     </div>
                     <hr className="dashed" />
@@ -79,7 +83,7 @@ const Landing = ({ getCycles, getAllStations }) => {
                                       any bicycle stant at your nearest
                                       station
                     </div>
-                        <p>SVG</p>
+                        <img src={otpPic} alt=""/>
 
                     </div>
                     <hr className="dashed-opp" />
@@ -92,7 +96,7 @@ const Landing = ({ getCycles, getAllStations }) => {
                             Save that id and submit it at the
                             end of your ride on the station
                     </div>
-                        <p>SVG</p>
+                        {/* <p>SVG</p> */}
 
                     </div>
                     <hr className="dashed" />
@@ -102,7 +106,7 @@ const Landing = ({ getCycles, getAllStations }) => {
                         <div className="text">
                             Enjoy your ride
                     </div>
-                        <p>SVG</p>
+                        <img className="bikeSvg" src={cycle2} alt=""/>
 
                     </div>
                 </div>

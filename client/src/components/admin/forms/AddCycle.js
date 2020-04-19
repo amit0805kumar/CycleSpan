@@ -35,7 +35,7 @@ function AddCycle({close, addCycles}) {
                 <input type="text" placeholder="Cycle Model" className="field" required value={model} name="model" onChange ={e=>{onChange(e)}}/>
                 <input type="text" placeholder="Company" className="field" required value={company} name="company" onChange ={e=>{onChange(e)}}/>
                 <input type="text" placeholder="Colour" className="field" required value={colour} name="colour" onChange ={e=>{onChange(e)}}/>
-                <select name="" id="" className="select" required value={gears} name="gears" onChange ={e=>{onChange(e)}}>
+                <select  className="select" required value={gears} name="gears" onChange ={e=>{onChange(e)}}>
                     <option value="null">--Select Gears--</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -60,7 +60,7 @@ function AddCycle({close, addCycles}) {
                 <div className="uploader">
                     <h3>Choose an Image: </h3><input type="file" accept="image/png" className="upload__input" />
                 </div>
-                <textarea name="desc" className="desc" cols="30" rows="3" placeholder="Description" required name="details" value={details} onChange={e=>onChange(e)}></textarea>
+                <textarea className="desc" cols="30" rows="3" placeholder="Description" required name="details" value={details} onChange={e=>onChange(e)}></textarea>
                 <button type="Submit">Submit</button>
 
             </form>

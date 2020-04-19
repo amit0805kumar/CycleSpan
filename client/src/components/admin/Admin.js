@@ -28,6 +28,12 @@ const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, get
         getAdmins()
     }, [getAllRecords, getAllCycles, getAllStations, getAllAvailables, getAllOtps, getAllActiveRides, getUsers, getAdmins])
 
+    // const refresh = ()=> {
+    //     getAllOtps()
+    //     getAllActiveRides()
+    //     getUsers()
+    //     getAllRecords()
+    // }
     const [formdata, setData] = useState({
         close: true,
         code: null

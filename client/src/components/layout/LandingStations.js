@@ -9,12 +9,12 @@ const LandingStations = ({ stations }) => {
             <div className="heading__shadowed">
                 Stations
            </div>
-            <div class="search">
+            {/* <div class="search">
                 <input type="text" class="bar" placeholder="Search City" />
                 <div class="location__icon">
                     <img src={locationIcon} alt="location icon" />
                 </div>
-            </div>
+            </div> */}
 
             <div className="address__container">
                 {

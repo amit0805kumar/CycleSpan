@@ -39,7 +39,6 @@ function AddStation({ close,addStation }) {
         <form id="stations" onSubmit={e=>onSubmit(e)}>
           <h1>Add Stations</h1>
           <textarea
-            name="desc"
             className="address"
             cols="30"
             rows="3"

@@ -23,8 +23,8 @@ const Billing = ({ info: { records } }) => {
                     </div>
                     {
                         records.map((record, index) => {
-                            return <React.Fragment>
-                                <div className="bill" key={index + 1}>
+                            return <React.Fragment key={index}>
+                                <div className="bill" >
                                     <div className="col">{index + 1}</div>
                                     <div className="col">{record.rideId}</div>
                                     <div className="col">{record.totalTime.toFixed(2)}</div>

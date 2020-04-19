@@ -5,6 +5,7 @@ import fb from '../../images/002-facebook.svg'
 import youtube from '../../images/001-youtube.svg'
 import insta from '../../images/003-instagram.svg'
 import logo from '../../images/cycleSpanLogo.svg'
+import {Link} from 'react-router-dom'
 const Footer = () => {
     return (
         <footer className="footer">
@@ -15,9 +16,9 @@ const Footer = () => {
                 <div className="text">
                     <h1>Cyclespan</h1>
                     <div className="links">
-                        <a href="#" className="link">Privacy Policy</a>
-                        <a href="#" className="link">Pricing</a>
-                        <a href="#" className="link">Help</a>
+                        <Link to="/dashboard" className="link">Privacy Policy</Link>
+                        <Link to="/dashboard" className="link">Pricing</Link>
+                        <Link to="/dashboard" className="link">Help</Link>
                     </div>
 
                 </div>
@@ -33,13 +34,13 @@ const Footer = () => {
             <br />
             <hr />
             <div className="social">
-                <a href="https://www.facebook.com/" className="link">
+                <a href="https://www.facebook.com/" className="a">
                     <img src={fb} alt="" />
                 </a>
-                <a href="https://www.facebook.com/" className="link">
+                <a href="https://www.facebook.com/" className="a">
                     <img src={youtube} alt="" />
                 </a>
-                <a href="https://www.facebook.com/" className="link">
+                <a href="https://www.facebook.com/" className="a">
                     <img src={insta} alt="" />
                 </a>
             </div>

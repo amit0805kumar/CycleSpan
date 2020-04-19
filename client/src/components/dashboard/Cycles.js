@@ -16,12 +16,12 @@ const Cycles = ({ getCycles, cycles: { cycles } }) => {
             <div className="available">
                 <div className="heading">Available cycles</div>
 
-                <div className="search">
+                {/* <div className="search">
                     <input type="text" placeholder="Search location" />
                     <div className="icon">
                         <img src={locSvg} alt="" />
                     </div>
-                </div>
+                </div> */}
 
                 <div className="cycles">
                     {

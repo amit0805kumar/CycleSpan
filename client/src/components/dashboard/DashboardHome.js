@@ -40,7 +40,7 @@ const DashboardHome = ({ info: { records }, getMyActiveRide, active }) => {
 
 DashboardHome.propTypes = {
     getMyActiveRide: PropTypes.func.isRequired,
-    active: PropTypes.object.isRequired
+    // active: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({

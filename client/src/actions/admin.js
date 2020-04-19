@@ -217,11 +217,7 @@ export const addAvailable = (payload) => async (dispatch) => {
 };
 
 export const manageAdmin = (id, act) => async (dispatch) => {
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
+  
   try {
     if (act === "allow") {
       await axios.post(`/api/profile/allowAdmin/${id}`);

@@ -23,9 +23,9 @@ const update = (opt,data) => {
         <div className="all__availables table__container">
             <div className="heading">
                 <div className="text">All Available cycles</div>
-                <div className="search"><input type="text" placeholder="Search by ModelNo/LocationCode" />
+                {/* <div className="search"><input type="text" placeholder="Search by ModelNo/LocationCode" />
 
-                </div>
+                </div> */}
                 <div className="btn" id="addAvailable" onClick={()=>addAvailable(3)}>
                     <div className="icon">+</div>
                     <div className="content">Add</div>
@@ -54,6 +54,7 @@ const update = (opt,data) => {
                                 locationCode: available.locationCode,
                             })}>+</span></li>
                         </ul>
+                        else return <React.Fragment key={index}></React.Fragment>
                     }) : <React.Fragment></React.Fragment>
                 }
             </div>

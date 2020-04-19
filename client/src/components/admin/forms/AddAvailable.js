@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {addAvailable} from '../../../actions/admin'
 
 
-function AddAvailable({close, cycles,stations, addAvailable}) {
+function AddAvailable({close,cycles,stations, addAvailable}) {
 
     const [formData, setFormData] = useState({
         location: "",
@@ -18,7 +18,7 @@ function AddAvailable({close, cycles,stations, addAvailable}) {
 
      const onChange = e => {
          if(e.target.name === "locationCode"){
-             var data = ""
+             let data = ""
              stations.map(station => {
                  if(station.code+"" === e.target.value){
                      data = station._id
@@ -30,7 +30,7 @@ function AddAvailable({close, cycles,stations, addAvailable}) {
                  location: data
              })
          }else if(e.target.name === "cycleModel"){
-            var data = ""
+            let data = ""
             cycles.map(cycle => {
                 if(cycle.model === e.target.value){
                     data = cycle._id
