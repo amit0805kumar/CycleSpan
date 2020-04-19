@@ -9,8 +9,8 @@ import Loader from '../layout/Loader'
 const Login = ({ login, isAuthenticated, loading }) => {
 
     const [formData, setFormData] = useState({
-        email: 'amit@gmail.com',
-        password: '222222'
+        email: '',
+        password: ''
     });
     const { email, password } = formData;
     const onChange = e => setFormData({
