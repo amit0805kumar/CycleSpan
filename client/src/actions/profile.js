@@ -1,11 +1,12 @@
 import {
     GET_PROFILE,
     PROFILE_ERROR,
-    ADD_PROFILE
+    ADD_PROFILE,
+    ACCOUNT_DELETE,
 } from './types'
 import axios from 'axios'
 import { setAlert } from './alert'
-
+import {logout} from './auth'
 export const getCurrentProfile = () => async dispatch => {
 
 
@@ -52,5 +53,17 @@ export const addProfile = (payload, history) => async dispatch => {
             payload: { msg: error.response.statusText, status: error.response.status }
         })
 
+    }
+}
+
+export const deleteAccount = () => async dispatch => {
+    try {
+        await axios.delete('/api/profile')
+        dispatch({
+            type: ACCOUNT_DELETE
+        })
+        dispatch(logout())
+    } catch (error) {
+        dispatch(setAlert('Something went wrong!','danger'))
     }
 }

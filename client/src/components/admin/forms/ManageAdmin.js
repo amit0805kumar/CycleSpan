@@ -31,7 +31,15 @@ function ManageAdmin({close, users, admins, manageAdmin}) {
         >
           +
         </div>
-
+        <div className="all_admins">
+            <h1>All Admin List</h1>
+            <hr/>
+            <ul>
+                {admins.map(admin=>{
+                    return <li key={admin._id}>{admin.name}</li>
+                })}
+            </ul>
+        </div>
         <form onSubmit={e=>onSubmit(e)}>
             <h1>Manage Admin</h1>
             <select name="id" value={id} onChange={e=>onChange(e)} required>

@@ -35,7 +35,7 @@ const Admin = ({ logout, getAllRecords, admin, getAllCycles, getAllStations, get
     const {close, code} = formdata
     const remove = ()=>{
         setData({
-            formdata,
+            ...formdata,
             close: true,
             code: null
         })

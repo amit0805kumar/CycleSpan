@@ -4,6 +4,7 @@ const { check, validationResult } = require('express-validator')
 const Profile = require('../../models/Profiles')
 const User = require('../../models/Users')
 const Admin = require('../../models/Admin')
+const RideRecord = require('../../models/rideRecord')
 const auth = require('../../middleware/auth')
 const adminAuth = require('../../middleware/adminAuth')
 
@@ -142,6 +143,9 @@ router.delete('/', auth, async (req, res) => {
         await Profile.findOneAndDelete({ user: req.user.id })
         //Remove User
         await User.findOneAndDelete({ _id: req.user.id })
+        //Remove rides
+        await RideRecord.deleteMany({ user: req.user.id })
+
         res.json({ message: "User deleted" })
 
     } catch (error) {
@@ -149,6 +153,7 @@ router.delete('/', auth, async (req, res) => {
         res.status(500).send('Server error')
     }
 })
+
 
 
 // @route POST api/profile/allowAdmin

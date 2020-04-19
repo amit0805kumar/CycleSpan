@@ -9,7 +9,7 @@ import Loader from '../layout/Loader'
 const Login = ({ login, isAuthenticated, loading }) => {
 
     const [formData, setFormData] = useState({
-        email: 'amit@gmail.com',
+        email: 'anumahi1710@gmail.com',
         password: '222222'
     });
     const { email, password } = formData;
@@ -22,17 +22,6 @@ const Login = ({ login, isAuthenticated, loading }) => {
         login(email, password);
 
     };
-
-    // if (loading) {
-    //     {
-    //         return <Loader />
-    //     }
-    // } else {
-    //     if (isAuthenticated) {
-    //         return <Redirect to='/dashboard' />
-    //     }
-    // }
-
 
     return loading ? <Loader /> : isAuthenticated ? <Redirect to='/dashboard' /> : (
         <div className="form__container">

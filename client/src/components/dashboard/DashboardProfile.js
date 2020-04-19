@@ -1,45 +1,56 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
-// import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import {deleteAccount} from '../../actions/profile'
 import settingSvg from '../../images/setting.svg'
 import { Link } from 'react-router-dom'
-const DashboardProfile = ({ profile, user }) => {
+const DashboardProfile = ({ profile, user, deleteAccount }) => {
+
+
+
     return (
         <React.Fragment>
-            <div class="section__profile">
-                <div class="header">
+            
+            <div className="section__profile">
+                <div className="header">
                     <h1>Personal details</h1>
-                    <Link class="edit" to="/profileEdit">
+                    <Link className="edit" to="/profileEdit">
                         <img src={settingSvg} alt="" />
                     </Link>
                 </div>
                 <br />
                 <hr />
-                <div class="general">
-                    <div class="name">{profile.user.name}</div>
-                    <div class="email">{user.email}</div>
+                <div className="general">
+                    <div className="name">{profile.user.name}</div>
+                    <div className="email">{user.email}</div>
 
                 </div>
 
-                <div class="address">
+                <div className="address">
                     <h1>Address</h1>
-                    <div class="text">{profile.location.address}</div>
-                    <div class="text">{profile.location.state}</div>
-                    <div class="text">{profile.location.pin}</div>
-                    <div class="text">{profile.location.country}</div>
+                    <div className="text">{profile.location.address}</div>
+                    <div className="text">{profile.location.state}</div>
+                    <div className="text">{profile.location.pin}</div>
+                    <div className="text">{profile.location.country}</div>
                 </div>
-                <div class="phone">
+                <div className="phone">
                     <h1>Phone Number</h1>
-                    <div class="text">+91 <span>{profile.number}</span></div>
+                    <div className="text">+91 <span>{profile.number}</span></div>
                 </div>
+
+            <div className="deleteProfile">
+                <div className="btn_deleteProfile noselect" onClick={()=>deleteAccount()} >
+                    Delete your profile
+                </div>
+            </div>
 
             </div>
         </React.Fragment>
     )
 }
 
-// DashboardProfile.propTypes = {
+DashboardProfile.propTypes = {
+    deleteAccount: PropTypes.func.isRequired
+}
 
-// }
-
-export default DashboardProfile
+export default connect(null,{deleteAccount})(DashboardProfile)
