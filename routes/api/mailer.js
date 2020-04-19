@@ -13,15 +13,15 @@ router.post('/', async (req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: 'greatamitkumar042@gmail.com',
-            pass: 'StarLord'
+            user: 'cyclespan.ltd@gmail.com',
+            pass: config.get('epass')
         },
         tls: {
             rejectUnauthorized: false
         }
     })
     let mailOptions = {
-        from: 'greatamitkumar042@gmail.com',
+        from: 'cyclespan.ltd@gmail.com',
         to: receiver,
         subject: sub,
         html: body
