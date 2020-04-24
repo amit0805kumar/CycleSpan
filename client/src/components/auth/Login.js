@@ -45,7 +45,7 @@ const Login = ({ login, isAuthenticated, loading }) => {
                 <form onSubmit={e => onSubmit(e)}>
                     <h1>Login</h1>
                     <input type="email" placeholder="Email" required name="email" value={email} onChange={e => onChange(e)} />
-                    <input type="password" placeholder="Passoword" required name="password" value={password} onChange={e => onChange(e)} />
+                    <input type="password" placeholder="Password" required name="password" value={password} onChange={e => onChange(e)} />
                     <button type="Submit">Login</button>
                 </form>
             </div>

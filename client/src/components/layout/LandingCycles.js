@@ -7,7 +7,7 @@ const LandingCycles = ({ cycles: { cycles } }) => {
     return (
         <React.Fragment>
 
-            <section className="section__cycles">
+            <section className="section__cycles" id="cycles" name="cycles">
                 <div className="heading__shadowed">
                     Cycles
                 </div>

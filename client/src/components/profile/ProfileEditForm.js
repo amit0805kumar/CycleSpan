@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { Redirect } from "react-router-dom";
 import { getCurrentProfile } from '../../actions/profile'
 
-const ProfileEditForm = ({ getCurrentProfile, addProfile, history, profile: { profile, loading } }) => {
+const ProfileEditForm = ({addProfile, history, profile: { profile, loading } }) => {
 
 
     const [formData, setData] = useState({
