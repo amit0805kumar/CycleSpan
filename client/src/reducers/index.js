@@ -7,6 +7,7 @@ import cycles from './cycles'
 import ride from './ride'
 import station from './station'
 import admin from './admin'
+import route from './route'
 
 export default combineReducers({
     alert,
@@ -15,5 +16,6 @@ export default combineReducers({
     cycles,
     ride,
     station,
-    admin
+    admin,
+    route
 })

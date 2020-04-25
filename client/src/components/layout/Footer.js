@@ -8,7 +8,7 @@ import logo from '../../images/cycleSpanLogo.svg'
 import {Link} from 'react-router-dom'
 const Footer = () => {
     return (
-        <footer className="footer">
+        <footer className="footer" id="footer">
             <img src={cycleIcon} alt="" className="cycle" />
 
             <div className="content">

@@ -18,11 +18,12 @@ import logoutSvg from '../../images/logout.svg'
 
 // eslint-disable-next-line
 
-const Dashboard = ({ getRecord, logout, getCurrentProfile, getAllStations, profile: { profile, loading }, isAdmin, user, rideDate }) => {
+const Dashboard = ({ navSet,getRecord, logout, getCurrentProfile, getAllStations, profile: { profile, loading }, isAdmin, user, rideDate }) => {
 
     const [Type, setType] = useState({
         type: 'home'
     })
+    navSet(false)
     const { type } = Type;
     useEffect(() => {
         getAllStations()

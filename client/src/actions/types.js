@@ -63,4 +63,6 @@ export const ALLAVAIL_ERROR = 'ALLAVAIL_ERROR'
 export const GET_ALLRECORD = 'GET_ALLRECORD'
 export const ALLRECORD_ERROR = 'ALLRECORD_ERROR'
 
+export const SET_NAV = 'SET_NAV'
+
 

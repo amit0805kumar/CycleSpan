@@ -18,7 +18,7 @@
             font-size: 2rem;
             margin: 0 2rem;
             transition: $tran-normal;
-
+            cursor: pointer;
             &:hover {
                 color: $color-green !important;
             }

@@ -5,7 +5,7 @@ import locationIcon from '../../images/loc.svg'
 
 const LandingStations = ({ stations }) => {
     return (
-        <section className="section__stations">
+        <section className="section__stations" id="stations">
             <div className="heading__shadowed">
                 Stations
            </div>

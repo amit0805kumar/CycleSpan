@@ -333,7 +333,8 @@ a {
       color: #000;
       font-size: 2rem;
       margin: 0 2rem;
-      transition: all 0.3s; }
+      transition: all 0.3s;
+      cursor: pointer; }
       .nav .links a:hover {
         color: #19D8B4 !important; }
 
@@ -739,7 +740,8 @@ a {
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        transition: all 0.2s cubic-bezier(0.98, 0.07, 0.83, 0.67); }
+        transition: all 0.2s cubic-bezier(0.98, 0.07, 0.83, 0.67);
+        cursor: pointer; }
         .dashboard__container .sidebar .nav .link:hover::before {
           width: 100%; }
         .dashboard__container .sidebar .nav .link:hover .ln {

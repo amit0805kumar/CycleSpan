@@ -20,13 +20,14 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getCycles } from "../../actions/cycles"
 import { getAllStations } from '../../actions/station'
+import { setNav } from '../../actions/route'
 
-const Landing = ({ getCycles, getAllStations }) => {
+const Landing = ({ getCycles, getAllStations, setNav }) => {
     useEffect(() => {
         getCycles()
         getAllStations()
     }, [getCycles, getAllStations]);
-
+    setNav(true)
     return <Fragment>
         <BgPattern />
         <header className="header" >
@@ -122,7 +123,8 @@ const Landing = ({ getCycles, getAllStations }) => {
 
 Landing.propTypes = {
     getCycles: PropTypes.func.isRequired,
-    getAllStations: PropTypes.func.isRequired
+    getAllStations: PropTypes.func.isRequired,
+    setNav: PropTypes.func.isRequired
 }
 
-export default connect(null, { getCycles, getAllStations })(Landing)
+export default connect(null, { getCycles, getAllStations, setNav })(Landing)
