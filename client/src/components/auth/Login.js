@@ -25,6 +25,15 @@ const Login = ({ login, isAuthenticated, loading }) => {
 
     return loading ? <Loader /> : isAuthenticated ? <Redirect to='/dashboard' /> : (
         <div className="form__container">
+       
+            <div className="form">
+                <form onSubmit={e => onSubmit(e)}>
+                    <h1>Login</h1>
+                    <input type="email" placeholder="Email" required name="email" value={email} onChange={e => onChange(e)} />
+                    <input type="password" placeholder="Password" required name="password" value={password} onChange={e => onChange(e)} />
+                    <button type="Submit">Login</button>
+                </form>
+            </div>
             <div className="design">
                 <div className="back">
                     <div className="top">
@@ -39,15 +48,7 @@ const Login = ({ login, isAuthenticated, loading }) => {
                 <h1>Welcome Back!</h1>
                 <h3>Don't have an account?</h3>
                 <Link to="./register" className="create">Create Account</Link>
-
-            </div>
-            <div className="form">
-                <form onSubmit={e => onSubmit(e)}>
-                    <h1>Login</h1>
-                    <input type="email" placeholder="Email" required name="email" value={email} onChange={e => onChange(e)} />
-                    <input type="password" placeholder="Password" required name="password" value={password} onChange={e => onChange(e)} />
-                    <button type="Submit">Login</button>
-                </form>
+                <Link to="/" className="homeBtn">Go Home</Link>
             </div>
         </div>
     )

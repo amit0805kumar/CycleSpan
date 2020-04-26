@@ -3,7 +3,6 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //Redux
 import { Provider} from "react-redux";
-import PropTypes from 'prop-types';
 
 import store from "./store";
 import setAuthToken from "./util/setAuthToken";
@@ -38,7 +37,7 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Fragment>
-          <Nav /> 
+          {/* <Nav />  */}
           <Alert />
           <Switch>
             <Route exact path="/" component={Landing} />

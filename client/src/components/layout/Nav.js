@@ -5,17 +5,16 @@ import { Link} from "react-scroll";
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
 
-
-const Nav = ({navFlag}) => {
+import LinkRoute from '../routing/LinkRoute'
+const Nav = () => {
   
     return (
         <Fragment>
-         {  
+          
          
-        navFlag ? <nav className="nav">
+       <nav className="nav">
                 <div className="links">
-                    <Link className="link" to="/">Home</Link>
-                    <Link className="link" to="/login">Login</Link>
+                    <LinkRoute to="/login" title="Login"/>
                     <Link 
                     to="cycles"
                     spy={true}
@@ -36,9 +35,9 @@ const Nav = ({navFlag}) => {
                      offset={-70}
                      duration= {500}>Contact Us</Link>
                 </div>
-            </nav> : <React.Fragment></React.Fragment>
+            </nav> 
             
-            }
+            
         </Fragment>
     )
 }

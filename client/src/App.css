@@ -608,6 +608,13 @@ a {
       .form__container .design .create:hover {
         background: #2D2D2D;
         color: #FFDC32; }
+    .form__container .design .homeBtn {
+      margin-top: 2rem;
+      cursor: pointer;
+      font-size: 1.6rem;
+      transition: all .3s; }
+      .form__container .design .homeBtn:hover {
+        color: #DB313E; }
     .form__container .design:hover {
       width: 100%; }
     .form__container .design:hover + .form {
@@ -615,9 +622,7 @@ a {
   .form__container .form {
     width: 50%;
     z-index: 5;
-    position: absolute;
     height: 100%;
-    right: 0;
     display: flex;
     padding: 2rem;
     transition: all 0.3s ease-in-out;
@@ -1191,8 +1196,7 @@ a {
   display: flex;
   justify-content: space-between;
   background: #2D2D2D;
-  align-items: center;
-  margin-top: 4rem; }
+  align-items: center; }
   .admin__nav .heading {
     font-size: 2rem; }
   .admin__nav .details {

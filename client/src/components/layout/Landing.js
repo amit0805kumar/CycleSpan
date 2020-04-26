@@ -11,7 +11,7 @@ import cycle2 from '../../images/cycle2.svg'
 
 
 import { Link } from 'react-router-dom'
-
+import Nav from './Nav'
 import BgPattern from './BgPattern'
 import LandingCycles from "./LandingCycles"
 import LandingStations from "./LandingStations"
@@ -27,8 +27,9 @@ const Landing = ({ getCycles, getAllStations, setNav }) => {
         getCycles()
         getAllStations()
     }, [getCycles, getAllStations]);
-    setNav(true)
+    // setNav(true)
     return <Fragment>
+        <Nav />
         <BgPattern />
         <header className="header" >
 
