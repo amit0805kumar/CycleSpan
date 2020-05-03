@@ -58,7 +58,7 @@ router.post('/add', [adminAuth, [
     }
 })
 
-// @route POST api/rides/updates
+// @route PUT api/rides/updates
 // @desc To update the cycles (inc or dec)
 // @access Private admin
 
@@ -96,7 +96,7 @@ router.put('/update', [adminAuth, [
 
 // @route GET api/rides/
 // @desc To get all available rides
-// @access Private admin
+// @access Public
 
 router.get('/', async (req, res) => {
     try {
@@ -133,7 +133,7 @@ router.get('/records', auth, async (req, res) => {
 
 // @route GET api/rides/record/me
 // @desc To get my records
-// @access Private admin user
+// @access Private 
 
 router.get('/records/me', auth, async (req, res) => {
     try {

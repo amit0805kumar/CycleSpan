@@ -51,7 +51,7 @@ router.get('/otps', adminAuth, async (req, res) => {
     }
 })
 
-// @route GET api/active/cancelOtp
+// @route DELETE api/active/cancelOtp
 // @desc To remove the OTP
 // @access Private
 

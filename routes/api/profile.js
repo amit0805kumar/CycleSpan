@@ -158,7 +158,7 @@ router.delete('/', auth, async (req, res) => {
 
 // @route POST api/profile/allowAdmin
 // @desc To make an admin
-// @access Private
+// @access Private admin
 
 router.post("/allowAdmin/:user_id", adminAuth, async (req, res) => {
 
@@ -189,7 +189,7 @@ router.post("/allowAdmin/:user_id", adminAuth, async (req, res) => {
 
 // @route Delete api/profile/removeAdmin
 // @desc To delete access admin allowance
-// @access Private
+// @access Private admin
 
 router.delete('/removeAdmin/:user_id', adminAuth, async (req, res) => {
 

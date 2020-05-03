@@ -24,7 +24,7 @@ router.get('/', auth, async (req, res) => {
     }
 })
 // @route GET api/auth/users
-// @desc to get user from token
+// @desc to get all users
 // @access Private admin
 router.get('/users', adminAuth, async (req, res) => {
 
@@ -40,7 +40,7 @@ router.get('/users', adminAuth, async (req, res) => {
     }
 })
 // @route GET api/auth/admins
-// @desc to get user from token
+// @desc to get add admins
 // @access Private admin
 router.get('/admins', adminAuth, async (req, res) => {
 
