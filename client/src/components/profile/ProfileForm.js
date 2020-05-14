@@ -26,7 +26,6 @@ const ProfileForm = ({ getCurrentProfile, addProfile, history, profile: { profil
         facebook: '',
         instagram: '',
         aadhar: '',
-        pan: ''
     })
 
     if (profile !== null) {
@@ -36,7 +35,7 @@ const ProfileForm = ({ getCurrentProfile, addProfile, history, profile: { profil
         ...formData,
         [e.target.name]: e.target.value
     })
-    const { dob, gender, number, address, state, country, youtube, facebook, instagram, pin, aadhar, pan } = formData
+    const { dob, gender, number, address, state, country, youtube, facebook, instagram, pin, aadhar } = formData
 
     const onSubmit = async e => {
         e.preventDefault();
@@ -118,10 +117,9 @@ const ProfileForm = ({ getCurrentProfile, addProfile, history, profile: { profil
 
                         <div className="form__field">
                             <h3>Document</h3>
-                            <p>Enter the number of any one ID.</p>
+                            <p>Enter your aadhar number</p>
                             <div className="docs">
-                                <input type="number" value={aadhar} name="aadhar" onChange={e => onChange(e)} placeholder="Aadhar" />
-                                <input type="number" value={pan} name="pan" onChange={e => onChange(e)} placeholder="PAN" />
+                                <input type="number" required value={aadhar} name="aadhar" onChange={e => onChange(e)} placeholder="Aadhar" />
                             </div>
                         </div>
 

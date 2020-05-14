@@ -23,7 +23,6 @@ const ProfileEditForm = ({addProfile, history, profile: { profile, loading } }) 
         facebook: '',
         instagram: '',
         aadhar: '',
-        pan: ''
     });
     useEffect(() => {
         // getCurrentProfile()
@@ -39,7 +38,6 @@ const ProfileEditForm = ({addProfile, history, profile: { profile, loading } }) 
             facebook: loading || !profile.social || !profile.social.facebook ? '' : profile.social.facebook,
             instagram: loading || !profile.social || !profile.social.instagram ? '' : profile.social.instagram,
             aadhar: loading || !profile.aadhar ? '' : profile.aadhar,
-            pan: loading || !profile.pan ? '' : profile.pan
         })
 
     }, [loading, profile])
@@ -53,7 +51,7 @@ const ProfileEditForm = ({addProfile, history, profile: { profile, loading } }) 
         ...formData,
         [e.target.name]: e.target.value
     })
-    const { gender, number, address, state, country, youtube, facebook, instagram, pin, aadhar, pan } = formData
+    const { gender, number, address, state, country, youtube, facebook, instagram, pin, aadhar } = formData
 
     const onSubmit = async e => {
         e.preventDefault();
@@ -132,10 +130,9 @@ const ProfileEditForm = ({addProfile, history, profile: { profile, loading } }) 
 
                         <div className="form__field">
                             <h3>Document</h3>
-                            <p>Enter the number of any one ID.</p>
+                            <p>Enter your aadhar number.</p>
                             <div className="docs">
-                                <input type="number" value={aadhar} name="aadhar" onChange={e => onChange(e)} placeholder="Aadhar" />
-                                <input type="number" value={pan} name="pan" onChange={e => onChange(e)} placeholder="PAN" />
+                                <input type="number" required value={aadhar} name="aadhar" onChange={e => onChange(e)} placeholder="Aadhar" />
                             </div>
                         </div>
 

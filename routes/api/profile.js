@@ -23,6 +23,7 @@ router.post(
             check('pin', 'Enter the pin').not().isEmpty(),
             check('state', 'Enter the state').not().isEmpty(),
             check('country', 'Enter the country').not().isEmpty(),
+            check('aadhar', 'Enter the Aadhar').isLength({ min: 12, max: 12 })
         ]
     ], async (req, res) => {
         const error = validationResult(req)
@@ -40,7 +41,8 @@ router.post(
             country,
             youtube,
             facebook,
-            instagram
+            instagram,
+            aadhar
         } = req.body
 
 
@@ -49,6 +51,7 @@ router.post(
         if (gender) profileFelds.gender = gender
         if (dob) profileFelds.dob = dob
         if (number) profileFelds.number = number
+        if (aadhar) profileFelds.aadhar = aadhar 
 
         profileFelds.location = {}
         if (address) profileFelds.location.address = address
