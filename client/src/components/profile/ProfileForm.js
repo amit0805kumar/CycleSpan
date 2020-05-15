@@ -39,7 +39,7 @@ const ProfileForm = ({ getCurrentProfile, addProfile, history, profile: { profil
 
     const onSubmit = async e => {
         e.preventDefault();
-        addProfile(formData, history)
+        addProfile(formData, history, false)
     };
 
     return (

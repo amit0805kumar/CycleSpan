@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import AddCycle from './AddCycle'
 import AddStation from './AddStation'
 import AddAvailable from './AddAvailable'
@@ -36,9 +35,6 @@ function FormManager({close, code}) {
     )
 }
 
-FormManager.propTypes = {
-
-}
 
 export default FormManager
 

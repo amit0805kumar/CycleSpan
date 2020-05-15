@@ -55,7 +55,7 @@ const ProfileEditForm = ({addProfile, history, profile: { profile, loading } }) 
 
     const onSubmit = async e => {
         e.preventDefault();
-        addProfile(formData, history)
+        addProfile(formData, history, true)
     };
 
 

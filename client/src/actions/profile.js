@@ -27,7 +27,7 @@ export const getCurrentProfile = () => async dispatch => {
         })
     }
 }
-export const addProfile = (payload, history) => async dispatch => {
+export const addProfile = (payload, history, update) => async dispatch => {
     const config = {
         headers: {
             'Content-Type': 'application/json'
@@ -48,10 +48,12 @@ export const addProfile = (payload, history) => async dispatch => {
         if (errors) {
             errors.forEach(error => dispatch(setAlert(error.msg, 'danger')))
         }
+       if(!update){
         dispatch({
             type: PROFILE_ERROR,
             payload: { msg: error.response.statusText, status: error.response.status }
         })
+       }
 
     }
 }

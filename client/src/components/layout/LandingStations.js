@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import locationIcon from '../../images/loc.svg'
+// import locationIcon from '../../images/loc.svg'
 
 const LandingStations = ({ stations }) => {
     return (

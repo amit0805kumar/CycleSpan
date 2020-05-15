@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import {deleteAccount} from '../../actions/profile'
 import settingSvg from '../../images/setting.svg'
 import { Link } from 'react-router-dom'
+import aadhar from '../../images/aadhar.jpg'
 const DashboardProfile = ({ profile, user, deleteAccount }) => {
 
 
@@ -15,14 +16,26 @@ const DashboardProfile = ({ profile, user, deleteAccount }) => {
                 <div className="header">
                     <h1>Personal details</h1>
                     <Link className="edit" to="/profileEdit">
+                        <h3>Update Profile</h3>
                         <img src={settingSvg} alt="" />
                     </Link>
                 </div>
                 <br />
                 <hr />
                 <div className="general">
-                    <div className="name">{profile.user.name}</div>
+                  <div className="left">
+                  <div className="name">{profile.user.name}</div>
                     <div className="email">{user.email}</div>
+                  </div>
+                  <div className="right">
+                      <div className="card__container">
+                        <h2>Aadhar</h2>
+                        <div className="card">
+                            <div className="num">{profile.aadhar}</div>
+                        <img src={aadhar} alt="aadhar"/>
+                        </div>
+                      </div>
+                  </div>
 
                 </div>
 

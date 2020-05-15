@@ -23,7 +23,7 @@ router.post(
             check('pin', 'Enter the pin').not().isEmpty(),
             check('state', 'Enter the state').not().isEmpty(),
             check('country', 'Enter the country').not().isEmpty(),
-            check('aadhar', 'Enter the Aadhar').isLength({ min: 12, max: 12 })
+            check('aadhar', 'Enter the a valid Aadhar number').isLength({ min: 12, max: 12 })
         ]
     ], async (req, res) => {
         const error = validationResult(req)
