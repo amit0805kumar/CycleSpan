@@ -819,6 +819,11 @@ a {
     .dashboard__container .content .heading {
       margin-top: 3rem;
       font-size: 2.5rem; }
+    .dashboard__container .content .cancel {
+      cursor: pointer;
+      display: inline !important; }
+      .dashboard__container .content .cancel:hover {
+        color: #DB313E; }
     .dashboard__container .content .otpBtn {
       background: #2D2D2D;
       font-size: 2rem;
@@ -826,6 +831,7 @@ a {
       height: 5rem;
       width: 25rem;
       margin-top: 3rem;
+      margin-bottom: 2rem;
       align-items: center;
       transition: all 0.3s ease-in-out; }
       .dashboard__container .content .otpBtn:hover {

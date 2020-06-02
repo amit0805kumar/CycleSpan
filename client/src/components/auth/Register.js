@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import topSvg from '../../images/topZigZag.svg'
 import bottomSvg from '../../images/bottomZigZag.svg'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { setAlert } from '../../actions/alert'
 import { register } from '../../actions/auth'
 import PropTypes from 'prop-types';
-const Register = ({ setAlert, register }) => {
+import Loader from '../layout/Loader'
+
+const Register = ({ setAlert, register, isAuthenticated, loading }) => {
 
     const [formData, setFormData] = useState({
         name: '',
@@ -30,7 +32,7 @@ const Register = ({ setAlert, register }) => {
         }
     }
 
-    return (
+    return loading ?  <Loader /> : isAuthenticated ?  <Redirect to='/dashboard' /> : (
         <div className="form__container">
       
             <div className="form">
@@ -66,6 +68,12 @@ const Register = ({ setAlert, register }) => {
 Register.protoTypes = {
     setAlert: PropTypes.func.isRequired,
     register: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool,
+    loading: PropTypes.bool
 }
 
-export default connect(null, { setAlert, register })(Register)
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated,
+    loading: state.auth.loading
+});
+export default connect(mapStateToProps, { setAlert, register })(Register)

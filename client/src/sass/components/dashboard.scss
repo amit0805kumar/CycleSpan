@@ -208,14 +208,21 @@
       margin-top: 3rem;
       font-size: 2.5rem;
     }
-
+    .cancel{
+      cursor: pointer;
+      display: inline !important;
+      &:hover{
+        color: $color-red;
+      }
+    }
     .otpBtn {
       background: $color-secondary;
       font-size: 2rem;
       display: flex;
       height: 5rem;
-      width: 25rem;
+      width: 25rem; 
       margin-top: 3rem;
+      margin-bottom: 2rem;
       align-items: center;
       transition: $tran-smooth;
 
