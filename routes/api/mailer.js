@@ -9,22 +9,22 @@ router.post('/', async (req, res) => {
 
 
     let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
-        auth: {
-            user: 'cyclespan.ltd@gmail.com',
-            pass: config.get('epass')
-        },
+         host: "smtp-mail.outlook.com", // hostname
+        secureConnection: false, // TLS requires secureConnection to be false
+        port: 587, // port for secure SMTP
         tls: {
-            rejectUnauthorized: false
-        }
+         ciphers: "SSLv3",
+        },
+        auth: {
+            user: "amit0805kumar@outlook.com",
+            pass: config.get("epass"),
+    },
     })
     let mailOptions = {
-        from: 'cyclespan.ltd@gmail.com',
-        to: receiver,
-        subject: sub,
-        html: body
+            from: '"Amit Kumar" <amit0805kumar@outlook.com>', // sender address (who sends)
+            to: receiver, // list of receivers (who receives)
+            subject: sub, // Subject line
+            html: body, // html body
     }
 
     transporter.sendMail(mailOptions, function (err, data) {

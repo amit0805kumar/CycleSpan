@@ -2,5 +2,5 @@
     "mongoURI": "mongodb+srv://amit:amit@devconnector-dxwk4.mongodb.net/cyclespan?retryWrites=true&w=majority",
     "jwtsecret": "mytoken",
     "otpSecret": "theOtpSecret",
-    "epass": "heatblast"
+    "epass": "RockBottom@123"
 } 
